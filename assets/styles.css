@@ -477,24 +477,55 @@ body.modal-open { overflow: hidden; }
 
 /* .d-flow : 남색 박스 + 주황 화살표로 이어지는 프로세스 도식
    <li> 를 추가하면 화살표가 자동으로 그려집니다 (첫 항목 제외) */
-.d-flow { list-style: none; display: flex; flex-direction: column; gap: 0; }
-.d-flow li { display: grid; grid-template-columns: 220px 1fr; gap: 26px; align-items: center; padding: 7px 0; }
+.d-flow { list-style: none; }
+.d-flow li { display: grid; grid-template-columns: 220px 1fr; gap: 26px; align-items: center; }
+
+/* 두 번째 항목부터 위에 36px 여백을 만들고, 그 여백 안에만 화살표를 그립니다.
+   화살표 기준은 박스 자신(.d-box)이라 left:50% 가 곧 박스 한가운데입니다.
+   → 열 너비를 하드코딩하지 않으므로 화면 폭이 바뀌어도 항상 정중앙입니다.
+   (예전에는 여백이 14px뿐인데 화살표를 위로 30px 올려서 앞 박스 안으로 파고들었습니다) */
+.d-flow li + li { margin-top: 36px; }
+
 .d-box {
   background: var(--navy-900); color: #fff; border-radius: 4px;
   padding: 15px 18px; text-align: center; font-size: 15px; font-weight: 700; letter-spacing: 0.01em;
   position: relative;
 }
-.d-flow li + li .d-box::before {
-  content: ""; position: absolute; left: 50%; top: -22px; transform: translateX(-50%);
-  width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;
-  border-top: 9px solid var(--coral);
+.d-flow li + li .d-box::before {    /* 화살표 몸통 */
+  content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+  top: -29px; width: 2px; height: 16px; background: var(--coral);
 }
-.d-flow li + li .d-box::after {
-  content: ""; position: absolute; left: 50%; top: -30px; transform: translateX(-50%);
-  width: 3px; height: 10px; background: var(--coral);
+.d-flow li + li .d-box::after {     /* 화살촉 */
+  content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+  top: -14px; width: 0; height: 0;
+  border-left: 6px solid transparent; border-right: 6px solid transparent;
+  border-top: 8px solid var(--coral);
 }
-.d-flow p { font-size: 14px; line-height: 1.75; color: var(--slate); position: relative; padding-left: 17px; }
+/* min-width:0 이 없으면 설명 글의 최소 폭이 박스 열(220px)을 밀어서 좁힙니다.
+   그러면 화살표 중심(110px)이 박스 중심과 어긋납니다. */
+.d-flow p { font-size: 14px; line-height: 1.75; color: var(--slate); position: relative; padding-left: 17px; min-width: 0; }
 .d-flow p::before { content: ""; position: absolute; left: 2px; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-300); }
+
+/* .d-logic : 시간 순서가 아니라 "판단의 흐름"을 보여주는 2x2 카드
+   d-flow(세로 화살표)와 달리 순서를 강조하지 않습니다.
+   가설을 스스로 반증한 칸에는 class="is-pivot" 을 붙여 강조합니다. */
+.d-logic-intro { font-size: 13.5px; line-height: 1.75; color: var(--slate); margin: -6px 0 20px; }
+.d-logic-intro b { color: var(--navy); font-weight: 700; }
+.d-logic { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.d-logic li {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  padding: 22px 24px; box-shadow: var(--shadow-sm);
+}
+.d-logic-role {
+  display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--coral); margin-bottom: 10px;
+}
+.d-logic h5 { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.d-logic p { font-size: 13.5px; line-height: 1.8; color: var(--slate); }
+.d-logic p b { color: var(--navy); font-weight: 700; }
+/* 가설이 뒤집힌 칸 — 나머지와 다르게 보여야 흐름이 읽힙니다 */
+.d-logic li.is-pivot { border-color: var(--coral); background: #fff8f5; }
+.d-logic li.is-pivot .d-logic-role { color: var(--coral-d); }
 
 /* ============ [스크롤 등장 효과] ============
    class="reveal" 을 붙이면 화면에 들어올 때 아래에서 위로 떠오릅니다.
@@ -537,10 +568,10 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   section { padding: 90px 0; }
   #about { padding: 96px 0; }
   .modal-body { padding: 44px 26px 44px; }
-  .d-flow li { grid-template-columns: 1fr; gap: 10px; padding: 10px 0 14px; }
-  .d-flow li + li { padding-top: 26px; }
-  .d-flow li + li .d-box::before { top: -16px; }
-  .d-flow li + li .d-box::after { top: -24px; }
+  /* 좁은 화면에서는 박스와 설명을 위아래로 쌓습니다.
+     화살표는 박스 기준이라 별도 조정이 필요 없습니다. */
+  .d-flow li { grid-template-columns: 1fr; gap: 10px; }
+  .d-logic { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
