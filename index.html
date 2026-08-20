@@ -719,36 +719,32 @@
       </article>
     </div>
 
-    <!-- 사이드 프로젝트 - 업무와 무관한 개인 작업입니다.
-         카드 제목과 위쪽 그림 영역을 누르면 앱이 새 탭에서 열립니다.
-         카드 안의 실행 화면(iframe)은 화면에 들어올 때 불러옵니다.
-         (동작은 assets/main.js 의 7) 블록) -->
+    <!-- 사이드 프로젝트 - 업무와 무관한 개인 작업이라 눈에 띄지 않게 처리했습니다.
+         평소에는 얇은 선 아래 작은 글씨 한 줄만 보이고,
+         눌렀을 때만 설명과 앱이 펼쳐집니다.
+         동작은 assets/main.js 의 7) 사이드 프로젝트 블록에 있습니다. -->
     <div class="side-project reveal">
-      <span class="sp-label">Side Project</span>
+      <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
+        <span class="sp-dot" aria-hidden="true"></span>
+        <span class="sp-toggle-main">
+          <b>SIDE PROJECT</b>
+          <span>업무 외에 직접 만든 웹앱 · 바로 실행해 볼 수 있습니다</span>
+        </span>
+        <span class="sp-toggle-cta">
+          <span class="sp-toggle-cta-text">펼쳐보기</span>
+          <span class="sp-toggle-icon" aria-hidden="true"></span>
+        </span>
+      </button>
 
-      <article class="sp-card">
-        <a class="sp-visual" href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-          <span class="sp-visual-icon">
-            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M24 4 8 10v13c0 10 6.8 18.3 16 21 9.2-2.7 16-11 16-21V10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M20 18h-3v12h3M28 18h3v12h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span class="sp-visual-arrow">
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </a>
-
-        <div class="sp-body">
-          <span class="sp-cat">AI · 개인 웹앱</span>
-          <h4>
-            <a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">고유명사 지킴이<span class="sp-ext" aria-hidden="true">
-              <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span></a>
-          </h4>
-          <p class="sp-card-sub">웹소설 맞춤법 검사 도우미</p>
+      <div class="sp-panel" id="spPanel" hidden>
+        <article class="sp-card">
+          <header class="sp-card-head">
+            <div>
+              <h4><a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">고유명사 지킴이<span class="sp-ext" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></h4>
+              <p class="sp-card-sub">웹소설 맞춤법 검사 도우미</p>
+            </div>
+            <span class="sp-card-tag">개인 프로젝트</span>
+          </header>
 
           <p class="sp-desc">맞춤법 검사기를 돌리면 소설 속 인물 이름과 지명까지 일반 단어로 고쳐버립니다.<br />그래서 고유명사를 잠시 코드로 바꿔 검사를 돌리고, 끝나면 원래 이름으로 되돌리도록 만들었습니다.</p>
 
@@ -763,12 +759,9 @@
               <span class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></span>
               <span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span>
             </div>
-            <!-- loading="lazy" 는 브라우저가 알아서 처리합니다.
-                 여기까지 스크롤하지 않으면 앱을 내려받지 않습니다.
-                 (예전에는 자바스크립트로 직접 했는데, 스크립트가 실패하면
-                  액자가 빈 채로 남아서 브라우저 기본 기능으로 바꿨습니다) -->
+            <!-- src 는 비워두고, 처음 펼칠 때 main.js 가 data-src 값을 넣습니다 -->
             <iframe id="spFrame"
-                    src="https://kurotoni.github.io/novel-spell-checker/"
+                    data-src="https://kurotoni.github.io/novel-spell-checker/"
                     title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미"
                     loading="lazy"
                     referrerpolicy="no-referrer"></iframe>
@@ -785,8 +778,8 @@
             <span class="sp-made-label">만드는 과정</span>
             <p>문제 정의부터 화면 설계, 개발, 배포까지 혼자 진행했습니다.<br />업무에서 쓰던 방식이 낯선 영역에서도 통하는지 확인해 보고 싶었습니다.<br />구현은 AI와 주고받으며 완성했습니다.</p>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </div>
 </section>
