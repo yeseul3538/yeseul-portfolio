@@ -192,8 +192,13 @@ HTML을 몰라도 이 문서만 보고 따라 하면 대부분의 수정이 가�
 **한 줄 글씨 바꾸기**
 
 ```html
-<span class="sp-toggle-text">개인 프로젝트 · 고유명사 지킴이</span>
+<b>고유명사 지킴이</b>                              ← 이름
+<span>직접 만든 웹앱 · 바로 실행해 볼 수 있습니다</span>  ← 한 줄 설명
+<span class="sp-toggle-cta-text">펼쳐보기</span>      ← 오른쪽 안내 글자
 ```
+
+**왼쪽 주황 점의 깜빡임을 끄고 싶다면** `assets/styles.css` 의 `.sp-dot::after` 에서
+`animation:` 로 시작하는 줄을 지우세요. (스크롤 중에 시선을 끌기 위한 표시입니다)
 
 **펼쳤을 때 나오는 설명 바꾸기**
 
@@ -214,8 +219,8 @@ HTML을 몰라도 이 문서만 보고 따라 하면 대부분의 수정이 가�
 
 **앱 화면 높이 바꾸기** — `assets/styles.css` 에서 `.sp-frame iframe` 를 찾아 `height` 값을 조절하세요.
 
-**더 눈에 띄게 하고 싶다면** `assets/styles.css` 의 `.sp-toggle` 에서
-`font-size: 13px` 를 키우거나 `color: var(--slate-l)` 를 `var(--navy)` 로 바꾸세요.
+**더 조용하게 하고 싶다면** `assets/styles.css` 의 `.sp-toggle` 에서
+`background: var(--cream-2)` 를 `none` 으로, `border` 를 `0` 으로 바꾸세요.
 
 **블록을 통째로 빼고 싶다면** `<div class="side-project ...>` 부터 짝이 되는 `</div>` 까지 지우면 됩니다.
 
