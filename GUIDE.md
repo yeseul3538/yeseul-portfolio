@@ -183,58 +183,37 @@ HTML을 몰라도 이 문서만 보고 따라 하면 대부분의 수정이 가�
 
 ---
 
-### ⑧ 사이드 프로젝트 (접었다 펴지는 한 줄)
+### ⑧ 사이드 프로젝트 카드
 
-자격증 섹션 맨 아래, 얇은 선 아래 작은 글씨 한 줄입니다.
-업무와 무관한 내용이라 **일부러 눈에 안 띄게** 만들어 두었습니다.
-`index.html`에서 `side-project`를 검색하세요.
-
-**접힌 줄의 글씨 바꾸기**
+자격증 섹션 맨 아래에 있습니다. `index.html`에서 `sp-card`를 검색하세요.
 
 ```html
-<b>SIDE PROJECT</b>                                    ← 제목
-<span>업무 외에 직접 만든 웹앱 · 바로 실행해 ...</span>   ← 한 줄 설명
-<span class="sp-toggle-cta-text">펼쳐보기</span>         ← 오른쪽 안내 글자
-```
-
-**펼쳤을 때 나오는 카드 바꾸기** — `sp-card` 를 검색하세요.
-
-```html
-<h4>고유명사 지킴이</h4>                    ← 프로젝트 이름
-<p class="sp-card-sub">웹소설 맞춤법 ...</p>  ← 한 줄 소개
-<span class="sp-card-tag">개인 프로젝트</span> ← 오른쪽 회색 태그
+<span class="sp-cat">AI · 개인 웹앱</span>       ← 작은 주황 분류
+<h4><a href="주소" ...>고유명사 지킴이 ...</a></h4>  ← 제목 (누르면 새 탭)
+<p class="sp-card-sub">웹소설 맞춤법 ...</p>      ← 한 줄 소개
 <p class="sp-desc">맞춤법 검사기를 돌리면 ...</p>  ← 본문 설명
 ```
+
+**앱 주소는 네 군데에 있습니다.** 바꿀 때 전부 고쳐야 합니다.
+
+1. 위쪽 그림 영역 `<a class="sp-visual" href="...">`
+2. 제목 `<h4><a href="...">`
+3. 실행 화면 `<iframe src="...">`
+4. 맨 아래 `새 탭에서 열기` 링크
+
+**앱 화면 높이** — `assets/styles.css` 의 `.sp-frame iframe` 에서 `height` 조절.
+
+**위쪽 그림 영역 색** — `.sp-visual` 의 `linear-gradient` 값을 바꾸세요.
+아이콘을 바꾸려면 `sp-visual-icon` 안의 `<svg>` 를 통째로 교체하면 됩니다.
 
 카드 맨 아래 `sp-made` 는 **만드는 과정**을 적는 칸입니다.
 성과를 자랑하는 자리가 아니라 어떻게 접근했는지를 적는 자리라
 문구를 바꿀 때도 그 톤을 유지하는 편이 좋습니다.
 
 **프로젝트를 하나 더 넣고 싶다면** `<article class="sp-card">` 부터
-`</article>` 까지 복사해서 붙여넣으면 카드가 두 장이 됩니다.
+`</article>` 까지 복사해서 붙여넣으세요.
 (단, `id="spFrame"` 은 한 페이지에 하나만 있어야 하니 두 번째 카드의
-iframe 은 `id` 를 지우고 `src` 를 직접 넣으세요)
-
-**왼쪽 주황 점의 깜빡임을 끄고 싶다면** `assets/styles.css` 의 `.sp-dot::after` 에서
-`animation:` 로 시작하는 줄을 지우세요. (스크롤 중에 시선을 끌기 위한 표시입니다)
-
-**안에 넣는 앱 주소 바꾸기**
-
-```html
-<iframe id="spFrame" data-src="https://kurotoni.github.io/novel-spell-checker/" ...>
-```
-
-`src` 가 아니라 **`data-src`** 인 점에 주의하세요. 버튼을 처음 눌렀을 때만
-앱을 불러오도록 일부러 이렇게 해두었습니다. (안 누른 사람은 안 불러와서 페이지가 가볍습니다)
-
-같은 주소가 아래 `새 탭에서 열기` 링크에도 있으니 **두 군데 다** 바꿔야 합니다.
-
-**앱 화면 높이 바꾸기** — `assets/styles.css` 에서 `.sp-frame iframe` 를 찾아 `height` 값을 조절하세요.
-
-**더 조용하게 하고 싶다면** `assets/styles.css` 의 `.sp-toggle` 에서
-`background: var(--cream-2)` 를 `none` 으로, `border` 를 `0` 으로 바꾸세요.
-
-**블록을 통째로 빼고 싶다면** `<div class="side-project ...>` 부터 짝이 되는 `</div>` 까지 지우면 됩니다.
+iframe 은 `id` 를 지우세요)
 
 ---
 
