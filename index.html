@@ -727,8 +727,8 @@
       <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
         <span class="sp-dot" aria-hidden="true"></span>
         <span class="sp-toggle-main">
-          <b>고유명사 지킴이</b>
-          <span>직접 만든 웹앱 · 바로 실행해 볼 수 있습니다</span>
+          <b>SIDE PROJECT</b>
+          <span>업무 외에 직접 만든 웹앱 · 바로 실행해 볼 수 있습니다</span>
         </span>
         <span class="sp-toggle-cta">
           <span class="sp-toggle-cta-text">펼쳐보기</span>
@@ -737,31 +737,48 @@
       </button>
 
       <div class="sp-panel" id="spPanel" hidden>
-        <p class="sp-desc">맞춤법 검사기가 소설 속 인물 이름과 지명을 임의로 고쳐버리는 문제를 막는 도구입니다. 업무와는 무관한 개인 작업이지만, AI를 활용해 문제 정의부터 배포까지 직접 만들어 본 기록입니다.</p>
+        <article class="sp-card">
+          <header class="sp-card-head">
+            <div>
+              <h4>고유명사 지킴이</h4>
+              <p class="sp-card-sub">웹소설 맞춤법 검사 도우미</p>
+            </div>
+            <span class="sp-card-tag">개인 프로젝트</span>
+          </header>
 
-        <ul class="sp-points">
-          <li><b>치환 → 검사 → 복원</b><span>고유명사를 코드로 바꿔 검사를 돌린 뒤 원래 말로 되돌립니다</span></li>
-          <li><b>조사 자동 검증</b><span>받침에 따라 은/는, 이/가 가 맞는지 확인합니다</span></li>
-          <li><b>서버 없이 동작</b><span>사전은 브라우저에만 저장되고 외부로 전송되지 않습니다</span></li>
-        </ul>
+          <p class="sp-desc">맞춤법 검사기를 돌리면 소설 속 인물 이름과 지명까지 일반 단어로 고쳐버립니다. 고유명사를 잠시 다른 코드로 바꿔 검사를 돌리고, 끝나면 원래 이름으로 되돌리는 방식으로 이 문제를 해결했습니다.</p>
 
-        <div class="sp-frame">
-          <div class="sp-frame-bar">
-            <span class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span>
+          <ul class="sp-points">
+            <li><b>치환 → 검사 → 복원</b><span>고유명사를 코드로 바꿔 검사를 돌린 뒤 원래 말로 되돌립니다</span></li>
+            <li><b>조사 자동 검증</b><span>받침에 따라 은/는, 이/가 가 맞는지 확인합니다</span></li>
+            <li><b>서버 없이 동작</b><span>사전은 브라우저에만 저장되고 외부로 전송되지 않습니다</span></li>
+          </ul>
+
+          <div class="sp-frame">
+            <div class="sp-frame-bar">
+              <span class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span>
+            </div>
+            <!-- src 는 비워두고, 처음 펼칠 때 main.js 가 data-src 값을 넣습니다 -->
+            <iframe id="spFrame"
+                    data-src="https://kurotoni.github.io/novel-spell-checker/"
+                    title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"></iframe>
           </div>
-          <!-- src 는 비워두고, 처음 펼칠 때 main.js 가 data-src 값을 넣습니다 -->
-          <iframe id="spFrame"
-                  data-src="https://kurotoni.github.io/novel-spell-checker/"
-                  title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"></iframe>
-        </div>
 
-        <p class="sp-note">
-          미리보기 화면이라 저장 기능이 제한될 수 있습니다.
-          <a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기</a>
-        </p>
+          <p class="sp-note">
+            미리보기 화면이라 저장 기능이 제한될 수 있습니다.
+            <a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기</a>
+          </p>
+
+          <!-- 현업 외 학습을 드러내는 부분.
+               "공부하고 있습니다" 라고 말하는 대신, 무엇을 어떻게 했는지로 보여줍니다. -->
+          <footer class="sp-made">
+            <span class="sp-made-label">만드는 과정</span>
+            <p>문제 정의부터 화면 설계, 개발, 배포까지 혼자 진행했습니다. 업무에서 쓰던 문제 정의 방식이 익숙하지 않은 영역에서도 통하는지 확인해 보고 싶었고, 구현은 AI와 주고받으며 완성했습니다.</p>
+          </footer>
+        </article>
       </div>
     </div>
   </div>

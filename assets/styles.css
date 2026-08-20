@@ -465,7 +465,7 @@ section { padding: 118px 0; }
 .sp-toggle[aria-expanded="true"] .sp-dot::after { animation: none; }
 
 .sp-toggle-main { min-width: 0; }
-.sp-toggle-main b { display: block; font-size: 14.5px; font-weight: 700; color: var(--navy); }
+.sp-toggle-main b { display: block; font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: var(--navy); }
 .sp-toggle-main > span { display: block; margin-top: 2px; font-size: 12.5px; font-weight: 400; color: var(--slate); }
 
 /* 오른쪽 "펼쳐보기 ▸" - 무엇을 하는 버튼인지 말로 알려줍니다 */
@@ -482,8 +482,29 @@ section { padding: 118px 0; }
 .sp-toggle:hover .sp-toggle-icon { transform: translateX(2px); }
 .sp-toggle[aria-expanded="true"] .sp-toggle-icon { transform: rotate(90deg); }
 
-.sp-panel { padding-top: 20px; }
+.sp-panel { padding-top: 14px; }
+
+/* 펼치면 나오는 흰 카드 한 장 */
+.sp-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 8px; box-shadow: var(--shadow-sm); padding: 26px 28px;
+}
+.sp-card-head { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 14px; margin-bottom: 15px; }
+.sp-card-head h4 { font-size: 18px; font-weight: 800; color: var(--navy); }
+.sp-card-sub { font-size: 12.5px; color: var(--slate-l); margin-top: 3px; }
+.sp-card-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.05em; color: var(--slate);
+  background: var(--cream-2); border-radius: 100px; padding: 5px 12px; white-space: nowrap;
+}
 .sp-desc { font-size: 13.5px; line-height: 1.8; color: var(--slate); max-width: 68ch; }
+
+/* 카드 맨 아래 - 무엇을 어떻게 만들었는지. 성과가 아니라 과정입니다. */
+.sp-made { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--line); }
+.sp-made-label {
+  display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--coral); margin-bottom: 7px;
+}
+.sp-made p { font-size: 13px; line-height: 1.8; color: var(--slate); max-width: 72ch; }
 
 .sp-points { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
 .sp-points li { background: var(--cream-2); border-radius: 5px; padding: 14px 16px; }
@@ -693,6 +714,9 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   /* 좁은 화면에서는 '펼쳐보기' 글자를 빼고 화살표만 남깁니다 */
   .sp-toggle { padding: 14px 16px; gap: 11px; }
   .sp-toggle-cta-text { display: none; }
+  .sp-card { padding: 20px; }
+  .sp-card-head { grid-template-columns: 1fr; gap: 10px; }
+  .sp-card-tag { justify-self: start; }
   .cert-card { padding: 18px 20px; }
   .contact-inner { gap: 20px; }
   .about-card { padding: 28px 24px 28px 28px; }
