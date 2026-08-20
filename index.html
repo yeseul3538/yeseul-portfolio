@@ -63,6 +63,7 @@
     <li><a href="#competency">Competencies</a></li>
     <li><a href="#works">Works</a></li>
     <li><a href="#stack">Stack</a></li>
+    <li><a href="#credentials">Credentials</a></li>
   </ul>
   <a class="nav-cta" href="#contact">Connect</a>
   <button class="nav-burger" id="burger" aria-label="메뉴 열기" aria-expanded="false">
@@ -76,6 +77,7 @@
   <a href="#competency">Competencies</a>
   <a href="#works">Works</a>
   <a href="#stack">Stack</a>
+  <a href="#credentials">Credentials</a>
   <a href="#contact">Connect</a>
 </div>
 
@@ -650,7 +652,77 @@
 </section>
 
 <!-- ┌────────────────────────────────────────────────────────────┐
-     │ [9] 연락처 (CONNECT)                                       │
+     │ [9] 자격증 · 수료증 (CREDENTIALS)                          │
+     │                                                            │
+     │  카드 1개 = <article class="cert-card">                    │
+     │    cert-cat   : 위의 작은 주황 분류 라벨                    │
+     │    h3         : 자격증 이름                                 │
+     │    cert-badge : 오른쪽 상태 표시                            │
+     │                 is-earned    → 취득 (남색 채움)             │
+     │                 is-completed → 수료 (주황 테두리)           │
+     │                                                            │
+     │  추가하려면 <article> 한 덩어리를 복사해서 글자만 바꾸세요. │
+     │  ※ 발급기관·취득일은 아직 넣지 않았습니다. 넣으려면          │
+     │    h3 아래에 <span class="cert-meta">기관 · 2026.03</span>  │
+     │    한 줄을 추가하면 됩니다.                                 │
+     └────────────────────────────────────────────────────────────┘ -->
+<section id="credentials">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="eyebrow">Credentials</span>
+      <h2>Certificates &amp; Licenses</h2>
+      <p class="sec-sub">현업 외에도 꾸준히 배우고 인증받고 있습니다.</p>
+    </header>
+
+    <div class="cert-grid">
+      <article class="cert-card reveal">
+        <span class="cert-cat">Data · AI</span>
+        <h3>AI-POT 1급</h3>
+        <span class="cert-badge is-earned">취득</span>
+      </article>
+      <article class="cert-card reveal reveal-1">
+        <span class="cert-cat">Data · AI</span>
+        <h3>ADsP 데이터 분석 준전문가</h3>
+        <span class="cert-badge is-earned">취득</span>
+      </article>
+      <article class="cert-card reveal reveal-2">
+        <span class="cert-cat">Service · Business</span>
+        <h3>SMAT 서비스경영자격</h3>
+        <span class="cert-badge is-earned">취득</span>
+      </article>
+
+      <article class="cert-card reveal">
+        <span class="cert-cat">Data · AI</span>
+        <h3>Claude Code in Action</h3>
+        <span class="cert-badge is-completed">수료</span>
+      </article>
+      <article class="cert-card reveal reveal-1">
+        <span class="cert-cat">Data · AI</span>
+        <h3>자연어 처리의 모든 것</h3>
+        <span class="cert-badge is-completed">수료</span>
+      </article>
+      <article class="cert-card reveal reveal-2">
+        <span class="cert-cat">Culinary</span>
+        <h3>한식조리기능사</h3>
+        <span class="cert-badge is-earned">취득</span>
+      </article>
+
+      <article class="cert-card reveal">
+        <span class="cert-cat">Culinary</span>
+        <h3>양식조리기능사</h3>
+        <span class="cert-badge is-earned">취득</span>
+      </article>
+      <article class="cert-card reveal reveal-1">
+        <span class="cert-cat">Culinary</span>
+        <h3>일식조리기능사</h3>
+        <span class="cert-badge is-earned">취득</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ┌────────────────────────────────────────────────────────────┐
+     │ [10] 연락처 (CONNECT)                                      │
      │                                                            │
      │  링크가 있는 항목  → <a class="contact-card" href="...">   │
      │  준비 중인 항목    → <div class="contact-card is-soon">    │
@@ -703,7 +775,7 @@
 </footer>
 
 <!-- ┌────────────────────────────────────────────────────────────┐
-     │ [10] 프로젝트 상세 팝업 (빈 껍데기)                        │
+     │ [11] 프로젝트 상세 팝업 (빈 껍데기)                        │
      │                                                            │
      │  여기는 비워둡니다. 카드를 클릭하면 main.js 가              │
      │  해당 카드의 work-detail 내용을 여기로 옮겨서 보여줍니다.   │

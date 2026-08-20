@@ -25,7 +25,7 @@ HTML을 몰라도 이 문서만 보고 따라 하면 대부분의 수정이 가�
 
 ---
 
-## 1. 자주 하는 수정 10가지
+## 1. 자주 하는 수정 11가지
 
 ### ① 첫 화면의 큰 제목 바꾸기
 
@@ -152,7 +152,38 @@ HTML을 몰라도 이 문서만 보고 따라 하면 대부분의 수정이 가�
 
 ---
 
-### ⑦ 연락처 링크 바꾸기 / 살리기
+### ⑦ 자격증 추가하기
+
+`index.html`에서 `cert-card`를 검색하세요. 카드 1개는 이렇게 생겼습니다.
+
+```html
+<article class="cert-card reveal">
+  <span class="cert-cat">Data · AI</span>        ← 작은 주황 분류 라벨
+  <h3>AI-POT 1급</h3>                             ← 자격증 이름
+  <span class="cert-badge is-earned">취득</span>  ← 오른쪽 상태 배지
+</article>
+```
+
+`<article>` 부터 `</article>` 까지 복사해서 붙여넣고 글자만 바꾸면 됩니다.
+
+배지는 두 종류입니다.
+
+| 클래스 | 표시 | 모양 |
+| --- | --- | --- |
+| `is-earned` | 취득 | 남색 채움 |
+| `is-completed` | 수료 | 주황 테두리 |
+
+**발급기관과 취득일을 넣고 싶다면** `<h3>` 바로 아래에 이 한 줄을 추가하세요.
+
+```html
+<span class="cert-meta">한국산업인력공단 · 2025.08</span>
+```
+
+스타일은 이미 준비되어 있어서 줄만 추가하면 바로 보입니다.
+
+---
+
+### ⑧ 연락처 링크 바꾸기 / 살리기
 
 `index.html`에서 `contact-card`를 검색하세요.
 
@@ -185,12 +216,12 @@ Notion 주소가 생기면 위 `<div ...>` 를 아래처럼 바꾸면 됩니다.
 
 ---
 
-### ⑧ 숫자 요약 띠 바꾸기
+### ⑨ 숫자 요약 띠 바꾸기
 
 `index.html`에서 `data-count`를 검색하세요.
 
 ```html
-<span class="stat-n" data-count="4" data-suffix="년 3개월">0</span>
+<span class="stat-n" data-count="4" data-suffix="년 4개월">0</span>
 <span class="stat-label">운영 · 기획 경력</span>
 ```
 
@@ -203,7 +234,7 @@ Notion 주소가 생기면 위 `<div ...>` 를 아래처럼 바꾸면 됩니다.
 
 ---
 
-### ⑨ 메뉴 항목 추가하기
+### ⑩ 메뉴 항목 추가하기
 
 **두 군데를 똑같이** 고쳐야 합니다. (PC 메뉴 / 모바일 메뉴)
 
@@ -221,12 +252,12 @@ Notion 주소가 생기면 위 `<div ...>` 를 아래처럼 바꾸면 됩니다.
 새 섹션을 만들었다면 `assets/main.js` 의 이 줄에도 id를 추가하세요.
 
 ```javascript
-var sectionIds = ['about', 'competency', 'works', 'stack', 'contact'];
+var sectionIds = ['about', 'competency', 'works', 'stack', 'credentials', 'contact'];
 ```
 
 ---
 
-### ⑩ 마우스 따라 움직이는 효과 조절 / 끄기
+### ⑪ 마우스 따라 움직이는 효과 조절 / 끄기
 
 `index.html`의 `data-depth` 숫자입니다.
 
@@ -301,8 +332,9 @@ index.html
  ├─ [6]  프로젝트 WORKS  ★ 가장 자주 고치는 곳
  ├─ [7]  숫자 요약       (남색 띠)
  ├─ [8]  사용 도구 STACK
- ├─ [9]  연락처 CONNECT  (남색 배경)
- └─ [10] 프로젝트 팝업   (빈 껍데기, 건드릴 일 없음)
+ ├─ [9]  자격증 CREDENTIALS
+ ├─ [10] 연락처 CONNECT  (남색 배경)
+ └─ [11] 프로젝트 팝업   (빈 껍데기, 건드릴 일 없음)
 ```
 
 `index.html`에서 `[6]` 처럼 대괄호를 검색하면 해당 위치로 바로 갑니다.

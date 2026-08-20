@@ -402,6 +402,31 @@ section { padding: 118px 0; }
 .frameworks h3 { color: var(--sand); font-size: 19px; font-weight: 800; margin-bottom: 8px; }
 .frameworks p { color: rgba(255, 255, 255, 0.88); font-size: 14px; font-weight: 600; letter-spacing: 0.01em; }
 
+/* ============ [자격증 · 수료증] ============
+   흰 카드 그리드. 카드마다 왼쪽에 이름, 오른쪽에 취득/수료 배지.
+   is-earned(취득) = 남색 채움 / is-completed(수료) = 주황 테두리 */
+#credentials { background: var(--cream-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.cert-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: var(--shadow-sm); padding: 22px 24px; transition: 0.25s;
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px 14px;
+}
+.cert-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: #d8d2c7; }
+.cert-cat {
+  grid-column: 1 / -1; font-size: 10.5px; font-weight: 800; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--coral);
+}
+.cert-card h3 { font-size: 15.5px; font-weight: 700; color: var(--navy); line-height: 1.45; letter-spacing: -0.005em; }
+/* 발급기관 · 취득일을 넣고 싶을 때 h3 아래에 쓰는 줄 */
+.cert-meta { grid-column: 1 / 2; font-size: 12px; color: var(--slate-l); }
+.cert-badge {
+  font-size: 11.5px; font-weight: 700; padding: 4px 12px; border-radius: 100px;
+  white-space: nowrap; align-self: center;
+}
+.cert-badge.is-earned { background: var(--navy); color: #fff; }
+.cert-badge.is-completed { background: transparent; color: var(--coral); border: 1px solid var(--coral); }
+
 /* ============ [연락처] ============ */
 #contact { background: var(--navy); padding: 120px 0; }
 .contact-inner { display: flex; gap: 32px; }
@@ -530,7 +555,8 @@ body.modal-open { overflow: hidden; }
 /* ============ [스크롤 등장 효과] ============
    class="reveal" 을 붙이면 화면에 들어올 때 아래에서 위로 떠오릅니다.
    reveal-1 / reveal-2 / reveal-3 을 함께 붙이면 순차적으로 나타납니다.
-   예) <div class="reveal reveal-2"> */
+   예) class="reveal reveal-2"
+
    ※ 숨기는 규칙은 html.js 안에만 둡니다. 자바스크립트가 막히거나 오류가 나면
       js 표시가 안 붙고, 그러면 아래 규칙이 적용되지 않아 내용이 그대로 보입니다.
       (이 안전장치가 없으면 스크립트 하나 실패에 페이지 전체가 빈 화면이 됩니다) */
@@ -554,6 +580,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .hero-cards { grid-template-columns: 1fr; margin-left: 34px; }
   .about-inner { grid-template-columns: 1fr; gap: 52px; }
   .comp-grid, .stack-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .work-card.feature { flex-direction: column; gap: 0; }
   .work-side { flex: 1; }
@@ -585,6 +612,8 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .hero-cards, .hero-actions { margin-left: 22px; }
   .hero-cards { margin-top: 40px; }
   .contact-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .cert-card { padding: 18px 20px; }
   .contact-inner { gap: 20px; }
   .about-card { padding: 28px 24px 28px 28px; }
   .comp-card, .stack-card, .work-card { padding: 26px 24px; }

@@ -42,7 +42,7 @@
   var hero = document.getElementById('hero');
   // 메뉴에서 현재 위치를 표시할 섹션 id 목록.
   // index.html 에 섹션을 추가했다면 여기에도 id 를 넣어주세요.
-  var sectionIds = ['about', 'competency', 'works', 'stack', 'contact'];
+  var sectionIds = ['about', 'competency', 'works', 'stack', 'credentials', 'contact'];
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
 
   function onScroll() {
