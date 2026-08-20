@@ -439,12 +439,13 @@ section { padding: 118px 0; }
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
   width: 100%; text-align: left; cursor: pointer; font: inherit;
   padding: 15px 18px; border: 1px solid var(--line); border-radius: 6px;
-  background: var(--cream-2);
-  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  /* 섹션 배경이 cream-2 라 같은 색을 쓰면 투명해 보입니다. 흰색으로 띄웁니다. */
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .sp-toggle:hover {
-  background: var(--surface); border-color: #d8d2c7;
-  transform: translateY(-1px); box-shadow: var(--shadow-sm);
+  border-color: #d3ccc0;
+  transform: translateY(-2px); box-shadow: var(--shadow-md);
 }
 .sp-toggle:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; }
 
@@ -466,7 +467,7 @@ section { padding: 118px 0; }
 
 .sp-toggle-main { min-width: 0; }
 .sp-toggle-main b { display: block; font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: var(--navy); }
-.sp-toggle-main > span { display: block; margin-top: 2px; font-size: 12.5px; font-weight: 400; color: var(--slate); }
+.sp-toggle-main > span { display: block; margin-top: 2px; font-size: 12.5px; font-weight: 400; color: var(--slate); text-wrap: pretty; }
 
 /* 오른쪽 "펼쳐보기 ▸" - 무엇을 하는 버튼인지 말로 알려줍니다 */
 .sp-toggle-cta {
@@ -496,7 +497,7 @@ section { padding: 118px 0; }
   font-size: 11px; font-weight: 700; letter-spacing: 0.05em; color: var(--slate);
   background: var(--cream-2); border-radius: 100px; padding: 5px 12px; white-space: nowrap;
 }
-.sp-desc { font-size: 13.5px; line-height: 1.8; color: var(--slate); max-width: 68ch; }
+.sp-desc { font-size: 13.5px; line-height: 1.8; color: var(--slate); max-width: 68ch; text-wrap: pretty; }
 
 /* 카드 맨 아래 - 무엇을 어떻게 만들었는지. 성과가 아니라 과정입니다. */
 .sp-made { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--line); }
@@ -504,7 +505,7 @@ section { padding: 118px 0; }
   display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.13em;
   text-transform: uppercase; color: var(--coral); margin-bottom: 7px;
 }
-.sp-made p { font-size: 13px; line-height: 1.8; color: var(--slate); max-width: 72ch; }
+.sp-made p { font-size: 13px; line-height: 1.8; color: var(--slate); max-width: 72ch; text-wrap: pretty; }
 
 .sp-points { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
 .sp-points li { background: var(--cream-2); border-radius: 5px; padding: 14px 16px; }
@@ -546,7 +547,9 @@ a.contact-card:hover span { color: var(--sand); }
 .contact-thanks { margin-top: 40px; font-size: 15px; color: rgba(255, 255, 255, 0.8); }
 
 /* ============ [맨 아래] ============ */
-footer { background: var(--navy-900); border-top: 1px solid rgba(255, 255, 255, 0.07); padding: 26px 0; }
+/* body 바로 아래 푸터만 대상으로 합니다.
+   그냥 footer 로 두면 본문 안에서 쓴 <footer> 까지 남색이 됩니다. */
+body > footer { background: var(--navy-900); border-top: 1px solid rgba(255, 255, 255, 0.07); padding: 26px 0; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .footer-inner span { font-size: 11.5px; letter-spacing: 0.06em; color: var(--navy-300); }
 
