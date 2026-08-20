@@ -142,6 +142,15 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     revealEls.forEach(function (el) { io.observe(el); });
+
+    // 안전장치: 2초가 지났는데 단 하나도 나타나지 않았다면
+    // IntersectionObserver 가 동작하지 않는 환경이라고 보고 전부 보여줍니다.
+    // (이게 없으면 내용이 전부 투명한 채로 남아 빈 화면이 됩니다)
+    setTimeout(function () {
+      if (!document.querySelector('.reveal.visible')) {
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+      }
+    }, 2000);
   } else {
     revealEls.forEach(function (el) { el.classList.add('visible'); });
   }

@@ -32,6 +32,11 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 <link rel="stylesheet" href="assets/styles.css" />
+
+<!-- 자바스크립트가 살아있을 때만 <html>에 js 표시를 답니다.
+     이 표시가 없으면 로딩 화면과 등장 애니메이션이 아예 꺼지고
+     모든 내용이 그냥 보입니다. (스크립트가 막혀도 빈 화면이 되지 않게) -->
+<script>document.documentElement.className += ' js';</script>
 </head>
 <body>
 
