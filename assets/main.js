@@ -1,7 +1,7 @@
 /* ============================================================================
    Yeseul You — 포트폴리오 2026 / 동작 스크립트
 
-   이 파일이 하는 일은 딱 6가지입니다.
+   이 파일이 하는 일은 딱 7가지입니다.
 
      1) 로딩 화면 감추기
      2) 메뉴바 : 스크롤에 따라 색/높이 바꾸고 현재 위치 표시
@@ -9,6 +9,7 @@
      4) 첫화면 : 마우스를 따라 배경이 살짝 움직이기
      5) 스크롤하면 요소가 아래에서 떠오르기 (.reveal)
      6) 숫자 세기 애니메이션 + 프로젝트 카드 클릭 시 팝업
+     7) 사이드 프로젝트 블록 접기 / 펼치기
 
    글자나 색을 바꾸는 일은 이 파일이 아니라
    index.html / assets/styles.css 에서 합니다.
@@ -242,4 +243,32 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeModal(); setMenu(false); }
   });
+
+  /* ---------- 7) 사이드 프로젝트 접기 / 펼치기 ----------
+     처음에는 .sp-panel 에 hidden 이 붙어 있어 접혀 있습니다.
+     버튼을 누르면 hidden 을 떼고, 안의 앱(iframe)을 그때 처음 불러옵니다.
+     이렇게 해야 펼치지 않은 사람은 앱을 내려받지 않아 페이지가 가볍습니다. */
+  var spToggle = document.getElementById('spToggle');
+  var spPanel = document.getElementById('spPanel');
+  var spFrame = document.getElementById('spFrame');
+
+  if (spToggle && spPanel) {
+    spToggle.addEventListener('click', function () {
+      var willOpen = spPanel.hasAttribute('hidden');
+
+      if (willOpen) {
+        spPanel.removeAttribute('hidden');
+        // iframe 은 처음 펼칠 때 한 번만 주소를 넣습니다.
+        if (spFrame && !spFrame.getAttribute('src')) {
+          spFrame.setAttribute('src', spFrame.getAttribute('data-src'));
+        }
+      } else {
+        spPanel.setAttribute('hidden', '');
+      }
+
+      spToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      var label = spToggle.querySelector('.sp-toggle-text');
+      if (label) label.textContent = willOpen ? '접기' : '직접 써보기';
+    });
+  }
 })();

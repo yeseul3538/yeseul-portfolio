@@ -427,6 +427,55 @@ section { padding: 118px 0; }
 .cert-badge.is-earned { background: var(--navy); color: #fff; }
 .cert-badge.is-completed { background: transparent; color: var(--coral); border: 1px solid var(--coral); }
 
+/* ============ [사이드 프로젝트] ============
+   자격증 섹션 맨 아래에 들어가는 접이식 블록.
+   .sp-panel 에 hidden 이 붙어 있으면 접힌 상태입니다.
+   버튼을 누르면 main.js 가 hidden 을 떼고 iframe 을 처음 불러옵니다. */
+.side-project {
+  margin-top: 34px; background: var(--surface);
+  border: 1px solid var(--line); border-left: 3px solid var(--coral);
+  border-radius: 6px; box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.sp-head { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; padding: 24px 26px; }
+.sp-tag {
+  display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--coral); margin-bottom: 8px;
+}
+.sp-intro h3 { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 7px; }
+.sp-intro p { font-size: 13.5px; line-height: 1.75; color: var(--slate); max-width: 62ch; }
+
+.sp-toggle {
+  display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
+  padding: 11px 20px; border: 1px solid var(--navy); border-radius: 100px;
+  background: transparent; color: var(--navy); font: inherit; font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: 0.22s;
+}
+.sp-toggle:hover { background: var(--navy); color: #fff; }
+/* 아래를 가리키는 작은 화살표. 펼쳐지면 180도 돕니다. */
+.sp-toggle-icon {
+  width: 0; height: 0; border-left: 4.5px solid transparent; border-right: 4.5px solid transparent;
+  border-top: 6px solid currentColor; transition: transform 0.25s;
+}
+.sp-toggle[aria-expanded="true"] .sp-toggle-icon { transform: rotate(180deg); }
+
+.sp-panel { padding: 0 26px 26px; border-top: 1px solid var(--line); }
+.sp-points { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px 0; }
+.sp-points li { background: var(--cream-2); border-radius: 5px; padding: 14px 16px; }
+.sp-points b { display: block; font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.sp-points span { font-size: 12.5px; line-height: 1.65; color: var(--slate); }
+
+/* 브라우저 창처럼 보이는 액자 */
+.sp-frame { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--cream-2); }
+.sp-frame-bar { display: flex; align-items: center; gap: 11px; padding: 9px 13px; border-bottom: 1px solid var(--line); }
+.sp-dots { display: flex; gap: 5px; }
+.sp-dots i { width: 8px; height: 8px; border-radius: 50%; background: #d6cfc4; }
+.sp-frame-url { font-size: 11.5px; color: var(--slate-l); letter-spacing: 0.01em; }
+.sp-frame iframe { display: block; width: 100%; height: 620px; border: 0; background: #fff; }
+
+.sp-note { margin-top: 13px; font-size: 12.5px; color: var(--slate-l); }
+.sp-note a { color: var(--coral-d); font-weight: 700; border-bottom: 1px solid currentColor; }
+.sp-note a:hover { color: var(--navy); }
+
 /* ============ [연락처] ============ */
 #contact { background: var(--navy); padding: 120px 0; }
 .contact-inner { display: flex; gap: 32px; }
@@ -581,6 +630,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .about-inner { grid-template-columns: 1fr; gap: 52px; }
   .comp-grid, .stack-grid { grid-template-columns: 1fr; }
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .sp-points { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .work-card.feature { flex-direction: column; gap: 0; }
   .work-side { flex: 1; }
@@ -613,6 +663,10 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .hero-cards { margin-top: 40px; }
   .contact-grid { grid-template-columns: 1fr; }
   .cert-grid { grid-template-columns: 1fr; }
+  .sp-head { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+  .sp-toggle { justify-content: center; }
+  .sp-panel { padding: 0 20px 20px; }
+  .sp-frame iframe { height: 520px; }
   .cert-card { padding: 18px 20px; }
   .contact-inner { gap: 20px; }
   .about-card { padding: 28px 24px 28px 28px; }
