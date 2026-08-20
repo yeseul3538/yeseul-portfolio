@@ -266,9 +266,9 @@
         spPanel.setAttribute('hidden', '');
       }
 
+      // 버튼 글씨에 프로젝트 이름이 들어있으므로 글씨는 그대로 두고
+      // 화살표 방향(CSS)과 aria-expanded 만 바꿉니다.
       spToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-      var label = spToggle.querySelector('.sp-toggle-text');
-      if (label) label.textContent = willOpen ? '접기' : '직접 써보기';
     });
   }
 })();
