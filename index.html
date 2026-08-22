@@ -449,7 +449,7 @@
         <span class="work-meta">Payment Operations · 2024–2025</span>
         <ul class="bullets">
           <li>월 기준 약 2,300만 원 규모 미납 데이터를 장기 · 고액 · 일반으로 분류</li>
-          <li>국세청 휴 · 폐업 자동 조회 앱스크립트 도입 (30분 주기 트리거)</li>
+          <li>국세청 휴 · 폐업 자동 조회 AppScript 도입 (30분 주기 트리거)</li>
         </ul>
         <div class="work-foot">
           <div class="tags"><span>Apps Script</span><span>Outbound 설계</span></div>
@@ -536,7 +536,7 @@
             <li class="is-pivot">
               <span class="d-logic-role">반증 · Trade-off</span>
               <h5>리스크</h5>
-              <p>계좌 잔액 200원 미만이면 출금액 &lt; 이체 수수료가 되어 <b>회수할수록 손해인 역전 구간</b>을 발견했습니다. 가설을 그대로 적용하면 소액 가맹점에서 비용이 회수액을 넘어섭니다.</p>
+              <p>계좌 잔액 200원 미만이면 출금액 &lt; 이체 수수료가 되어 <b>회수할수록 손해인 역전 구간</b>을 발견했습니다.</p>
             </li>
             <li>
               <span class="d-logic-role">결론 · Decision</span>
@@ -544,12 +544,11 @@
               <p>① 최소 출금 단위를 설정해 역전 구간을 차단하고, ② 월 CMS 1천 원 미만 소액 가맹점을 리스트업해 금액대별 비율을 분석, 의사결정 근거 데이터를 만들었습니다.</p>
             </li>
           </ol>
-
           <div class="d-note">
             <h4>Scope &amp; Artifacts</h4>
             <ul>
               <li>CMS 출금 정책 변경안 도출</li>
-              <li>저잔액 케이스 이체 수수료 역전 리스크 사전 분석 및 액션 플랜 도출</li>
+              <li>정책 변경으로 인한 리스크 사전 분석 및 액션 플랜 도출</li>
             </ul>
           </div>
         </div>
@@ -711,7 +710,6 @@
     </div>
 
     <!-- 사이드 프로젝트 - 업무와 무관한 개인 작업이라 눈에 띄지 않게 처리했습니다.
-         평소에는 얇은 선 아래 작은 글씨 한 줄만 보이고,
          눌렀을 때만 설명과 앱이 펼쳐집니다.
          동작은 assets/main.js 의 7) 사이드 프로젝트 블록에 있습니다. -->
     <div class="side-project reveal">
@@ -762,9 +760,6 @@
             미리보기 화면이라 저장 기능이 제한될 수 있습니다.
             <a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기</a>
           </p>
-
-          <!-- 현업 외 학습을 드러내는 부분.
-               "공부하고 있습니다" 라고 말하는 대신, 무엇을 어떻게 했는지로 보여줍니다. -->
           <div class="sp-made">
             <span class="sp-made-label">만드는 과정</span>
             <p>문제 정의부터 화면 설계, 개발, 배포까지 혼자 진행했습니다.<br />업무에서 쓰던 방식이 낯선 영역에서도 통하는지 확인해 보고 싶었습니다.<br />구현은 AI와 주고받으며 완성했습니다.</p>
