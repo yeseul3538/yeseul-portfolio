@@ -193,6 +193,91 @@
     counters.forEach(animateCount);
   }
 
+  /* ---------- 6-0) 프로젝트 가로 슬라이더 ----------
+     위쪽 탭과 01 / 06 번호는 카드 순서대로 자동으로 만들어집니다.
+     화살표 · 탭 · 키보드 ←→ · 가로 스와이프로 넘길 수 있습니다. */
+  var track = document.querySelector('.works-track');
+  var goToWork = null;
+  if (track) {
+    var wCards = Array.prototype.slice.call(track.querySelectorAll('.work-card'));
+    var tabsBox = document.querySelector('.works-tabs');
+    var countNow = document.querySelector('.works-count b');
+    var countAll = document.querySelector('.works-count span');
+    var prevBtn = document.querySelector('.works-arrow.prev');
+    var nextBtn = document.querySelector('.works-arrow.next');
+    var pad2 = function (n) { return (n < 10 ? '0' : '') + n; };
+    var tabs = [];
+    var current = -1;
+
+    if (countAll) countAll.textContent = pad2(wCards.length);
+
+    wCards.forEach(function (card, i) {
+      var title = card.querySelector('h3');
+      var tab = document.createElement('button');
+      tab.type = 'button';
+      tab.className = 'works-tab';
+      tab.setAttribute('role', 'tab');
+      tab.innerHTML = '<em>' + pad2(i + 1) + '</em>';
+      tab.appendChild(document.createTextNode(title ? title.textContent : 'Project ' + (i + 1)));
+      tab.addEventListener('click', function () { goToWork(i); });
+      if (tabsBox) tabsBox.appendChild(tab);
+      tabs.push(tab);
+    });
+
+    var setActive = function (i) {
+      if (i === current) return;
+      current = i;
+      wCards.forEach(function (c, k) {
+        c.classList.toggle('is-active', k === i);
+        c.setAttribute('tabindex', k === i ? '0' : '-1');
+      });
+      tabs.forEach(function (t, k) {
+        t.classList.toggle('is-active', k === i);
+        t.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      });
+      if (tabs[i] && tabsBox) {
+        tabsBox.scrollTo({ left: tabs[i].offsetLeft - tabsBox.offsetLeft - 8, behavior: 'smooth' });
+      }
+      if (countNow) countNow.textContent = pad2(i + 1);
+      if (prevBtn) prevBtn.disabled = i === 0;
+      if (nextBtn) nextBtn.disabled = i === wCards.length - 1;
+    };
+
+    goToWork = function (i) {
+      i = Math.max(0, Math.min(wCards.length - 1, i));
+      track.scrollTo({ left: wCards[i].offsetLeft - wCards[0].offsetLeft, behavior: 'smooth' });
+      setActive(i);
+    };
+
+    var scrollTimer;
+    track.addEventListener('scroll', function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        var x = track.scrollLeft, best = 0, bestD = Infinity;
+        wCards.forEach(function (c, k) {
+          var d = Math.abs(c.offsetLeft - wCards[0].offsetLeft - x);
+          if (d < bestD) { bestD = d; best = k; }
+        });
+        // 맨 끝까지 밀었으면 마지막 카드로 봅니다.
+        if (x + track.clientWidth >= track.scrollWidth - 4) best = wCards.length - 1;
+        setActive(best);
+      }, 80);
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goToWork(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goToWork(current + 1); });
+
+    var carousel = document.querySelector('.works-carousel');
+    if (carousel) {
+      carousel.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); goToWork(current + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); goToWork(current - 1); }
+      });
+    }
+
+    setActive(0);
+  }
+
   /* ---------- 6-2) 프로젝트 상세 팝업 ----------
      카드를 클릭하면 그 카드 안의 .work-detail 내용을
      화면 가운데 팝업(#modalBody)으로 복사해서 보여줍니다.
@@ -225,7 +310,14 @@
   }
 
   document.querySelectorAll('.work-card').forEach(function (card) {
-    card.addEventListener('click', function () { openModal(card); });
+    card.addEventListener('click', function () {
+      // 옆에 살짝 보이는 카드를 누르면 팝업 대신 그 카드로 넘어갑니다.
+      if (goToWork && !card.classList.contains('is-active') && card.closest('.works-track')) {
+        goToWork(Array.prototype.indexOf.call(card.parentNode.querySelectorAll('.work-card'), card));
+        return;
+      }
+      openModal(card);
+    });
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();

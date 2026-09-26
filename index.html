@@ -279,7 +279,8 @@
      │                                                            │
      │  ▶ 프로젝트를 추가하려면: <article ...> 부터 </article> 까지 │
      │    통째로 복사해서 붙여넣고 글자만 바꾸면 됩니다.           │
-     │  ▶ 맨 위 카드만 class 에 feature 가 붙어 가로로 넓습니다.   │
+     │  ▶ 카드는 가로 슬라이더(works-track)에 한 장씩 보입니다.   │
+     │    위쪽 탭 · 번호(01 / 06)는 카드 순서대로 자동 생성됩니다.│
      └────────────────────────────────────────────────────────────┘ -->
 <section id="works">
   <div class="wrap">
@@ -289,10 +290,14 @@
       <p class="sec-sub">운영 · 결제 · 계약 도메인의 반복 이슈를 시스템으로 전환한 기록입니다.</p>
     </header>
 
-    <div class="works-grid">
+    <div class="works-carousel reveal">
+      <div class="works-tabs" role="tablist" aria-label="프로젝트 목록"></div>
+
+      <div class="works-viewport">
+      <div class="works-track" tabindex="-1">
 
       <!-- 01 -->
-      <article class="work-card feature reveal" tabindex="0" role="button" aria-label="위약금 계산기 자세히 보기">
+      <article class="work-card feature" tabindex="0" role="button" aria-label="위약금 계산기 자세히 보기">
         <div class="work-side">
           <span class="work-no">Project 01</span>
           <h3>위약금 계산기</h3>
@@ -346,18 +351,22 @@
       </article>
 
       <!-- 02 -->
-      <article class="work-card reveal" tabindex="0" role="button" aria-label="자산명세서 데이터 확인 프로세스 자세히 보기">
-        <span class="work-no">Project 02</span>
-        <h3>자산명세서 데이터 확인 프로세스</h3>
-        <p class="work-sub">출고 · 계약서 · 회계 데이터 매칭</p>
-        <span class="work-meta">Operations · 2024 · SCM · Finance · Commerce 팀 협업</span>
-        <ul class="bullets">
-          <li>출고 요청 워크플로우 도입 + 스프레드시트 자동 백업 시스템 구축</li>
-          <li>정기 크로스체크 루틴 확립 → 자산 명세서 데이터 정합성 증가</li>
-        </ul>
-        <div class="work-foot">
-          <div class="tags"><span>RACI</span><span>워크플로우</span><span>정합성</span></div>
-          <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+      <article class="work-card feature" tabindex="0" role="button" aria-label="자산명세서 데이터 확인 프로세스 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">Project 02</span>
+          <h3>자산명세서 데이터 확인 프로세스</h3>
+          <p class="work-sub">출고 · 계약서 · 회계 데이터 매칭</p>
+          <span class="work-meta">Operations · 2024 · SCM · Finance · Commerce 팀 협업</span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>출고 요청 워크플로우 도입 + 스프레드시트 자동 백업 시스템 구축</li>
+            <li>정기 크로스체크 루틴 확립 → 자산 명세서 데이터 정합성 증가</li>
+          </ul>
+          <div class="work-foot">
+            <div class="tags"><span>RACI</span><span>워크플로우</span><span>정합성</span></div>
+            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+          </div>
         </div>
 
         <div class="work-detail" hidden>
@@ -394,18 +403,22 @@
       </article>
 
       <!-- 03 -->
-      <article class="work-card reveal reveal-1" tabindex="0" role="button" aria-label="가맹점 라이프사이클 관리 자세히 보기">
-        <span class="work-no">Project 03</span>
-        <h3>가맹점 라이프사이클 관리</h3>
-        <p class="work-sub">해지 · 폐업 트랙킹 프로세스 구축</p>
-        <span class="work-meta">Operations · 2025 · 단독 진행</span>
-        <ul class="bullets">
-          <li>CMS 미납 고객 수취율 개선 (8% → 15%) 및 장비 감가상각 손해 상계</li>
-          <li>가맹점 안내 · 진행 프로세스 표준화</li>
-        </ul>
-        <div class="work-foot">
-          <div class="tags"><span>크로스 검증</span><span>Slack 자동화</span></div>
-          <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+      <article class="work-card feature" tabindex="0" role="button" aria-label="가맹점 라이프사이클 관리 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">Project 03</span>
+          <h3>가맹점 라이프사이클 관리</h3>
+          <p class="work-sub">해지 · 폐업 트랙킹 프로세스 구축</p>
+          <span class="work-meta">Operations · 2025 · 단독 진행</span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>CMS 미납 고객 수취율 개선 (8% → 15%) 및 장비 감가상각 손해 상계</li>
+            <li>가맹점 안내 · 진행 프로세스 표준화</li>
+          </ul>
+          <div class="work-foot">
+            <div class="tags"><span>크로스 검증</span><span>Slack 자동화</span></div>
+            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+          </div>
         </div>
 
         <div class="work-detail" hidden>
@@ -442,18 +455,22 @@
       </article>
 
       <!-- 04 -->
-      <article class="work-card reveal" tabindex="0" role="button" aria-label="미납 가맹점 관리 자세히 보기">
-        <span class="work-no">Project 04</span>
-        <h3>미납 가맹점 관리</h3>
-        <p class="work-sub">단계별 회수 프로세스 설계 및 보고서 작성</p>
-        <span class="work-meta">Payment Operations · 2024–2025</span>
-        <ul class="bullets">
-          <li>월 기준 약 2,300만 원 규모 미납 데이터를 장기 · 고액 · 일반으로 분류</li>
-          <li>국세청 휴 · 폐업 자동 조회 AppScript 도입 (30분 주기 트리거)</li>
-        </ul>
-        <div class="work-foot">
-          <div class="tags"><span>Apps Script</span><span>Outbound 설계</span></div>
-          <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+      <article class="work-card feature" tabindex="0" role="button" aria-label="미납 가맹점 관리 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">Project 04</span>
+          <h3>미납 가맹점 관리</h3>
+          <p class="work-sub">단계별 회수 프로세스 설계 및 보고서 작성</p>
+          <span class="work-meta">Payment Operations · 2024–2025</span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>월 기준 약 2,300만 원 규모 미납 데이터를 장기 · 고액 · 일반으로 분류</li>
+            <li>국세청 휴 · 폐업 자동 조회 AppScript 도입 (30분 주기 트리거)</li>
+          </ul>
+          <div class="work-foot">
+            <div class="tags"><span>Apps Script</span><span>Outbound 설계</span></div>
+            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+          </div>
         </div>
 
         <div class="work-detail" hidden>
@@ -493,18 +510,22 @@
       </article>
 
       <!-- 05 -->
-      <article class="work-card reveal reveal-1" tabindex="0" role="button" aria-label="CMS 결제 정책 개선 자세히 보기">
-        <span class="work-no">Project 05</span>
-        <h3>CMS 결제 정책 개선</h3>
-        <p class="work-sub">CMS 출금 정책 재설계</p>
-        <span class="work-meta">Payment Operations · 2024 · 결제 정책 변경 기획</span>
-        <ul class="bullets">
-          <li>일괄 출금 → 부분 출금 방식으로 정책 변경안 도출</li>
-          <li>저잔액 케이스 이체 수수료 역전 리스크 사전 분석 및 액션 플랜 도출</li>
-        </ul>
-        <div class="work-foot">
-          <div class="tags"><span>정책 기획</span><span>트레이드오프</span></div>
-          <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+      <article class="work-card feature" tabindex="0" role="button" aria-label="CMS 결제 정책 개선 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">Project 05</span>
+          <h3>CMS 결제 정책 개선</h3>
+          <p class="work-sub">CMS 출금 정책 재설계</p>
+          <span class="work-meta">Payment Operations · 2024 · 결제 정책 변경 기획</span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>일괄 출금 → 부분 출금 방식으로 정책 변경안 도출</li>
+            <li>저잔액 케이스 이체 수수료 역전 리스크 사전 분석 및 액션 플랜 도출</li>
+          </ul>
+          <div class="work-foot">
+            <div class="tags"><span>정책 기획</span><span>트레이드오프</span></div>
+            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+          </div>
         </div>
 
         <div class="work-detail" hidden>
@@ -555,18 +576,22 @@
       </article>
 
       <!-- 06 · Operation (F&B) -->
-      <article class="work-card reveal reveal-2" tabindex="0" role="button" aria-label="외식업 매장 운영 자세히 보기">
-        <span class="work-no">Project 06 · Operation</span>
-        <h3>외식업 매장 운영</h3>
-        <p class="work-sub">프로모션 · P&amp;L · 인력 관리 6년</p>
-        <span class="work-meta">F&amp;B Operations · 2015–2021 · 자연별곡 · 이탈리안 레스토랑 · 트레이너 → 매니저</span>
-        <ul class="bullets">
-          <li>자연별곡 (이랜드외식사업부) · 이탈리안 레스토랑에서 6년 매장 운영</li>
-          <li>매장 자체 프로모션 기획 · 판매, 인건비 · 식자재 · 소모품 P&amp;L 관리</li>
-        </ul>
-        <div class="work-foot">
-          <div class="tags"><span>Operations</span><span>F&amp;B Operations</span><span>P&amp;L</span></div>
-          <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+      <article class="work-card feature" tabindex="0" role="button" aria-label="외식업 매장 운영 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">Project 06 · Operation</span>
+          <h3>외식업 매장 운영</h3>
+          <p class="work-sub">프로모션 · P&amp;L · 인력 관리 6년</p>
+          <span class="work-meta">F&amp;B Operations · 2015–2021 · 자연별곡 · 이탈리안 레스토랑 · 트레이너 → 매니저</span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>자연별곡 (이랜드외식사업부) · 이탈리안 레스토랑에서 6년 매장 운영</li>
+            <li>매장 자체 프로모션 기획 · 판매, 인건비 · 식자재 · 소모품 P&amp;L 관리</li>
+          </ul>
+          <div class="work-foot">
+            <div class="tags"><span>Operations</span><span>F&amp;B Operations</span><span>P&amp;L</span></div>
+            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+          </div>
         </div>
 
         <div class="work-detail" hidden>
@@ -603,6 +628,14 @@
         </div>
       </article>
 
+      </div>
+      </div>
+
+      <div class="works-nav">
+        <button type="button" class="works-arrow prev" aria-label="이전 프로젝트">&larr;</button>
+        <span class="works-count" aria-live="polite"><b>01</b> / <span>06</span></span>
+        <button type="button" class="works-arrow next" aria-label="다음 프로젝트">&rarr;</button>
+      </div>
     </div>
   </div>
 </section>

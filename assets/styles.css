@@ -345,8 +345,46 @@ section { padding: 118px 0; }
 .comp-card .bullets { margin-top: 22px; }
 
 /* ============ [프로젝트] ============
-   카드를 한 줄에 3개로 바꾸고 싶으면 repeat(2, 1fr) → repeat(3, 1fr) */
-.works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+   가로 슬라이더: 카드 한 장 + 다음 카드 가장자리가 살짝 보입니다.
+   보이는 카드 너비는 .works-track .work-card 의 flex-basis(88%) 로 조절 */
+.works-tabs {
+  display: flex; flex-wrap: wrap; gap: 8px; scrollbar-width: none;
+  padding-bottom: 4px; margin-bottom: 22px;
+}
+.works-tabs::-webkit-scrollbar { display: none; }
+.works-tab {
+  flex: 0 0 auto; display: flex; align-items: baseline; gap: 8px;
+  font: inherit; font-size: 13px; font-weight: 700; color: var(--slate-l);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+  padding: 9px 16px; cursor: pointer; transition: 0.25s; white-space: nowrap;
+}
+.works-tab em { font-style: normal; font-size: 11px; font-weight: 800; color: var(--coral); letter-spacing: 0.08em; }
+.works-tab:hover { color: var(--navy); border-color: #d8d2c7; }
+.works-tab.is-active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.works-tab.is-active em { color: #fff; opacity: 0.7; }
+
+.works-viewport { position: relative; margin: 0 calc(var(--pad) * -1); }
+.works-track {
+  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--pad); padding: 10px var(--pad) 24px;
+  scrollbar-width: none; outline: none; overscroll-behavior-x: contain;
+}
+.works-track::-webkit-scrollbar { display: none; }
+.works-track .work-card { flex: 0 0 88%; scroll-snap-align: start; opacity: 0.45; }
+.works-track .work-card.is-active { opacity: 1; }
+.works-track .work-card:not(.is-active):hover { transform: none; box-shadow: var(--shadow-sm); }
+.works-track .work-card:not(.is-active) .work-more { visibility: hidden; }
+
+.works-nav { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 6px; }
+.works-arrow {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--surface); color: var(--navy); font-size: 18px; cursor: pointer;
+  transition: 0.25s; box-shadow: var(--shadow-sm);
+}
+.works-arrow:hover:not(:disabled) { background: var(--navy); color: #fff; border-color: var(--navy); }
+.works-arrow:disabled { opacity: 0.35; cursor: default; }
+.works-count { font-size: 13px; font-weight: 700; color: var(--slate-l); letter-spacing: 0.08em; min-width: 64px; text-align: center; }
+.works-count b { color: var(--navy); font-size: 18px; font-weight: 800; }
 
 .work-card {
   position: relative; background: var(--surface); border: 1px solid var(--line);
@@ -712,8 +750,8 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 
 @media (max-width: 860px) {
   .nav-links { display: none; }
-  .works-grid { grid-template-columns: 1fr; }
-  .work-card.feature { grid-column: span 1; }
+  .works-track .work-card { flex-basis: 90%; }
+  .works-tabs { flex-wrap: nowrap; overflow-x: auto; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
   section { padding: 90px 0; }
   #about { padding: 96px 0; }
