@@ -325,9 +325,7 @@ html.js .work-card:not(.is-active) .work-more { visibility: hidden; }
 .frameworks p { color: rgba(255, 255, 255, 0.9); font-size: 15px; font-weight: 600; }
 
 /* [자격증] */
-.cert-grid { gap: 14px; grid-template-columns: repeat(4, 1fr); }
-.cert-courses { margin-top: 16px; font-size: 14px; color: var(--muted); }
-.cert-courses b { margin-right: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: var(--coral-d); }
+.cert-grid { gap: 14px; }
 .cert-card {
   display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 6px 14px; padding: 22px 24px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm);
