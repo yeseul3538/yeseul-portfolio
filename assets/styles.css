@@ -218,7 +218,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 
 /* [숫자 요약] */
 .stats { background: var(--navy); padding: 64px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; text-align: center; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; text-align: center; }
 .stat-n { display: block; font-size: clamp(28px, 3.4vw, 42px); font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
 .stat-n i, .stat-n em { font-style: normal; color: var(--coral); }
 .stat-n i { margin: 0 6px; font-weight: 400; }
@@ -478,7 +478,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   section { padding: 88px 0; }
   .work-card { flex-basis: 90%; }
   .works-tabs { flex-wrap: nowrap; overflow-x: auto; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 20px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 32px; }
   .modal-body { padding: 44px 24px; }
   .d-flow li { grid-template-columns: 1fr; gap: 10px; }
   .d-logic { grid-template-columns: 1fr; }
