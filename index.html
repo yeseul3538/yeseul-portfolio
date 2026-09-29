@@ -66,7 +66,7 @@
 
     <!-- 카드를 누르면 해당 프로젝트(data-go = 0부터 시작하는 순서)로 이동 -->
     <div class="hero-cards" data-depth="22">
-      <a class="hero-card" href="#works" data-go="2">
+      <a class="hero-card" href="#works" data-go="3">
         <span class="hero-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-4.2 1.8L9 15l4.2-1.8z"/></svg></span>
         <span><b>제품 기획</b><span>위약금 계산기</span></span>
       </a>
@@ -74,7 +74,7 @@
         <span class="hero-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.5 4.5 13a4.7 4.7 0 0 1 6.6-6.7l.9.9.9-.9A4.7 4.7 0 0 1 19.5 13z"/></svg></span>
         <span><b>운영 기획</b><span>가맹점 라이프사이클 관리</span></span>
       </a>
-      <a class="hero-card" href="#works" data-go="1">
+      <a class="hero-card" href="#works" data-go="2">
         <span class="hero-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-3.2-6.4L20 4"/></svg></span>
         <span><b>결제 운영</b><span>미납 가맹점 관리</span></span>
       </a>
@@ -260,9 +260,77 @@
       </article>
 
       <!-- 02 -->
-      <article class="work-card" tabindex="0" role="button" aria-label="미납 가맹점 관리 자세히 보기">
+      <article class="work-card" tabindex="0" role="button" aria-label="영업 리드 추적 자동화 및 성과 리포트 구축 자세히 보기">
         <div class="work-side">
           <span class="work-no">프로젝트 02</span>
+          <h3>영업 리드 추적 자동화 및 성과 리포트 구축</h3>
+          <p class="work-sub">인입 경로 수동 매칭 → GAS · Slack 자동 분류</p>
+          <span class="work-meta">운영 기획 · 2026 · 업무 자동화</span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>영업 리드 인입 경로 <b>95% 자동 분류</b> (수동 매칭 5% 미만 유지)</li>
+            <li>수동 매칭 시간 <b>하루 2시간 → 20분</b></li>
+            <li>주간 성과 리포트 자동 집계 → 대표 보고 · KPI 측정에 활용</li>
+          </ul>
+          <div class="work-foot">
+            <div class="tags"><span>Apps Script</span><span>Slack 연동</span><span>데이터 관리</span></div>
+            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+          </div>
+        </div>
+        <div class="work-detail" hidden>
+          <div class="d-note">
+            <h4>문제 정의</h4>
+            <ul>
+              <li>일 평균 200건 이상 인입되는 영업 리드의 경로를 수동으로 매칭하느라 하루 2시간이 소요되었습니다.</li>
+              <li>채널 · 담당자별 데이터가 파편화되어 영업 전환율과 성과를 추적할 수 없었습니다.</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>목표</h4>
+            <ul>
+              <li>영업 리드 인입 경로를 자동으로 분류해 수동 매칭 리소스 줄이기</li>
+              <li>채널 · 담당자별 성과를 주 단위로 추적할 수 있는 리포트 구조 만들기</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>내 역할</h4>
+            <ul>
+              <li>영업 리드 운영 구조 설계 · 예외 상황 기준 정리</li>
+              <li>Google Apps Script · Slack 연동 자동화 개발</li>
+              <li>주간 성과 리포트 구조 구축 (보고는 파트장이 진행)</li>
+            </ul>
+          </div>
+          <h4 class="d-label">진행 과정</h4>
+          <ol class="d-flow">
+            <li><div class="d-box">사용자 동선 확인</div><p>운영 흐름을 분석해 영업 리드 추적 및 담당자별 실적 측정 구조 정리</p></li>
+            <li><div class="d-box">예외 케이스 정리</div><p>담당자 변경 · 중복 등 예외 상황 기준을 정립하고 분류 기준 및 시나리오 설계</p></li>
+            <li><div class="d-box">인입 채널 단일화</div><p>파편화된 인입 채널 데이터를 표준화하고 실무자 사용 동선 단순화 · 가이드 배포</p></li>
+            <li><div class="d-box">GAS 자동화 구축</div><p>Google Apps Script와 Slack 연동으로 실시간 리드 분류 시스템 개발</p></li>
+            <li><div class="d-box">성과 리포트</div><p>단순 문의와 실제 전환 리드를 구분해 주간 성과 리포트가 자동 집계되는 구조 확립</p></li>
+          </ol>
+          <div class="d-note accent">
+            <h4>결과 · 산출물</h4>
+            <ul>
+              <li>영업 리드 인입 경로 <b>95% 자동 분류</b> (수동 매칭 5% 미만 유지)</li>
+              <li>수동 매칭 시간 <b>하루 2시간 → 20분</b></li>
+              <li>주간 성과 리포트를 매주 대표 보고와 KPI 측정에 활용</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>배운 점</h4>
+            <ul>
+              <li>자동화보다 먼저 예외 상황의 기준을 정해야 분류 결과를 믿고 쓸 수 있었습니다.</li>
+              <li>데이터를 한곳으로 모으자 성과를 측정하고 보고하는 구조까지 이어졌습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="work-card" tabindex="0" role="button" aria-label="미납 가맹점 관리 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">프로젝트 03</span>
           <h3>미납 가맹점 관리</h3>
           <p class="work-sub">단계별 회수 프로세스 설계 및 주간 보고</p>
           <span class="work-meta">결제 운영 · 2024–2026 · 프로세스 설계</span>
@@ -331,10 +399,10 @@
         </div>
       </article>
 
-      <!-- 03 -->
+      <!-- 04 -->
       <article class="work-card" tabindex="0" role="button" aria-label="위약금 계산기 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 03</span>
+          <span class="work-no">프로젝트 04</span>
           <h3>위약금 계산기</h3>
           <p class="work-sub">영업 · CX 업무 자동화 툴 기획</p>
           <span class="work-meta">제품 기획 · 2024–2025 · 업무용 툴 기획</span>
@@ -398,10 +466,10 @@
         </div>
       </article>
 
-      <!-- 04 -->
+      <!-- 05 -->
       <article class="work-card" tabindex="0" role="button" aria-label="CMS 결제 정책 개선 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 04</span>
+          <span class="work-no">프로젝트 05</span>
           <h3>CMS 결제 정책 개선</h3>
           <p class="work-sub">CMS 출금 정책 재설계</p>
           <span class="work-meta">결제 운영 · 2024 · 정책 기획</span>
@@ -480,10 +548,10 @@
         </div>
       </article>
 
-      <!-- 05 -->
+      <!-- 06 -->
       <article class="work-card" tabindex="0" role="button" aria-label="자산명세서 데이터 확인 프로세스 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 05</span>
+          <span class="work-no">프로젝트 06</span>
           <h3>자산명세서 데이터 확인 프로세스</h3>
           <p class="work-sub">출고 · 계약서 · 회계 데이터 매칭</p>
           <span class="work-meta">운영 기획 · 2024 · 부서 간 협업</span>
@@ -545,10 +613,10 @@
         </div>
       </article>
 
-      <!-- 06 -->
+      <!-- 07 -->
       <article class="work-card" tabindex="0" role="button" aria-label="법인카드 재발급 일괄 처리 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 06</span>
+          <span class="work-no">프로젝트 07</span>
           <h3>법인카드 재발급 일괄 처리</h3>
           <p class="work-sub">건별 수기 재발급 → Excel 업로드 일괄 처리 전환</p>
           <span class="work-meta">운영 기획 · 2023 · 프로세스 설계</span>
@@ -610,10 +678,10 @@
           </div>
         </div>
       </article>
-      <!-- 07 -->
+      <!-- 08 -->
       <article class="work-card" tabindex="0" role="button" aria-label="대량 발급 오류 사전 표기 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 07</span>
+          <span class="work-no">프로젝트 08</span>
           <h3>대량 발급 오류 사전 표기</h3>
           <p class="work-sub">현업의 불편을 개발 가능한 요구사항으로 전환</p>
           <span class="work-meta">운영 기획 · 2023 · 개발 요구사항 정의</span>
@@ -679,7 +747,7 @@
 
       <div class="works-nav">
         <button type="button" class="works-arrow prev" aria-label="이전 프로젝트">&larr;</button>
-        <span class="works-count" aria-live="polite"><b>01</b> / <span>07</span></span>
+        <span class="works-count" aria-live="polite"><b>01</b> / <span>08</span></span>
         <button type="button" class="works-arrow next" aria-label="다음 프로젝트">&rarr;</button>
       </div>
     </div>
