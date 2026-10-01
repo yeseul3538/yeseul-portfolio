@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>유예슬 — 운영 기획 · 프로덕트 기획 포트폴리오</title>
-<meta name="description" content="복잡한 운영을 구조로, 반복 이슈를 자동화로. 가맹점 운영 · 결제 · 계약 도메인의 반복 이슈를 시스템으로 전환해 온 운영·제품 기획자 유예슬의 포트폴리오." />
+<title>유예슬 — 운영 기획·프로덕트 기획 포트폴리오</title>
+<meta name="description" content="복잡한 운영을 구조로, 반복 이슈를 자동화로. 가맹점 운영·결제·계약 도메인의 반복 이슈를 시스템으로 전환해 온 운영·제품 기획자 유예슬의 포트폴리오." />
 <meta name="author" content="Yeseul You" />
 <meta name="theme-color" content="#13253f" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="유예슬 — 운영 기획 · 프로덕트 기획 포트폴리오" />
+<meta property="og:title" content="유예슬 — 운영 기획·프로덕트 기획 포트폴리오" />
 <meta property="og:description" content="복잡한 운영을 구조로, 반복 이슈를 자동화로. 반복 운영 이슈를 재사용 가능한 시스템으로 전환합니다." />
 <meta property="og:url" content="https://yeseul-portfolio.vercel.app/" />
 <meta property="og:locale" content="ko_KR" />
@@ -23,13 +23,9 @@
 </head>
 <body>
 
-<div id="loader" aria-hidden="true">
-  <div class="loader-mark"><i></i>YESEUL</div>
-  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-</div>
 
 <!-- 메뉴 (모바일 메뉴는 main.js가 이 목록을 복사해 만듭니다) -->
-<nav id="nav" class="on-dark" aria-label="주요 메뉴">
+<nav id="nav" aria-label="주요 메뉴">
   <a class="nav-logo" href="#hero"><i></i>YESEUL</a>
   <ul class="nav-links">
     <li><a href="#about">소개</a></li>
@@ -45,87 +41,81 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu"></div>
 
-<!-- [첫 화면] data-depth = 마우스를 따라 움직이는 정도 -->
+<!-- [첫 화면] 한 가닥의 실이 'YESEUL' 글자 사이를 드나들다, 스크롤하면 팽팽해지며 세 갈래 흐름(카드)으로 정렬됨 (main.js 3) -->
 <header id="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="hero-grid"></div>
-    <div class="hero-glow hero-glow-a"></div>
-    <div class="hero-glow hero-glow-b"></div>
-    <div class="hero-spot"></div>
-  </div>
+  <div class="th-stage">
+    <svg class="th-art th-back" aria-hidden="true"></svg>
+    <div class="th-mark" aria-hidden="true">YESEUL</div>
+    <svg class="th-art th-front" aria-hidden="true"></svg>
 
-  <div class="hero-inner">
-    <div class="hero-lead">
-      <span class="hero-rule" aria-hidden="true"></span>
-      <div>
-        <p class="hero-eyebrow" data-depth="6">유예슬 · 운영 기획 · 프로덕트 기획</p>
-        <h1 class="hero-title" data-depth="14">복잡한 운영을 구조로,<br />반복 이슈를 자동화로</h1>
-        <p class="hero-sub" data-depth="9">가맹점 운영 · 결제 · 계약 도메인의 반복 이슈를<br class="br-pc" /> 재사용 가능한 시스템으로 전환합니다</p>
+    <div class="hero-inner">
+      <div class="hero-lead">
+        <div>
+        <p class="hero-eyebrow parts"><span>유예슬</span><span>운영 기획</span><span>프로덕트 기획</span></p>
+        <h1 class="hero-title">복잡한 운영을 구조로,<br />반복 이슈를 자동화로</h1>
+        <p class="hero-sub">가맹점 운영·결제·계약 도메인의 반복 이슈를<br class="br-pc" /> 재사용 가능한 시스템으로 전환합니다</p>
+        </div>
+        <div class="hero-actions">
+      <a class="btn btn-accent" href="#works">프로젝트 보기</a>
+      <a class="btn btn-outline" href="#contact">연락하기</a>
+        </div>
       </div>
-    </div>
 
-    <!-- 카드를 누르면 해당 프로젝트(data-go = 0부터 시작하는 순서)로 이동 -->
-    <div class="hero-cards" data-depth="22">
+      <!-- 카드를 누르면 해당 프로젝트(data-go = 0부터 시작하는 순서)로 이동 -->
+    <div class="hero-cards">
       <a class="hero-card" href="#works" data-go="1">
-        <span class="hero-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-4.2 1.8L9 15l4.2-1.8z"/></svg></span>
         <span><b>업무 자동화</b><span>영업 리드 자동화</span></span>
       </a>
       <a class="hero-card" href="#works" data-go="0">
-        <span class="hero-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.5 4.5 13a4.7 4.7 0 0 1 6.6-6.7l.9.9.9-.9A4.7 4.7 0 0 1 19.5 13z"/></svg></span>
         <span><b>운영 기획</b><span>가맹점 라이프사이클 관리</span></span>
       </a>
       <a class="hero-card" href="#works" data-go="2">
-        <span class="hero-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-3.2-6.4L20 4"/></svg></span>
         <span><b>결제 운영</b><span>미납 가맹점 관리</span></span>
       </a>
     </div>
-
-    <div class="hero-actions" data-depth="5">
-      <a class="btn btn-accent" href="#works">프로젝트 보기</a>
-      <a class="btn btn-outline" href="#contact">연락하기</a>
     </div>
-  </div>
 
-  <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><i></i></div>
+    <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </div>
 </header>
 
-<!-- [숫자 요약] data-count = 세어 올라갈 숫자, data-suffix = 뒤에 붙는 글자 -->
+<!-- [숫자 요약] -->
 <section class="stats" aria-label="주요 성과 요약">
   <div class="wrap stats-grid">
-    <div class="stat reveal"><span class="stat-n" data-count="4" data-suffix="년 4개월">4<span class="unit">년 4개월</span></span><span class="stat-label">운영 · 기획 경력</span></div>
-    <div class="stat reveal"><span class="stat-n">8<i>→</i><span class="unit">최고</span>30<em>%</em></span><span class="stat-label">미납금 회수율 개선 (아이샵케어)</span></div>
-    <div class="stat reveal"><span class="stat-n">2<span class="unit">시간</span><i>→</i>20<span class="unit">분</span></span><span class="stat-label">영업 리드 매칭 시간, 하루 기준 (아이샵케어)</span></div>
+    <div class="stat"><span class="stat-n">4<span class="unit">년 4개월</span></span><span class="stat-label">운영·기획 경력</span></div>
+    <div class="stat"><span class="stat-n">8<i>→</i><span class="unit">최고</span>30<em>%</em></span><span class="stat-label">미납금 회수율 개선 (아이샵케어)</span></div>
+    <div class="stat"><span class="stat-n">2<span class="unit">시간</span><i>→</i>20<span class="unit">분</span></span><span class="stat-label">영업 리드 매칭 시간, 하루 기준 (아이샵케어)</span></div>
   </div>
 </section>
 
 <!-- [소개] -->
 <section id="about">
   <div class="wrap about-inner">
-    <div class="about-text reveal">
+    <div class="about-text">
       <span class="eyebrow">소개</span>
       <h2>복잡한 운영을 시스템으로<br />만드는 기획자</h2>
       <p>흩어져 처리되던 운영 이슈를 <b>분기 로직과 SOP</b>로 정리해, 누가 처리해도 같은 결과가 나오는 기준을 만듭니다.</p>
-      <p><b>현대카드</b> 법인카드운영팀에서 2년간 상품 · 영업 · 개발팀과 협업했습니다. 건별 수기로 처리하던 법인카드 재발급을 Excel 업로드 일괄 처리로 바꿔, 기업 1곳당 4–6시간 걸리던 작업을 15분으로 줄였습니다.</p>
-      <p><b>아이샵케어</b>에서는 2년 4개월간 가맹점 운영 · 결제 · 계약 도메인의 반복 이슈를 시스템으로 전환하는 기획과 운영을 맡았습니다.</p>
+      <p><b>현대카드</b> 법인카드운영팀에서 2년간 상품, 영업, 개발팀과 협업했습니다. 건별 수기로 처리하던 법인카드 재발급을 Excel 업로드 일괄 처리로 바꿔, 기업 1곳당 4–6시간 걸리던 작업을 15분으로 줄였습니다.</p>
+      <p><b>아이샵케어</b>에서는 2년 4개월간 가맹점 운영·결제·계약 도메인의 반복 이슈를 시스템으로 전환하는 기획과 운영을 맡았습니다.</p>
       <p>그 전에는 외식업 매장에서 6년간 현장 운영을 경험했습니다 (2015–2021, 트레이너 → 매니저).</p>
       <ul class="chips">
-        <li>가맹점 운영</li><li>결제 · 정산</li><li>계약</li><li>SOP 설계</li><li>분기 로직</li>
+        <li>가맹점 운영</li><li>결제·정산</li><li>계약</li><li>SOP 설계</li><li>분기 로직</li>
       </ul>
     </div>
 
-    <div class="about-card panel reveal">
+    <div class="about-card panel">
       <div class="career-head">
         <span class="career-icon" aria-hidden="true"><svg viewBox="0 0 32 20"><path d="M2 18 11 9l5 4.5L29 2"/><path d="M22 2h7v7"/></svg></span>
         <h3>경력 <em>4년 4개월</em></h3>
       </div>
       <ol class="career-list">
         <li>
-          <div class="career-top"><b>아이샵케어</b><span>2024.01 – 2026.05 · 2년 4개월</span></div>
-          <p>Operation Team · 정규직</p>
+          <div class="career-top"><b>아이샵케어</b><span class="parts"><span>2024.01 – 2026.05</span><span>2년 4개월</span></span></div>
+          <p class="parts"><span>Operation Team</span><span>정규직</span></p>
         </li>
         <li>
-          <div class="career-top"><b>현대카드</b><span>2022.01 – 2024.01 · 2년</span></div>
-          <p>법인카드운영팀 · 계약직</p>
+          <div class="career-top"><b>현대카드</b><span class="parts"><span>2022.01 – 2024.01</span><span>2년</span></span></div>
+          <p class="parts"><span>법인카드운영팀</span><span>계약직</span></p>
         </li>
       </ol>
     </div>
@@ -135,37 +125,37 @@
 <!-- [핵심 역량] -->
 <section id="competency" class="tint">
   <div class="wrap">
-    <header class="sec-head reveal">
+    <header class="sec-head">
       <span class="eyebrow">핵심 역량</span>
       <h2>이렇게 문제를 해결합니다</h2>
     </header>
 
     <div class="grid-3">
-      <article class="comp-card panel reveal">
+      <article class="comp-card panel">
         <header><h3>운영 기획</h3></header>
         <p>발생한 이슈의 데이터를 모아 원인을 분석하고, 반복되지 않도록 프로세스로 만듭니다. 모든 단계를 문서로 정리해 누구나 문제와 해결 방안을 이해할 수 있게 합니다.</p>
         <ul class="bullets">
           <li>반복 이슈 분석 → 표준 프로세스 설계</li>
-          <li>SOP · 플레이북 · 사용자 가이드 문서화</li>
-          <li>데이터 정합성 확보 (매칭 · 검증 프로세스)</li>
+          <li>SOP·플레이북·사용자 가이드 문서화</li>
+          <li>데이터 정합성 확보 (매칭·검증 프로세스)</li>
         </ul>
       </article>
-      <article class="comp-card panel reveal">
+      <article class="comp-card panel">
         <header><h3>분기 로직 명세</h3></header>
         <p>복잡한 비즈니스 조건을 분기 명세로 옮기고, UI와 기초 데이터를 포함해 개발자가 구현 가능한 형태로 전환합니다.</p>
         <ul class="bullets">
           <li>비즈니스 조건의 분기 명세화</li>
           <li>개발 명세서 작성</li>
-          <li>엣지 케이스 도출 · QA 테스트 설계</li>
+          <li>엣지 케이스 도출·QA 테스트 설계</li>
         </ul>
       </article>
-      <article class="comp-card panel reveal">
+      <article class="comp-card panel">
         <header><h3>부서 간 협업</h3></header>
         <p>각 부서의 입장과 우선순위를 이해하고, 서로 다른 요구사항을 하나의 기준으로 정리해 합의를 이끌어냅니다.</p>
         <ul class="bullets">
           <li>유관 부서 요구사항 조율</li>
           <li>R&amp;R 분장표 기반 책임 분리</li>
-          <li>제품 테스트 · 사용자 가이드 작성 및 사내 배포</li>
+          <li>제품 테스트·사용자 가이드 작성 및 사내 배포</li>
         </ul>
       </article>
     </div>
@@ -177,51 +167,47 @@
      · work-side : 번호 · 제목 · 한 줄 설명 · 기간 (팝업 머리글로도 자동 사용)
      · work-main : 요약 성과 + 태그
      · work-detail (hidden) : 클릭 시 팝업 본문. hidden은 지우지 마세요.
-     탭과 01 / 06 번호는 카드 순서대로 자동 생성됩니다. -->
+     카드는 목록으로 모두 펼쳐 보입니다. -->
 <section id="works">
   <div class="wrap">
-    <header class="sec-head reveal">
+    <header class="sec-head">
       <span class="eyebrow">프로젝트</span>
       <h2>주요 프로젝트</h2>
       <p class="sec-sub">운영 문제를 기준과 프로세스로 구조화한 기록입니다.</p>
     </header>
 
-    <div class="works-carousel reveal">
-      <div class="works-tabs" role="tablist" aria-label="프로젝트 목록"></div>
-
-      <div class="works-viewport">
-      <div class="works-track">
+    <div class="works-list">
 
       <!-- 01 -->
       <article class="work-card" tabindex="0" role="button" aria-label="가맹점 라이프사이클 관리 자세히 보기">
         <div class="work-side">
           <span class="work-no">프로젝트 01</span>
           <h3>가맹점 라이프사이클 관리</h3>
-          <p class="work-sub">해지 · 폐업 트래킹 프로세스 구축</p>
-          <span class="work-meta">운영 기획 · 2025 · 프로세스 설계</span>
+          <p class="work-sub">해지·폐업 트래킹 프로세스 구축</p>
+          <span class="work-meta parts"><span>운영 기획</span><span>2025</span><span>프로세스 설계</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
             <li>위약금 청구 기준을 실제 장비 감가상각으로 변경 → 해지 1건당 <b>180,000원 → 480,000원</b></li>
-            <li>가맹점 안내 · 진행 프로세스 표준화</li>
+            <li>가맹점 안내·진행 프로세스 표준화</li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>크로스 검증</span><span>Slack 자동화</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
           <div class="d-note">
             <h4>문제 정의</h4>
             <ul>
-              <li>해지 · 폐업 가맹점 트래킹이 부재해 CMS · 위약금 입금 누락이 반복되었습니다.</li>
+              <li>해지·폐업 가맹점 트래킹이 부재해 CMS·위약금 입금 누락이 반복되었습니다.</li>
               <li>국세청상 사업자가 정상 운영 중이고 단말기 사용도 확인되는데 전산상 해지 처리된 케이스가 방치되어 금전적 손해와 데이터 불일치가 발생했습니다.</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>목표</h4>
             <ul>
-              <li>해지·폐업 가맹점을 조기에 감지해 CMS · 위약금 입금 누락을 막고, 전산 상태를 실제 운영 상태와 일치시키기</li>
+              <li>해지·폐업 가맹점을 조기에 감지해 CMS·위약금 입금 누락을 막고, 전산 상태를 실제 운영 상태와 일치시키기</li>
               <li>해지 위약금을 실제 장비 손실에 맞게 산정하기</li>
             </ul>
           </div>
@@ -233,14 +219,14 @@
           </div>
           <h4 class="d-label">진행 과정</h4>
           <ol class="d-flow">
-            <li><div class="d-box">감지</div><p>CX 상담 내역 중 해지 / 폐업 문의 매일 확인, 가맹점 사업자번호 휴 · 폐업 조회</p></li>
-            <li><div class="d-box">진단</div><p>장비 회수 데이터 + 국세청 + CX 상담 내역 크로스 검증, 문제 건수 · 유형별 케이스 정량 파악</p></li>
+            <li><div class="d-box">감지</div><p>CX 상담 내역 중 해지 / 폐업 문의 매일 확인, 가맹점 사업자번호 휴·폐업 조회</p></li>
+            <li><div class="d-box">진단</div><p>장비 회수 데이터 + 국세청 + CX 상담 내역 크로스 검증, 문제 건수·유형별 케이스 정량 파악</p></li>
             <li><div class="d-box">위약금 기준 재설계</div><p>"월 CMS × 잔여 개월 수"로 단순 계산하던 위약금을 실제 장비 가격의 감가상각 기준으로 다시 설계</p></li>
             <li><div class="d-box">데이터 자동 적재</div><p>고객 여정 시작부터 끝까지 퍼널별 데이터가 한 번의 입력으로 자동 적재되는 프로세스 구축</p></li>
             <li><div class="d-box">후속 처리 표준화</div><p>Slack 자동화 + 담당자 지정 + 후속 작업 표준화로 재발 방지</p></li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
                             <li>위약금 산정 기준을 "월 CMS × 잔여 개월 수"에서 실제 장비 가격의 감가상각으로 변경 → 해지 1건당 청구액 <b>180,000원 → 480,000원</b></li>
               <li>상향된 청구액 기준 회수율 <b>10%</b>, 지속 미납 시 추심사 이관으로 후속 조치</li>
@@ -264,18 +250,18 @@
         <div class="work-side">
           <span class="work-no">프로젝트 02</span>
           <h3>영업 리드 추적 자동화 및 성과 리포트 구축</h3>
-          <p class="work-sub">인입 경로 수동 매칭 → GAS · Slack 자동 분류</p>
-          <span class="work-meta">운영 기획 · 2026 · 업무 자동화</span>
+          <p class="work-sub">인입 경로 수동 매칭 → GAS·Slack 자동 분류</p>
+          <span class="work-meta parts"><span>운영 기획</span><span>2026</span><span>업무 자동화</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
             <li>영업 리드 인입 경로 <b>95% 자동 분류</b> (수동 매칭 5% 미만 유지)</li>
             <li>수동 매칭 시간 <b>하루 2시간 → 20분</b></li>
-            <li>주간 성과 리포트 자동 집계 → 대표 보고 · KPI 측정에 활용</li>
+            <li>주간 성과 리포트 자동 집계 → 대표 보고·KPI 측정에 활용</li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>Apps Script</span><span>Slack 연동</span><span>데이터 관리</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
@@ -283,34 +269,34 @@
             <h4>문제 정의</h4>
             <ul>
               <li>일 평균 200건 이상 인입되는 영업 리드의 경로를 수동으로 매칭하느라 하루 2시간이 소요되었습니다.</li>
-              <li>채널 · 담당자별 데이터가 파편화되어 영업 전환율과 성과를 추적할 수 없었습니다.</li>
+              <li>채널·담당자별 데이터가 파편화되어 영업 전환율과 성과를 추적할 수 없었습니다.</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>목표</h4>
             <ul>
               <li>영업 리드 인입 경로를 자동으로 분류해 수동 매칭 리소스 줄이기</li>
-              <li>채널 · 담당자별 성과를 주 단위로 추적할 수 있는 리포트 구조 만들기</li>
+              <li>채널·담당자별 성과를 주 단위로 추적할 수 있는 리포트 구조 만들기</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>영업 리드 운영 구조 설계 · 예외 상황 기준 정리</li>
-              <li>Google Apps Script · Slack 연동 자동화 개발</li>
+              <li>영업 리드 운영 구조 설계·예외 상황 기준 정리</li>
+              <li>Google Apps Script·Slack 연동 자동화 개발</li>
               <li>주간 성과 리포트 구조 구축 (보고는 파트장이 진행)</li>
             </ul>
           </div>
           <h4 class="d-label">진행 과정</h4>
           <ol class="d-flow">
             <li><div class="d-box">사용자 동선 확인</div><p>운영 흐름을 분석해 영업 리드 추적 및 담당자별 실적 측정 구조 정리</p></li>
-            <li><div class="d-box">예외 케이스 정리</div><p>담당자 변경 · 중복 등 예외 상황 기준을 정립하고 분류 기준 및 시나리오 설계</p></li>
-            <li><div class="d-box">인입 채널 단일화</div><p>파편화된 인입 채널 데이터를 표준화하고 실무자 사용 동선 단순화 · 가이드 배포</p></li>
+            <li><div class="d-box">예외 케이스 정리</div><p>담당자 변경·중복 등 예외 상황 기준을 정립하고 분류 기준 및 시나리오 설계</p></li>
+            <li><div class="d-box">인입 채널 단일화</div><p>파편화된 인입 채널 데이터를 표준화하고 실무자 사용 동선 단순화·가이드 배포</p></li>
             <li><div class="d-box">GAS 자동화 구축</div><p>Google Apps Script와 Slack 연동으로 실시간 리드 분류 시스템 개발</p></li>
             <li><div class="d-box">성과 리포트</div><p>단순 문의와 실제 전환 리드를 구분해 주간 성과 리포트가 자동 집계되는 구조 확립</p></li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
               <li>영업 리드 인입 경로 <b>95% 자동 분류</b> (수동 매칭 5% 미만 유지)</li>
               <li>수동 매칭 시간 <b>하루 2시간 → 20분</b></li>
@@ -333,17 +319,17 @@
           <span class="work-no">프로젝트 03</span>
           <h3>미납 가맹점 관리</h3>
           <p class="work-sub">단계별 회수 프로세스 설계 및 주간 보고</p>
-          <span class="work-meta">결제 운영 · 2024–2026 · 프로세스 설계</span>
+          <span class="work-meta parts"><span>결제 운영</span><span>2024–2026</span><span>프로세스 설계</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
             <li>미납금 회수율 <b>8% → 15%</b> 개선 (2024.05 → 2026.04, 부분 출금 정책과 함께 작용한 결과)</li>
-            <li>월 <b>약 2,300만 원</b> 규모 미납 데이터를 장기 · 고액 · 일반으로 분류</li>
-            <li>국세청 휴 · 폐업 자동 조회 Apps Script 도입 (<b>30분 주기</b> 트리거)</li>
+            <li>월 <b>약 2,300만 원</b> 규모 미납 데이터를 장기·고액·일반으로 분류</li>
+            <li>국세청 휴·폐업 자동 조회 Apps Script 도입 (<b>30분 주기</b> 트리거)</li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>Apps Script</span><span>Outbound 설계</span><span>주간 보고</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
@@ -351,42 +337,42 @@
             <h4>문제 정의</h4>
             <ul>
               <li>CMS 미납 가맹점 관리 체계가 없어 최초 미납 데이터부터 만들었습니다.</li>
-              <li>데이터 취합 이후에도 전월 미납 고객에 대한 사후 대응 중심이라 장기 · 고액 미납이 계속 누적되었습니다.</li>
+              <li>데이터 취합 이후에도 전월 미납 고객에 대한 사후 대응 중심이라 장기·고액 미납이 계속 누적되었습니다.</li>
               <li>폐업 후 연락 두절 등 회수 사각지대 고객이 발생해 정상 채권 회수가 어려운 구조였습니다.</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>목표</h4>
             <ul>
-              <li>사후 대응 중심의 미납 관리를 사전 탐지 · 유형별 회수 체계로 전환하기</li>
+              <li>사후 대응 중심의 미납 관리를 사전 탐지·유형별 회수 체계로 전환하기</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>미납 데이터 최초 구축, 분류 기준 · 4단계 Outbound 설계</li>
-              <li>국세청 휴 · 폐업 자동 조회 Apps Script 제작</li>
-              <li>CX · Finance와 추심 이관 프로세스 수립</li>
-              <li>매주 팀 위클리 미팅에 미납 · 회수 현황 보고</li>
+              <li>미납 데이터 최초 구축, 분류 기준·4단계 Outbound 설계</li>
+              <li>국세청 휴·폐업 자동 조회 Apps Script 제작</li>
+              <li>CX·Finance와 추심 이관 프로세스 수립</li>
+              <li>매주 팀 위클리 미팅에 미납·회수 현황 보고</li>
             </ul>
           </div>
           <h4 class="d-label">진행 과정</h4>
           <ol class="d-flow">
-            <li><div class="d-box">감지</div><p>국세청 휴 · 폐업 자동 조회 Apps Script 제작. 월별 미납 데이터와 CMS 입금 데이터 매칭으로 미납 / 해소 / 예상 사전 탐지</p></li>
-            <li><div class="d-box">분류</div><p>월 <b>약 2,300만 원</b> 규모의 미납 데이터를 장기 · 고액 · 일반으로 분류해 상황별 회수 시나리오 매칭</p></li>
-            <li><div class="d-box">액션 및 관리</div><p>자동이체 출금일에 맞춰 <b>5일 → 10일 → 14일 → 20일</b> 4단계 Outbound 설계. 회수 금액 중 당월 정상 · 미납 출금액 구별 관리</p></li>
-            <li><div class="d-box">추심사 이관</div><p>외부 추심사 이관 기준 및 프로세스 수립. CX팀 응대 매뉴얼 전달, Finance팀과 수수료 · 세금계산서 처리 정합성 확보</p></li>
-            <li><div class="d-box">주간 보고</div><p>매주 팀 위클리 미팅에 미납 · 회수 현황 보고 → 팀장이 리더 미팅의 의사결정 자료로 활용</p></li>
+            <li><div class="d-box">감지</div><p>국세청 휴·폐업 자동 조회 Apps Script 제작. 월별 미납 데이터와 CMS 입금 데이터 매칭으로 미납 / 해소 / 예상 사전 탐지</p></li>
+            <li><div class="d-box">분류</div><p>월 <b>약 2,300만 원</b> 규모의 미납 데이터를 장기·고액·일반으로 분류해 상황별 회수 시나리오 매칭</p></li>
+            <li><div class="d-box">액션 및 관리</div><p>자동이체 출금일에 맞춰 <b>5일 → 10일 → 14일 → 20일</b> 4단계 Outbound 설계. 회수 금액 중 당월 정상·미납 출금액 구별 관리</p></li>
+            <li><div class="d-box">추심사 이관</div><p>외부 추심사 이관 기준 및 프로세스 수립. CX팀 응대 매뉴얼 전달, Finance팀과 수수료·세금계산서 처리 정합성 확보</p></li>
+            <li><div class="d-box">주간 보고</div><p>매주 팀 위클리 미팅에 미납·회수 현황 보고 → 팀장이 리더 미팅의 의사결정 자료로 활용</p></li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
               <li>미납금 회수율 <b>8% → 15%</b> 개선 (2024.05 → 2026.04, 부분 출금 정책과 함께 작용한 결과)</li>
-              <li>미납 사유별 (장기 · 고액 · 폐업 후 미인입) 세분화 목록 관리</li>
+              <li>미납 사유별 (장기·고액·폐업 후 미인입) 세분화 목록 관리</li>
               <li>미납 기간 및 자동 출금 일자별 Outbound 회수 프로세스 설계</li>
-              <li>국세청 휴 · 폐업 자동 조회 Apps Script 도입 (30분 주기 트리거)</li>
+              <li>국세청 휴·폐업 자동 조회 Apps Script 도입 (30분 주기 트리거)</li>
               <li>6개월 미입금 시 외부 추심사 이관 로직 표준화</li>
-              <li>미납 발생부터 해소까지 분류별 · 단계별 데이터 제작</li>
+              <li>미납 발생부터 해소까지 분류별·단계별 데이터 제작</li>
             </ul>
           </div>
           <div class="d-note">
@@ -404,18 +390,18 @@
         <div class="work-side">
           <span class="work-no">프로젝트 04</span>
           <h3>위약금 계산기</h3>
-          <p class="work-sub">영업 · CX 업무 자동화 툴 기획</p>
-          <span class="work-meta">제품 기획 · 2024–2025 · 업무용 툴 기획</span>
+          <p class="work-sub">영업·CX 업무 자동화 툴 기획</p>
+          <span class="work-meta parts"><span>제품 기획</span><span>2024–2025</span><span>업무용 툴 기획</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
-            <li><b>4가지 계약 유형</b> 통합 (오프라인 · 온라인 초회 · 온라인 갱신 · 케어서비스)</li>
+            <li><b>4가지 계약 유형</b> 통합 (오프라인·온라인 초회·온라인 갱신·케어서비스)</li>
             <li><b>11건</b> QA 보완 요구사항 도출 및 반영</li>
-            <li>부가세 처리 분기 표준화 · 사용자 가이드 작성 · 사내 배포 완료</li>
+            <li>부가세 처리 분기 표준화·사용자 가이드 작성·사내 배포 완료</li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>분기 명세</span><span>개발 협업</span><span>QA</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
@@ -436,24 +422,24 @@
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>계약 조건 분해 · 분기 명세, 개발 명세서(PRD) 작성</li>
-              <li>QA (보완 요구사항 11건 도출) · 사용자 가이드 작성 · CX 온보딩</li>
+              <li>계약 조건 분해·분기 명세, 개발 명세서(PRD) 작성</li>
+              <li>QA (보완 요구사항 11건 도출)·사용자 가이드 작성·CX 온보딩</li>
               <li>개발은 개발팀이 담당</li>
             </ul>
           </div>
           <h4 class="d-label">진행 과정</h4>
           <ol class="d-flow">
             <li><div class="d-box">계약내용 분해</div><p>3-Step UI (계약유형 → 메인 → 추가장비)로 분기 명세화</p></li>
-            <li><div class="d-box">개발 명세서 작성</div><p>4가지 조건별 산정식 · 부가세 처리 분기를 명세서로 정리해 개발자에게 전달</p></li>
+            <li><div class="d-box">개발 명세서 작성</div><p>4가지 조건별 산정식·부가세 처리 분기를 명세서로 정리해 개발자에게 전달</p></li>
             <li><div class="d-box">QA</div><p>1차 빌드 검증 → <b>11건</b> 보완 요구사항 도출 (미설치 케이스 / 설치비 추가 청구 등)</p></li>
             <li><div class="d-box">배포</div><p>사용자 가이드 작성 + 사내 공지 + CX팀 온보딩</p></li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
-              <li>4가지 계약 유형 통합 (오프라인 · 온라인 초회 · 온라인 갱신 · 케어서비스)</li>
+              <li>4가지 계약 유형 통합 (오프라인·온라인 초회·온라인 갱신·케어서비스)</li>
               <li>11건 QA 보완 요구사항 도출 및 반영</li>
-              <li>부가세 처리 분기 표준화 · 사용자 가이드 작성 · 사내 배포 완료</li>
+              <li>부가세 처리 분기 표준화·사용자 가이드 작성·사내 배포 완료</li>
             </ul>
           </div>
           <div class="d-note">
@@ -472,17 +458,17 @@
           <span class="work-no">프로젝트 05</span>
           <h3>CMS 결제 정책 개선</h3>
           <p class="work-sub">CMS 출금 정책 재설계</p>
-          <span class="work-meta">결제 운영 · 2024 · 정책 기획</span>
+          <span class="work-meta parts"><span>결제 운영</span><span>2024</span><span>정책 기획</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
-            <li>일괄 출금 → <b>부분 출금</b> 방식으로 정책 변경 · <b>실제 적용</b></li>
+            <li>일괄 출금 → <b>부분 출금</b> 방식으로 정책 변경·<b>실제 적용</b></li>
             <li>적용 후 2년간 미납 비율 <b>30% → 27%</b> (미납 회수 체계와 함께 작용한 결과)</li>
             <li>저잔액 케이스 이체 수수료 <b>역전 리스크</b> 사전 분석 및 액션 플랜 도출</li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>정책 기획</span><span>트레이드오프</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
@@ -502,36 +488,36 @@
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>AS-IS 분석 · 변경안 도출 · 적용</li>
-              <li>수수료 역전 구간 발견 → 최소 출금 단위 · 소액 가맹점 분석 등 보완책 마련</li>
+              <li>AS-IS 분석·변경안 도출·적용</li>
+              <li>수수료 역전 구간 발견 → 최소 출금 단위·소액 가맹점 분석 등 보완책 마련</li>
             </ul>
           </div>
           <h4 class="d-label">판단 흐름</h4>
           <p class="d-logic-intro">정책 변경 전 발생할 수 있는 리스크와 엣지 케이스를 미리 탐지하고 보완하였습니다.</p>
           <ol class="d-logic">
             <li>
-              <span class="d-logic-role">관찰 · AS-IS</span>
+              <span class="d-logic-role">관찰·AS-IS</span>
               <h5>분석</h5>
               <p>잔액이 총 미납금 이상일 때만 출금하는 기존 방식에서 저잔액 가맹점의 미납이 계속 누적되는 구조를 확인했습니다.</p>
             </li>
             <li>
-              <span class="d-logic-role">가설 · TO-BE</span>
+              <span class="d-logic-role">가설·TO-BE</span>
               <h5>변경</h5>
               <p>잔액이 미납금 이하여도 잔액을 모두 출금하는 부분 출금 방식이면 저잔액 구간에서도 회수가 시작되어 미납 비율이 줄어들 것으로 보았습니다.</p>
             </li>
             <li class="is-pivot">
-              <span class="d-logic-role">반증 · Trade-off</span>
+              <span class="d-logic-role">반증·Trade-off</span>
               <h5>리스크</h5>
               <p>계좌 잔액 200원 미만이면 출금액 &lt; 이체 수수료가 되어 <b>회수할수록 손해인 역전 구간</b>을 발견했습니다.</p>
             </li>
             <li>
-              <span class="d-logic-role">결론 · Decision</span>
+              <span class="d-logic-role">결론·Decision</span>
               <h5>보완</h5>
               <p>① 최소 출금 단위를 설정해 역전 구간을 차단하고, ② 월 CMS 1천 원 미만 소액 가맹점을 리스트업해 금액대별 비율을 분석, 의사결정 근거 데이터를 만들었습니다.</p>
             </li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
               <li>CMS 부분 출금 정책 변경안 도출 및 실제 적용</li>
               <li>적용 후 2년간 미납 비율 <b>30% → 27%</b> (미납 회수 체계와 함께 작용한 결과)</li>
@@ -553,53 +539,53 @@
         <div class="work-side">
           <span class="work-no">프로젝트 06</span>
           <h3>자산명세서 데이터 확인 프로세스</h3>
-          <p class="work-sub">출고 · 계약서 · 회계 데이터 매칭</p>
-          <span class="work-meta">운영 기획 · 2024 · 부서 간 협업</span>
+          <p class="work-sub">출고·계약서·회계 데이터 매칭</p>
+          <span class="work-meta parts"><span>운영 기획</span><span>2024</span><span>부서 간 협업</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
             <li>출고 요청 워크플로우 도입 + 스프레드시트 <b>자동 적재</b> 시스템 구축</li>
-            <li>출고 요청 <b>48시간 내 미확인</b> 시 담당자 자동 메일 · 시트 데이터 Slack 자동 업로드 (Zapier)</li>
+            <li>출고 요청 <b>48시간 내 미확인</b> 시 담당자 자동 메일·시트 데이터 Slack 자동 업로드 (Zapier)</li>
             <li>월간 출고 ↔ 계약서 <b>크로스체크 도입</b></li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>R&amp;R</span><span>Zapier</span><span>워크플로우</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
           <div class="d-note">
             <h4>문제 정의</h4>
             <ul>
-              <li>장비 출고 · 계약서 · 회계 데이터가 각각 다른 팀에서 관리되어 정합성이 무너지고, 백업 부재로 오출고 · 계약서 미수취 등이 발생하였습니다.</li>
+              <li>장비 출고·계약서·회계 데이터가 각각 다른 팀에서 관리되어 정합성이 무너지고, 백업 부재로 오출고·계약서 미수취 등이 발생하였습니다.</li>
               <li>임대장비는 회사 귀속 자산이므로 누락된 데이터로 인해 회계 감사 시에도 문제가 생길 수 있는 상황이었습니다.</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>목표</h4>
             <ul>
-              <li>출고 · 계약서 · 회계 데이터를 하나의 기준으로 맞추고, 오출고와 감사 리스크를 미리 차단하기</li>
+              <li>출고·계약서·회계 데이터를 하나의 기준으로 맞추고, 오출고와 감사 리스크를 미리 차단하기</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>문제 진단, 출고 워크플로우 · 자동 적재 · 48시간 알림(Zapier) 설계</li>
-              <li>R&amp;R로 부서별 책임 정리, SCM · Finance · Commerce 협업 조율</li>
+              <li>문제 진단, 출고 워크플로우·자동 적재·48시간 알림(Zapier) 설계</li>
+              <li>R&amp;R로 부서별 책임 정리, SCM·Finance·Commerce 협업 조율</li>
             </ul>
           </div>
           <h4 class="d-label">진행 과정</h4>
           <ol class="d-flow">
-            <li><div class="d-box">진단</div><p>출고 요청 데이터 적재 부재로 인한 오출고 · 이중 출고와, 고객 요청에 따른 커머스 팀의 임의 처리로 생긴 데이터 오류 확인</p></li>
+            <li><div class="d-box">진단</div><p>출고 요청 데이터 적재 부재로 인한 오출고·이중 출고와, 고객 요청에 따른 커머스 팀의 임의 처리로 생긴 데이터 오류 확인</p></li>
             <li><div class="d-box">표준화</div><p>출고 요청 표준 워크플로우 전환 + 스프레드시트 자동 적재로 담당자 확인 채널 통일. <b>48시간</b> 내 미확인 시 담당자 자동 메일 발송 (Zapier: Google Sheets → Gmail), 시트 데이터 Slack 자동 업로드로 확인 용이성 개선</p></li>
             <li><div class="d-box">책임 정리</div><p>R&amp;R 분장표로 출고부터 회수까지 퍼널별 담당자 배정 및 책임부서 문서화</p></li>
-            <li><div class="d-box">프로세스 구축</div><p>월간 출고 ↔ 계약서 크로스체크 프로세스 설계. 계약서 미수취 · 오출고 · 미회수 건 담당자 전달</p></li>
+            <li><div class="d-box">프로세스 구축</div><p>월간 출고 ↔ 계약서 크로스체크 프로세스 설계. 계약서 미수취·오출고·미회수 건 담당자 전달</p></li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
               <li>출고 요청 워크플로우 도입 + 스프레드시트 자동 적재 시스템 구축</li>
-              <li>SCM · Finance · Commerce 팀 협업 프로세스 설계</li>
+              <li>SCM·Finance·Commerce 팀 협업 프로세스 설계</li>
               <li>월간 출고 ↔ 계약서 크로스체크 도입</li>
             </ul>
           </div>
@@ -619,7 +605,7 @@
           <span class="work-no">프로젝트 07</span>
           <h3>법인카드 재발급 일괄 처리</h3>
           <p class="work-sub">건별 수기 재발급 → Excel 업로드 일괄 처리 전환</p>
-          <span class="work-meta">운영 기획 · 2023 · 프로세스 설계</span>
+          <span class="work-meta parts"><span>운영 기획</span><span>2023</span><span>프로세스 설계</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
@@ -629,7 +615,7 @@
           </ul>
           <div class="work-foot">
             <div class="tags"><span>업무 자동화</span><span>개발 협업</span><span>프로세스 설계</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
@@ -650,22 +636,22 @@
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>반복 주기 · 소요 시간 · 투입 인력 기준으로 병목 진단</li>
-              <li>다운로드 → 수정 → 업로드 흐름 정의, 개발팀과 요구사항 협의 · 운영 적용</li>
+              <li>반복 주기·소요 시간·투입 인력 기준으로 병목 진단</li>
+              <li>다운로드 → 수정 → 업로드 흐름 정의, 개발팀과 요구사항 협의·운영 적용</li>
             </ul>
           </div>
           <h4 class="d-label">진행 과정</h4>
           <ol class="d-flow">
-            <li><div class="d-box">진단</div><p>반복 주기 · 소요 시간 · 투입 인력을 기준으로 건별 수기 처리의 병목 정의</p></li>
+            <li><div class="d-box">진단</div><p>반복 주기·소요 시간·투입 인력을 기준으로 건별 수기 처리의 병목 정의</p></li>
             <li><div class="d-box">흐름 설계</div><p>기존 카드 정보 Excel 다운로드 → 정보 유지 또는 일부 변경 → 시스템 업로드로 이어지는 재발급 흐름 정의</p></li>
             <li><div class="d-box">개발 협업</div><p>개발팀에 요구사항을 전달해 Excel 업로드 기반 일괄 재발급 기능 구현</p></li>
             <li><div class="d-box">적용</div><p>기업 단위 재발급을 업로드 한 번으로 처리하도록 운영 방식 전환</p></li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
               <li>기업 1곳 재발급 처리 시간 <b>4–6시간 → 15분</b></li>
-              <li>1–2주 주기로 발생하던 전담 인력 투입 해소 → 상담 · 운영 업무에 리소스 재배치</li>
+              <li>1–2주 주기로 발생하던 전담 인력 투입 해소 → 상담·운영 업무에 리소스 재배치</li>
               <li>카드 한 장씩 반복하던 수기 입력 업무 제거 → 작업 피로도 해소</li>
             </ul>
           </div>
@@ -684,16 +670,16 @@
           <span class="work-no">프로젝트 08</span>
           <h3>대량 발급 오류 사전 표기</h3>
           <p class="work-sub">현업의 불편을 개발 가능한 요구사항으로 전환</p>
-          <span class="work-meta">운영 기획 · 2023 · 개발 요구사항 정의</span>
+          <span class="work-meta parts"><span>운영 기획</span><span>2023</span><span>개발 요구사항 정의</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
             <li>오류 건 처리 시간 <b>건당 30분–1시간 → 10–20분</b></li>
-            <li>기존 화면 · 단계를 유지하는 대안으로 <b>개발 우선순위가 낮던 요청 반영</b></li>
+            <li>기존 화면·단계를 유지하는 대안으로 <b>개발 우선순위가 낮던 요청 반영</b></li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>요구사항 정의</span><span>개발 협업</span><span>리드타임 분석</span></div>
-            <span class="work-more">자세히 보기 <i>&rarr;</i></span>
+            <span class="work-more">자세히 보기</span>
           </div>
         </div>
         <div class="work-detail" hidden>
@@ -714,7 +700,7 @@
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>현업 요청을 핵심 요구 · 제약 · 대안으로 나눠 정리</li>
+              <li>현업 요청을 핵심 요구·제약·대안으로 나눠 정리</li>
               <li>오류 건 수기 재발급 리드타임을 정리해 개발 필요성의 근거로 제시</li>
               <li>개발 부담이 적은 대안 방식 제안</li>
             </ul>
@@ -727,7 +713,7 @@
             <li><div class="d-box">반영</div><p>화면을 바꾸지 않아 개발 부담이 적은 방식으로 제안 반영</p></li>
           </ol>
           <div class="d-note accent">
-            <h4>결과 · 산출물</h4>
+            <h4>결과·산출물</h4>
             <ul>
               <li>발급 처리 도중 오류 건을 바로 확인</li>
               <li>오류 건 처리 시간 <b>건당 30분–1시간 → 10–20분</b></li>
@@ -742,14 +728,6 @@
           </div>
         </div>
       </article>
-      </div>
-      </div>
-
-      <div class="works-nav">
-        <button type="button" class="works-arrow prev" aria-label="이전 프로젝트">&larr;</button>
-        <span class="works-count" aria-live="polite"><b>01</b> / <span>08</span></span>
-        <button type="button" class="works-arrow next" aria-label="다음 프로젝트">&rarr;</button>
-      </div>
     </div>
   </div>
 </section>
@@ -757,42 +735,42 @@
 <!-- [사용 도구] -->
 <section id="stack" class="tint">
   <div class="wrap">
-    <header class="sec-head reveal">
+    <header class="sec-head">
       <span class="eyebrow">업무 도구</span>
       <h2>도구와 방법론</h2>
       <p class="sec-sub">도구로 실제로 만든 것과 근거 프로젝트 번호입니다.</p>
     </header>
 
     <div class="grid-3">
-      <article class="stack-card panel reveal">
+      <article class="stack-card panel">
         <h3>자동화</h3>
         <ul class="bullets">
-          <li><b>Google Apps Script</b> — 국세청 휴 · 폐업 자동 조회, 30분 주기 (03) · 영업 리드 인입 경로 자동 분류 (02)</li>
+          <li><b>Google Apps Script</b> — 국세청 휴·폐업 자동 조회, 30분 주기 (03)·영업 리드 인입 경로 자동 분류 (02)</li>
           <li><b>Zapier</b> — 출고 요청 48시간 미확인 시 담당자 자동 메일, 시트 → Slack 자동 업로드 (06)</li>
-          <li><b>Slack Workflow · Webhook</b> — 해지 · 폐업 후속 처리 알림 (01) · 리드 분류 실시간 연동 (02)</li>
+          <li><b>Slack Workflow·Webhook</b> — 해지·폐업 후속 처리 알림 (01)·리드 분류 실시간 연동 (02)</li>
         </ul>
       </article>
-      <article class="stack-card panel reveal">
-        <h3>결제 · 가맹점 도메인</h3>
+      <article class="stack-card panel">
+        <h3>결제·가맹점 도메인</h3>
         <ul class="bullets">
-          <li>결제 · 정산 (CMS · VAN · PG)</li>
-          <li>결제 단말기 (POS · CAT · 토스 프론트)</li>
-          <li>ERP (이카운트 · 아마란스) · 모두싸인 (전자계약)</li>
-          <li><b>채널톡 · 솔라피</b> — 미납 안내 알림톡 발송 (03)</li>
+          <li>결제·정산 (CMS·VAN·PG)</li>
+          <li>결제 단말기 (POS·CAT·토스 프론트)</li>
+          <li>ERP (이카운트·아마란스)·모두싸인 (전자계약)</li>
+          <li><b>채널톡·솔라피</b> — 미납 안내 알림톡 발송 (03)</li>
         </ul>
       </article>
-      <article class="stack-card panel reveal">
-        <h3>기획 · 협업</h3>
+      <article class="stack-card panel">
+        <h3>기획·협업</h3>
         <ul class="bullets">
-          <li><b>Figma</b> — 위약금 계산기 3-Step UI 와이어프레임 · 플로우 설계 (04)</li>
+          <li><b>Figma</b> — 위약금 계산기 3-Step UI 와이어프레임·플로우 설계 (04)</li>
         </ul>
-        <p class="stack-note">기본 도구: Notion · Google Workspace</p>
+        <p class="stack-note">기본 도구: Notion·Google Workspace</p>
       </article>
     </div>
 
-    <div class="frameworks reveal">
+    <div class="frameworks">
       <h3>일하는 방식</h3>
-      <p>PRD · 분기 명세 (04) · QA 테스트 케이스 · 엣지 케이스 (04, 05) · SOP · 사용자 가이드 (04) · R&amp;R (06) · AS-IS / TO-BE · 트레이드오프 분석 (05)</p>
+      <p class="parts"><span>PRD</span><span>분기 명세 (04)</span><span>QA 테스트 케이스</span><span>엣지 케이스 (04, 05)</span><span>SOP</span><span>사용자 가이드 (04)</span><span>R&amp;R (06)</span><span>AS-IS / TO-BE</span><span>트레이드오프 분석 (05)</span></p>
     </div>
   </div>
 </section>
@@ -800,23 +778,23 @@
 <!-- [자격증] cert-badge: is-earned = 취득 / is-completed = 수료 -->
 <section id="credentials">
   <div class="wrap">
-    <header class="sec-head reveal">
+    <header class="sec-head">
       <span class="eyebrow">자격증</span>
-      <h2>자격증 · 수료</h2>
+      <h2>자격증·수료</h2>
       <p class="sec-sub">현업 외에도 꾸준히 배우고 인증받고 있습니다.</p>
     </header>
 
     <div class="grid-3 cert-grid">
-      <article class="cert-card reveal"><span class="cert-cat">데이터 · AI</span><h3>ADsP 데이터 분석 준전문가 <small>한국데이터산업진흥원 · 2025.11</small></h3><span class="cert-badge is-earned">취득</span></article>
-      <article class="cert-card reveal"><span class="cert-cat">데이터 · AI</span><h3>AI-POT 1급 <small>한국생산성본부 · 2026.07</small></h3><span class="cert-badge is-earned">취득</span></article>
-      <article class="cert-card reveal"><span class="cert-cat">서비스 · 경영</span><h3>SMAT 서비스경영자격 1급 <small>한국생산성본부 · 2021.07</small></h3><span class="cert-badge is-earned">취득</span></article>
-      <article class="cert-card reveal"><span class="cert-cat">조리</span><h3>조리기능사 (한식 · 양식 · 일식) <small>한국산업인력공단 · 2012–2013</small></h3><span class="cert-badge is-earned">취득</span></article>
-      <article class="cert-card reveal"><span class="cert-cat">데이터 · AI</span><h3>Claude Code in Action <small>Anthropic · 2026.03</small></h3><span class="cert-badge is-completed">수료</span></article>
-      <article class="cert-card reveal"><span class="cert-cat">데이터 · AI</span><h3>자연어 처리의 모든 것 <small>Boostcourse · 2026.04</small></h3><span class="cert-badge is-completed">수료</span></article>
+      <article class="cert-card"><span class="cert-cat">데이터·AI</span><h3>ADsP 데이터 분석 준전문가 <small class="parts"><span>한국데이터산업진흥원</span><span>2025.11</span></small></h3><span class="cert-badge is-earned">취득</span></article>
+      <article class="cert-card"><span class="cert-cat">데이터·AI</span><h3>AI-POT 1급 <small class="parts"><span>한국생산성본부</span><span>2026.07</span></small></h3><span class="cert-badge is-earned">취득</span></article>
+      <article class="cert-card"><span class="cert-cat">서비스·경영</span><h3>SMAT 서비스경영자격 1급 <small class="parts"><span>한국생산성본부</span><span>2021.07</span></small></h3><span class="cert-badge is-earned">취득</span></article>
+      <article class="cert-card"><span class="cert-cat">조리</span><h3>조리기능사 (한식·양식·일식) <small class="parts"><span>한국산업인력공단</span><span>2012–2013</span></small></h3><span class="cert-badge is-earned">취득</span></article>
+      <article class="cert-card"><span class="cert-cat">데이터·AI</span><h3>Claude Code in Action <small class="parts"><span>Anthropic</span><span>2026.03</span></small></h3><span class="cert-badge is-completed">수료</span></article>
+      <article class="cert-card"><span class="cert-cat">데이터·AI</span><h3>자연어 처리의 모든 것 <small class="parts"><span>Boostcourse</span><span>2026.04</span></small></h3><span class="cert-badge is-completed">수료</span></article>
     </div>
 
     <!-- 사이드 프로젝트: 펼칠 때만 iframe을 불러옵니다 -->
-    <div class="side-project reveal">
+    <div class="side-project">
       <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
         <span class="sp-dot" aria-hidden="true"></span>
         <span class="sp-toggle-main"><b>사이드 프로젝트</b><span>업무 외적으로 진행한 개인 프로젝트입니다.</span></span>
@@ -859,15 +837,15 @@
     <span class="hero-rule" aria-hidden="true"></span>
     <div class="contact-body">
       <span class="eyebrow">연락처</span>
-      <h2 class="reveal">더 나은 변화를 함께 만들어갑니다</h2>
-      <p class="reveal">복잡한 운영을 시스템으로 만드는 일을 함께 하고 싶습니다.<br />운영 기획 · 프로덕트 기획 직무 제안을 환영합니다.</p>
+      <h2 >더 나은 변화를 함께 만들어갑니다</h2>
+      <p >복잡한 운영을 시스템으로 만드는 일을 함께 하고 싶습니다.<br />운영 기획·프로덕트 기획 직무 제안을 환영합니다.</p>
 
       <div class="contact-grid">
-        <a class="contact-card reveal" href="mailto:easter3538@naver.com"><b>Email</b><span>easter3538@naver.com</span></a>
-        <a class="contact-card reveal" href="https://drive.google.com/uc?export=download&amp;id=1J_pDKfSwpOclMBk69iSD8uDriS_Xvk8O" target="_blank" rel="noopener noreferrer"><b>Resume</b><span>이력서 다운로드 (PDF)</span></a>
-        <a class="contact-card reveal" href="https://app.notion.com/p/Resume-1b3518dc10ce80929964cc9c649ad2d5?source=copy_link" target="_blank" rel="noopener noreferrer"><b>Notion</b><span>노션 이력서 보기</span></a>
-        <a class="contact-card reveal" href="https://www.linkedin.com/in/yeseul-you" target="_blank" rel="noopener noreferrer"><b>LinkedIn</b><span>linkedin.com/in/yeseul-you</span></a>
-        <a class="contact-card reveal" href="https://github.com/KUROTONI" target="_blank" rel="noopener noreferrer"><b>GitHub</b><span>github.com/KUROTONI</span></a>
+        <a class="contact-card" href="mailto:easter3538@naver.com"><b>Email</b><span>easter3538@naver.com</span></a>
+        <a class="contact-card" href="https://drive.google.com/uc?export=download&amp;id=1J_pDKfSwpOclMBk69iSD8uDriS_Xvk8O" target="_blank" rel="noopener noreferrer"><b>Resume</b><span>이력서 다운로드 (PDF)</span></a>
+        <a class="contact-card" href="https://app.notion.com/p/Resume-1b3518dc10ce80929964cc9c649ad2d5?source=copy_link" target="_blank" rel="noopener noreferrer"><b>Notion</b><span>노션 이력서 보기</span></a>
+        <a class="contact-card" href="https://www.linkedin.com/in/yeseul-you" target="_blank" rel="noopener noreferrer"><b>LinkedIn</b><span>linkedin.com/in/yeseul-you</span></a>
+        <a class="contact-card" href="https://github.com/KUROTONI" target="_blank" rel="noopener noreferrer"><b>GitHub</b><span>github.com/KUROTONI</span></a>
       </div>
     </div>
   </div>
@@ -875,7 +853,7 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <span>YESEUL · 포트폴리오 2026</span>
+    <span>YESEUL·포트폴리오 2026</span>
     <span>© 2026 Yeseul You</span>
   </div>
 </footer>
