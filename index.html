@@ -83,7 +83,7 @@
 <section class="stats" aria-label="주요 성과 요약">
   <div class="wrap stats-grid">
     <div class="stat"><span class="stat-n">4<span class="unit">년 4개월</span></span><span class="stat-label">운영·기획 경력</span></div>
-    <div class="stat"><span class="stat-n">8<i>→</i>15<em>%</em></span><span class="stat-label">미납금 평균 회수율 (아이샵케어)</span></div>
+    <div class="stat"><span class="stat-n">40<span class="unit">만</span><i>→</i>160<span class="unit">만</span></span><span class="stat-label">해지 위약금 월 순회수액 (아이샵케어)</span></div>
     <div class="stat"><span class="stat-n">2<span class="unit">시간</span><i>→</i>20<span class="unit">분</span></span><span class="stat-label">영업 리드 매칭 시간, 하루 기준 (아이샵케어)</span></div>
   </div>
 </section>
@@ -188,8 +188,9 @@
         </div>
         <div class="work-main">
           <ul class="bullets">
-            <li>위약금 청구 기준을 실제 장비 감가상각으로 변경 → 해지 1건당 <b>180,000원 → 480,000원</b></li>
-            <li>가맹점 안내·진행 프로세스 표준화</li>
+            <li>해지 위약금 월 순회수액 <b>40만 원 → 160만 원</b> (4배, 환불 차감 후)</li>
+            <li>폐업 조기 감지로 월 청구 건수 <b>15건 → 90건</b></li>
+            <li>위약금을 <b>장비 반납 유도 장치</b>로 재설계 (반납 시 환불, 미반납 시 실제 장비 손실 기준 청구)</li>
           </ul>
           <div class="work-foot">
             <div class="tags"><span>크로스 검증</span><span>Slack 자동화</span></div>
@@ -221,19 +222,18 @@
           <ol class="d-flow">
             <li><div class="d-box">감지</div><p>CX 상담 내역 중 해지 / 폐업 문의 매일 확인, 가맹점 사업자번호 휴·폐업 조회</p></li>
             <li><div class="d-box">진단</div><p>장비 회수 데이터 + 국세청 + CX 상담 내역 크로스 검증, 문제 건수·유형별 케이스 정량 파악</p></li>
-            <li><div class="d-box">위약금 기준 재설계</div><p>"월 CMS × 잔여 개월 수"로 단순 계산하던 위약금을 실제 장비 가격의 감가상각 기준으로 다시 설계</p></li>
+            <li><div class="d-box">위약금 구조 재설계</div><p>기존 위약금은 "월 CMS × 잔여 개월 수"로 계산했습니다. 그런데 CMS는 장비를 36개월간 정상 사용한다는 전제로 장비값을 나눠 책정한 요금이라, 약정을 채우지 못한 해지에서 실제로 생기는 장비 손실을 반영하지 못했습니다. 그래서 해지 시점의 장비 감가상각 잔존가치 기준으로 다시 설계하고, 장비가 정상 반납되면 위약금을 환불해 <b>손실 보전과 장비 회수 유도</b>를 함께 하도록 했습니다.</p></li>
             <li><div class="d-box">데이터 자동 적재</div><p>고객 여정 시작부터 끝까지 퍼널별 데이터가 한 번의 입력으로 자동 적재되는 프로세스 구축</p></li>
             <li><div class="d-box">후속 처리 표준화</div><p>Slack 자동화 + 담당자 지정 + 후속 작업 표준화로 재발 방지</p></li>
           </ol>
           <div class="d-note accent">
             <h4>결과·산출물</h4>
             <ul>
-                            <li>위약금 산정 기준을 "월 CMS × 잔여 개월 수"에서 실제 장비 가격의 감가상각으로 변경 → 해지 1건당 청구액 <b>180,000원 → 480,000원</b></li>
-              <li>상향된 청구액 기준 회수율 <b>10%</b>, 지속 미납 시 추심사 이관으로 후속 조치</li>
-              <li>청구 기준 변경 후 늘어난 분쟁에 맞춰 계약서 상세 약관 개정</li>
-              <li>고객이 고객센터에 먼저 문의해야 위약금을 안내하던 방식 → 폐업을 조기 감지해 회사가 먼저 연락하는 방식으로 전환</li>
-              <li>퍼널별 데이터 자동 적재 프로세스 구축</li>
-              <li>가맹점 안내 및 진행 프로세스 표준화</li>
+              <li>해지 위약금 월 순회수액 <b>40만 원 → 160만 원</b> (장비 반납 건 환불 차감 후)</li>
+              <li>고객 문의를 기다리던 방식에서 폐업을 먼저 감지해 연락하는 방식으로 전환 → 월 청구 건수 <b>15건 → 90건</b></li>
+              <li>위약금 산정을 실제 장비 손실 기준으로 변경 (대표 사례 건당 18만 원 → 48만 원)</li>
+              <li>지속 미납 건은 추심사로 이관하고, 청구 기준 변경에 맞춰 계약서 상세 약관을 개정해 분쟁 근거 정비</li>
+              <li>퍼널별 데이터 자동 적재, 가맹점 안내·진행 프로세스 표준화</li>
             </ul>
           </div>
           <div class="d-note">
@@ -314,21 +314,21 @@
       </article>
 
       <!-- 03 -->
-      <article class="work-card" tabindex="0" role="button" aria-label="미납 가맹점 관리 자세히 보기">
+      <article class="work-card" tabindex="0" role="button" aria-label="미납 가맹점 관리 체계 구축 자세히 보기">
         <div class="work-side">
           <span class="work-no">프로젝트 03</span>
-          <h3>미납 가맹점 관리</h3>
-          <p class="work-sub">단계별 회수 프로세스 설계 및 주간 보고</p>
-          <span class="work-meta parts"><span>결제 운영</span><span>2024–2026</span><span>프로세스 설계</span></span>
+          <h3>미납 가맹점 관리 체계 구축</h3>
+          <p class="work-sub">출금 정책 재설계부터 단계별 회수·추심 이관까지</p>
+          <span class="work-meta parts"><span>결제 운영</span><span>2024–2026</span><span>정책 기획</span><span>프로세스 설계</span></span>
         </div>
         <div class="work-main">
           <ul class="bullets">
-            <li>미납금 평균 회수율 <b>8% → 15%</b> 개선 (가맹점 증가로 미납 규모가 커지는 중에도 상승)</li>
-            <li>최근 1년 월평균 회수액 <b>약 250만 원</b>, 최대 <b>월 700만 원</b> 회수</li>
-            <li>월 <b>약 2,300만 원</b>(최근 기준) 규모의 미납 데이터를 장기·고액·일반으로 분류</li>
+            <li>미납금 평균 회수율 <b>8% → 15%</b> (가맹점 증가로 미납 규모가 커지는 중에도 개선)</li>
+            <li>최근 1년 월평균 회수액 <b>약 250만 원</b>, 최대 <b>월 700만 원</b></li>
+            <li>일괄 출금 → <b>부분 출금</b> 정책 전환, 수수료 역전 구간 사전 차단</li>
           </ul>
           <div class="work-foot">
-            <div class="tags"><span>Apps Script</span><span>Outbound 설계</span><span>주간 보고</span></div>
+            <div class="tags"><span>정책 기획</span><span>Outbound 설계</span><span>Apps Script</span></div>
             <span class="work-more">자세히 보기</span>
           </div>
         </div>
@@ -336,51 +336,49 @@
           <div class="d-note">
             <h4>문제 정의</h4>
             <ul>
-              <li>CMS 미납 가맹점 관리 체계가 없어 최초 미납 데이터부터 만들었습니다.</li>
-              <li>데이터 취합 이후에도 전월 미납 고객에 대한 사후 대응 중심이라 장기·고액 미납이 계속 누적되었습니다.</li>
-              <li>폐업 후 연락 두절 등 회수 사각지대 고객이 발생해 정상 채권 회수가 어려운 구조였습니다.</li>
+              <li>CMS 미납 가맹점을 관리하는 체계가 없어, 미납 데이터부터 새로 만들어야 했습니다.</li>
+              <li>잔액이 총 미납금 이상일 때만 일괄 출금하는 CMS 방식 때문에, 잔액이 부족한 가맹점의 미납이 회수 없이 계속 쌓였습니다.</li>
+              <li>전월 미납 고객에 대한 사후 대응에 그쳐 장기·고액 미납이 누적되었고, 폐업 후 연락 두절 같은 회수 사각지대도 있었습니다.</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>목표</h4>
             <ul>
-              <li>사후 대응 중심의 미납 관리를 사전 탐지·유형별 회수 체계로 전환하기</li>
+              <li>사후 대응에 그치던 미납 관리를, 출금 정책부터 회수·추심까지 이어지는 단계별 체계로 바꾸기</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>내 역할</h4>
             <ul>
-              <li>미납 데이터 최초 구축, 분류 기준·4단계 Outbound 설계</li>
+              <li>출금 정책 AS-IS 분석, 변경안 도출 및 적용</li>
+              <li>미납 데이터 최초 구축, 분류 기준과 4단계 Outbound 설계</li>
               <li>국세청 휴·폐업 자동 조회 Apps Script 제작</li>
-              <li>CX·Finance와 추심 이관 프로세스 수립</li>
-              <li>매주 팀 위클리 미팅에 미납·회수 현황 보고</li>
+              <li>CX·Finance와 추심 이관 프로세스 수립, 주간 현황 보고</li>
             </ul>
           </div>
           <h4 class="d-label">진행 과정</h4>
           <ol class="d-flow">
-            <li><div class="d-box">감지</div><p>국세청 휴·폐업 자동 조회 Apps Script 제작. 월별 미납 데이터와 CMS 입금 데이터 매칭으로 미납 / 해소 / 예상 사전 탐지</p></li>
-            <li><div class="d-box">분류</div><p>월 <b>약 2,300만 원</b> 규모의 미납 데이터를 장기·고액·일반으로 분류해 상황별 회수 시나리오 매칭</p></li>
-            <li><div class="d-box">액션 및 관리</div><p>자동이체 출금일에 맞춰 <b>5일 → 10일 → 14일 → 20일</b> 4단계 Outbound 설계. 회수 금액 중 당월 정상·미납 출금액 구별 관리</p></li>
-            <li><div class="d-box">추심사 이관</div><p>외부 추심사 이관 기준 및 프로세스 수립. CX팀 응대 매뉴얼 전달, Finance팀과 수수료·세금계산서 처리 정합성 확보</p></li>
-            <li><div class="d-box">주간 보고</div><p>매주 팀 위클리 미팅에 미납·회수 현황 보고 → 팀장이 리더 미팅의 의사결정 자료로 활용</p></li>
+            <li><div class="d-box">정책 진단</div><p>잔액이 총 미납금 이상일 때만 출금하는 방식 때문에, 저잔액 가맹점의 미납이 회수 없이 쌓이는 구조를 확인했습니다.</p></li>
+            <li><div class="d-box">정책 변경과 리스크 검증</div><p>잔액을 모두 출금하는 부분 출금 방식으로 바꾸기 전에, 잔액 200원 미만에서는 출금액보다 이체 수수료가 커지는 <b>역전 구간</b>을 찾았습니다. 최소 출금 단위를 설정해 이를 차단하고, 월 CMS 1천 원 미만 소액 가맹점은 금액대별로 분석해 의사결정 근거를 만들었습니다.</p></li>
+            <li><div class="d-box">감지와 분류</div><p>미납 데이터를 새로 구축하고, 최근 기준 월 <b>약 2,300만 원</b> 규모의 미납을 장기·고액·일반으로 나눴습니다. 국세청 휴·폐업 자동 조회(30분 주기)로 폐업 가맹점을 먼저 걸러냈습니다.</p></li>
+            <li><div class="d-box">단계별 회수</div><p>자동이체 출금일에 맞춰 <b>5일 → 10일 → 14일 → 20일</b> 4단계 Outbound를 설계했습니다. 6개월 미입금 건은 외부 추심사로 넘기는 기준을 세우고, CX팀에 응대 매뉴얼을 전달했으며 Finance팀과 수수료·세금계산서 처리 기준을 맞췄습니다.</p></li>
+            <li><div class="d-box">주간 보고</div><p>매주 팀 위클리 미팅에서 미납·회수 현황을 보고했고, 이 자료는 리더 미팅의 의사결정 자료로 쓰였습니다.</p></li>
           </ol>
           <div class="d-note accent">
             <h4>결과·산출물</h4>
             <ul>
-              <li>미납금 평균 회수율 <b>8% → 15%</b> (회수율 = 월 회수액 ÷ 월 총 미납금) — 가맹점 수 증가로 미납 규모가 매달 커지는 상황에서도 회수율 개선, 부분 출금 정책(프로젝트 05)과 함께 설계한 결과</li>
-              <li>최근 1년 월평균 회수액 약 250만 원, 최대 월 700만 원 회수</li>
-              <li>미납 사유별 (장기·고액·폐업 후 미인입) 세분화 목록 관리</li>
-              <li>미납 기간 및 자동 출금 일자별 Outbound 회수 프로세스 설계</li>
-              <li>국세청 휴·폐업 자동 조회 Apps Script 도입 (30분 주기 트리거)</li>
-              <li>6개월 미입금 시 외부 추심사 이관 로직 표준화</li>
-              <li>미납 발생부터 해소까지 분류별·단계별 데이터 제작</li>
+              <li>미납금 평균 회수율 <b>8% → 15%</b> (회수율 = 월 회수액 ÷ 월 총 미납금)</li>
+              <li>최근 1년 월평균 회수액 약 250만 원, 최대 월 700만 원</li>
+              <li>정책 적용 후 미납 비율(금액 기준) 약 30% → 27%</li>
+              <li>부분 출금 정책 실제 적용, 수수료 역전 구간 차단</li>
+              <li>6개월 미입금 시 추심사 이관 로직 표준화</li>
             </ul>
           </div>
           <div class="d-note">
             <h4>배운 점</h4>
             <ul>
-              <li>데이터가 없을 때는 기준부터 만들어야 했습니다.</li>
-              <li>분류가 명확해야 다음 액션도 명확해졌습니다.</li>
+              <li>좋은 정책 가설도 엣지 케이스 하나로 손해가 될 수 있어, 수치로 먼저 검증해야 했습니다.</li>
+              <li>데이터가 없을 때는 기준부터 만들어야 했고, 분류가 명확해야 다음 액션도 명확해졌습니다.</li>
             </ul>
           </div>
         </div>
@@ -454,90 +452,9 @@
       </article>
 
       <!-- 05 -->
-      <article class="work-card" tabindex="0" role="button" aria-label="CMS 결제 정책 개선 자세히 보기">
-        <div class="work-side">
-          <span class="work-no">프로젝트 05</span>
-          <h3>CMS 결제 정책 개선</h3>
-          <p class="work-sub">CMS 출금 정책 재설계</p>
-          <span class="work-meta parts"><span>결제 운영</span><span>2024</span><span>정책 기획</span></span>
-        </div>
-        <div class="work-main">
-          <ul class="bullets">
-            <li>일괄 출금 → <b>부분 출금</b> 방식으로 정책 변경·<b>실제 적용</b></li>
-            <li>저잔액 케이스 이체 수수료 <b>역전 리스크</b> 사전 분석 및 액션 플랜 도출</li>
-          </ul>
-          <div class="work-foot">
-            <div class="tags"><span>정책 기획</span><span>트레이드오프</span></div>
-            <span class="work-more">자세히 보기</span>
-          </div>
-        </div>
-        <div class="work-detail" hidden>
-          <div class="d-note">
-            <h4>문제 정의</h4>
-            <ul>
-              <li>기존 CMS는 고객 통장 잔액이 총 미납금 이상일 때만 일괄 출금하는 방식이었습니다.</li>
-              <li>잔액이 부족한 가맹점의 미납이 계속 누적되어 정상 회수가 어려운 구조였습니다.</li>
-            </ul>
-          </div>
-          <div class="d-note">
-            <h4>목표</h4>
-            <ul>
-              <li>저잔액 가맹점도 회수가 시작되도록 출금 정책을 바꾸되, 변경 전에 리스크부터 검증하기</li>
-            </ul>
-          </div>
-          <div class="d-note">
-            <h4>내 역할</h4>
-            <ul>
-              <li>AS-IS 분석·변경안 도출·적용</li>
-              <li>수수료 역전 구간 발견 → 최소 출금 단위·소액 가맹점 분석 등 보완책 마련</li>
-            </ul>
-          </div>
-          <h4 class="d-label">판단 흐름</h4>
-          <p class="d-logic-intro">정책 변경 전 발생할 수 있는 리스크와 엣지 케이스를 미리 탐지하고 보완하였습니다.</p>
-          <ol class="d-logic">
-            <li>
-              <span class="d-logic-role">관찰·AS-IS</span>
-              <h5>분석</h5>
-              <p>잔액이 총 미납금 이상일 때만 출금하는 기존 방식에서 저잔액 가맹점의 미납이 계속 누적되는 구조를 확인했습니다.</p>
-            </li>
-            <li>
-              <span class="d-logic-role">가설·TO-BE</span>
-              <h5>변경</h5>
-              <p>잔액이 미납금 이하여도 잔액을 모두 출금하는 부분 출금 방식이면 저잔액 구간에서도 회수가 시작되어 미납 비율이 줄어들 것으로 보았습니다.</p>
-            </li>
-            <li class="is-pivot">
-              <span class="d-logic-role">반증·Trade-off</span>
-              <h5>리스크</h5>
-              <p>계좌 잔액 200원 미만이면 출금액 &lt; 이체 수수료가 되어 <b>회수할수록 손해인 역전 구간</b>을 발견했습니다.</p>
-            </li>
-            <li>
-              <span class="d-logic-role">결론·Decision</span>
-              <h5>보완</h5>
-              <p>① 최소 출금 단위를 설정해 역전 구간을 차단하고, ② 월 CMS 1천 원 미만 소액 가맹점을 리스트업해 금액대별 비율을 분석, 의사결정 근거 데이터를 만들었습니다.</p>
-            </li>
-          </ol>
-          <div class="d-note accent">
-            <h4>결과·산출물</h4>
-            <ul>
-              <li>CMS 부분 출금 정책 변경안 도출 및 실제 적용</li>
-              <li>적용 후 미납 비율(금액 기준) 약 <b>30% → 27%</b></li>
-              <li>정책 변경으로 인한 리스크 사전 분석 및 액션 플랜 도출</li>
-            </ul>
-          </div>
-          <div class="d-note">
-            <h4>배운 점</h4>
-            <ul>
-              <li>좋은 가설도 엣지 케이스 하나로 뒤집힐 수 있었습니다.</li>
-              <li>정책은 수치로 먼저 검증한 뒤 제안해야 설득력이 생겼습니다.</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- 06 -->
       <article class="work-card" tabindex="0" role="button" aria-label="자산명세서 데이터 확인 프로세스 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 06</span>
+          <span class="work-no">프로젝트 05</span>
           <h3>자산명세서 데이터 확인 프로세스</h3>
           <p class="work-sub">출고·계약서·회계 데이터 매칭</p>
           <span class="work-meta parts"><span>운영 기획</span><span>2024</span><span>부서 간 협업</span></span>
@@ -599,10 +516,10 @@
         </div>
       </article>
 
-      <!-- 07 -->
+      <!-- 06 -->
       <article class="work-card" tabindex="0" role="button" aria-label="법인카드 재발급 일괄 처리 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 07</span>
+          <span class="work-no">프로젝트 06</span>
           <h3>법인카드 재발급 일괄 처리</h3>
           <p class="work-sub">건별 수기 재발급 → Excel 업로드 일괄 처리 전환</p>
           <span class="work-meta parts"><span>운영 기획</span><span>2023</span><span>프로세스 설계</span></span>
@@ -664,10 +581,10 @@
           </div>
         </div>
       </article>
-      <!-- 08 -->
+      <!-- 07 -->
       <article class="work-card" tabindex="0" role="button" aria-label="대량 발급 오류 사전 표기 자세히 보기">
         <div class="work-side">
-          <span class="work-no">프로젝트 08</span>
+          <span class="work-no">프로젝트 07</span>
           <h3>대량 발급 오류 사전 표기</h3>
           <p class="work-sub">현업의 불편을 개발 가능한 요구사항으로 전환</p>
           <span class="work-meta parts"><span>운영 기획</span><span>2023</span><span>개발 요구사항 정의</span></span>
@@ -746,7 +663,7 @@
         <h3>자동화</h3>
         <ul class="bullets">
           <li><b>Google Apps Script</b> — 국세청 휴·폐업 자동 조회, 30분 주기 (03)·영업 리드 인입 경로 자동 분류 (02)</li>
-          <li><b>Zapier</b> — 출고 요청 48시간 미확인 시 담당자 자동 메일, 시트 → Slack 자동 업로드 (06)</li>
+          <li><b>Zapier</b> — 출고 요청 48시간 미확인 시 담당자 자동 메일, 시트 → Slack 자동 업로드 (05)</li>
           <li><b>Slack Workflow·Webhook</b> — 해지·폐업 후속 처리 알림 (01)·리드 분류 실시간 연동 (02)</li>
         </ul>
       </article>
@@ -770,7 +687,7 @@
 
     <div class="frameworks">
       <h3>일하는 방식</h3>
-      <p class="parts"><span>PRD</span><span>분기 명세 (04)</span><span>QA 테스트 케이스</span><span>엣지 케이스 (04, 05)</span><span>SOP</span><span>사용자 가이드 (04)</span><span>R&amp;R (06)</span><span>AS-IS / TO-BE</span><span>트레이드오프 분석 (05)</span></p>
+      <p class="parts"><span>PRD</span><span>분기 명세 (04)</span><span>QA 테스트 케이스</span><span>엣지 케이스 (03, 04)</span><span>SOP</span><span>사용자 가이드 (04)</span><span>R&amp;R (05)</span><span>AS-IS / TO-BE</span><span>트레이드오프 분석 (03)</span></p>
     </div>
   </div>
 </section>
