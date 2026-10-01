@@ -320,6 +320,7 @@ html.js .work-card:not(.is-active) .work-more { visibility: hidden; }
 /* [사용 도구] */
 .stack-card { padding: 32px 30px; }
 .stack-card h3 { font-size: 19px; margin-bottom: 22px; }
+.stack-note { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 13.5px; color: var(--muted); }
 .frameworks { margin-top: 20px; background: var(--navy); border-radius: var(--radius); padding: 28px 36px; }
 .frameworks h3 { color: var(--sand); font-size: 18px; margin-bottom: 6px; }
 .frameworks p { color: rgba(255, 255, 255, 0.9); font-size: 15px; font-weight: 600; }
