@@ -39,7 +39,6 @@
     <li><a href="#about">소개</a></li>
     <li><a href="#works">프로젝트</a></li>
     <li><a href="#stack">도구</a></li>
-    <li><a href="#side">사이드 프로젝트</a></li>
     <li><a href="#credentials">자격증</a></li>
   </ul>
   <a class="nav-cta" href="#contact">연락하기</a>
@@ -133,6 +132,7 @@
        - work-main   : 카드에 보이는 성과 3줄 + 태그
        - work-detail (hidden) : 팝업 본문. hidden은 지우지 마세요.
      · 그 밖의 프로젝트 05~07: <article class="work-card is-compact">. 목록 한 줄로 보이고, 누르면 01~04와 같은 팝업이 열립니다.
+     · 사이드 프로젝트(고유명사 지킴이): 07 아래 맨 끝. 팝업 없이 카드 한 장 (아래 [사이드 프로젝트] 주석 참고)
      · 도식(svg)은 이 파일 안에 직접 들어 있습니다. assets/diagrams 폴더에는 같은 그림의 사본과,
        '크게 보기' 링크로 여는 상세 도식(p02-detect.svg, p07-flow.svg)이 있습니다. -->
 <section id="works">
@@ -675,6 +675,47 @@
         </div>
       </article>
     </div>
+
+    <!-- [사이드 프로젝트] 프로젝트 섹션 맨 아래. 메인 프로젝트보다 가볍게: 머리글 한 줄 + 문제·접근·결과 3칸 (팝업 없음)
+         · 역량 태그(sp-tags): <li> 하나가 태그 하나
+         · 데모(iframe)는 '펼쳐서 체험'을 처음 누를 때만 불러옵니다 (main.js 8)
+         · 데모 주소가 바뀌면 3곳을 함께 고치세요: sp-newtab의 href, sp-frame-url 글자, spFrame의 data-src -->
+    <div class="side-project" id="side">
+      <span class="side-label">사이드 프로젝트</span>
+      <h3>업무 방식을 낯선 문제에 적용해 본 기록</h3>
+      <p class="side-sub">바꿀 수 없는 시스템은 두고, 앞뒤 흐름을 설계해 해결합니다.</p>
+
+      <article class="sp-card">
+        <header class="sp-head">
+          <div class="sp-title">
+            <h4>고유명사 지킴이</h4>
+            <p>웹소설 맞춤법 검사 도우미 · 단독 진행</p>
+          </div>
+          <ul class="sp-tags" aria-label="역량">
+            <li>문제 정의</li>
+            <li>프로세스 설계</li>
+            <li>AI 활용</li>
+          </ul>
+        </header>
+        <dl class="sp-pal">
+          <div><dt>문제</dt><dd>검사기가 인물·지명까지 일반 단어로 고침</dd></div>
+          <div><dt>접근</dt><dd>검사기는 그대로, 치환 → 검사 → 복원 흐름 설계</dd></div>
+          <div><dt>결과</dt><dd>조사 자동 검증, 서버 없이 브라우저에서 동작</dd></div>
+        </dl>
+        <div class="sp-try">
+          <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
+            <span class="sp-toggle-open">펼쳐서 체험</span><span class="sp-toggle-close">접기</span><span class="sp-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <a class="sp-newtab" href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 8 8M12 9.5v4H2.5V4h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="sp-panel" id="spPanel" hidden>
+          <div class="sp-frame">
+            <div class="sp-frame-bar"><span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span></div>
+            <iframe id="spFrame" data-src="https://kurotoni.github.io/novel-spell-checker/" title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -720,52 +761,6 @@
     <div class="frameworks">
       <h3>일하는 방식</h3>
       <p class="parts"><span>요구사항 정의·PRD (04, 05, 06)</span><span>분기 명세 (01, 02, 03, 05)</span><span>엣지 케이스 검증 (01, 03, 05)</span><span>QA 테스트 케이스 (05)</span><span>SOP·매뉴얼 (01, 02, 07)</span><span>사용자 가이드 (03, 05)</span><span>R&amp;R (07)</span><span>트레이드오프 분석 (01, 06)</span><span>AS-IS / TO-BE</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- [사이드 프로젝트] '도구' 섹션 바로 다음에 둡니다. 데모(iframe)는 펼칠 때만 불러옵니다 (main.js 8) -->
-<section id="side" class="tint">
-  <div class="wrap">
-    <header class="sec-head">
-      <span class="eyebrow">사이드 프로젝트</span>
-      <h2>업무 밖에서 만든 도구</h2>
-      <p class="sec-sub">문제 정의부터 배포까지 혼자 진행한 개인 프로젝트입니다.</p>
-    </header>
-    <!-- 기본으로 펼쳐 보이는 사례 소개. 무거운 데모(iframe)만 접어 두고, 누를 때 불러옴 (main.js 8) -->
-    <div class="side-project">
-      <article class="sp-card">
-        <div class="sp-info">
-          <header class="sp-card-head">
-            <h4><a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">고유명사 지킴이<span class="sp-ext" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></h4>
-            <p class="sp-card-sub">웹소설 맞춤법 검사 도우미</p>
-            <span class="sp-card-tag">단독 진행</span>
-          </header>
-          <p class="sp-desc">맞춤법 검사기는 소설 속 인물 이름과 지명까지 일반 단어로 고쳐 버립니다. 검사기 자체는 바꿀 수 없으니 앞뒤 흐름을 설계해 풀었습니다. 고유명사를 잠시 코드로 바꿔 검사를 돌리고, 끝나면 원래 이름으로 되돌립니다.</p>
-          <div class="sp-made">
-            <span class="sp-made-label">만드는 과정</span>
-            <p>문제 정의부터 화면 설계, 개발, 배포까지 혼자 진행했고, 구현은 AI와 주고받으며 완성했습니다. 바꿀 수 없는 시스템은 그대로 두고 앞뒤 흐름으로 문제를 푸는, 업무에서 쓰던 방식을 낯선 영역에 적용해 본 프로젝트입니다.</p>
-          </div>
-        </div>
-        <ul class="sp-points">
-            <li><b>치환 → 검사 → 복원</b><span>고유명사를 코드로 바꿔 검사를 돌린 뒤 원래 이름으로 되돌립니다</span></li>
-            <li><b>조사 자동 검증</b><span>받침에 따라 은/는, 이/가가 맞는지 확인합니다</span></li>
-            <li><b>서버 없이 동작</b><span>사전은 브라우저에만 저장되고 외부로 전송되지 않습니다</span></li>
-          </ul>
-        <div class="sp-try">
-          <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
-            <span class="sp-toggle-main">펼쳐서 바로 사용해 볼 수 있습니다</span>
-            <span class="sp-toggle-cta"><span class="sp-toggle-cta-text">펼쳐보기</span><span class="sp-toggle-icon" aria-hidden="true"></span></span>
-          </button>
-          <a class="sp-newtab" href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기</a>
-        </div>
-        <div class="sp-panel" id="spPanel" hidden>
-          <div class="sp-frame">
-            <div class="sp-frame-bar"><span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span></div>
-            <iframe id="spFrame" data-src="https://kurotoni.github.io/novel-spell-checker/" title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          </div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
