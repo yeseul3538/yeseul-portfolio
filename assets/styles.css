@@ -285,55 +285,47 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .cert-badge.is-earned { background: var(--navy); color: #fff; }
 .cert-badge.is-completed { color: var(--coral-d); border: 1px solid var(--coral); }
 
-/* [사이드 프로젝트] */
-.side-project { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
-#side .side-project { margin-top: 0; padding-top: 0; border-top: 0; }
-.sp-toggle {
-  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
-  width: 100%; text-align: left; cursor: pointer; font: inherit; color: inherit;
-  padding: 15px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm);
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+/* [사이드 프로젝트] 펼쳐 보이는 사례 소개 — 왼쪽: 소개·문제·과정 / 오른쪽: 기능 3가지 / 아래: 데모(누르면 열림) */
+.sp-card {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-areas: "info points" "try try" "panel panel";
+  gap: 0 56px; padding: 36px 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
 }
-.sp-toggle:hover { border-color: var(--line-d); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.sp-dot { position: relative; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
-.sp-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--coral); opacity: 0; animation: spPulse 2.8s ease-out infinite; }
-@keyframes spPulse { 0% { transform: scale(0.6); opacity: 0.7; } 70%, 100% { transform: scale(1.25); opacity: 0; } }
-.sp-toggle[aria-expanded="true"] .sp-dot::after { animation: none; }
-.sp-toggle-main b { display: block; font-size: 13px; font-weight: 800; letter-spacing: 0.1em; }
-.sp-toggle-main > span { display: block; font-size: 14px; color: var(--muted); }
-.sp-toggle-cta { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; font-size: 14px; font-weight: 700; color: var(--coral-d); }
-.sp-toggle-icon { border-block: 4px solid transparent; border-left: 6px solid currentColor; transition: transform 0.25s; }
-.sp-toggle:hover .sp-toggle-icon { transform: translateX(2px); }
-.sp-toggle[aria-expanded="true"] .sp-toggle-icon { transform: rotate(90deg); }
-
-.sp-panel { padding-top: 14px; }
-.sp-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 28px 30px; }
-.sp-panel:not([hidden]) .sp-card { animation: spRise 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
-@keyframes spRise { from { opacity: 0; transform: translateY(14px); } }
-.sp-card-head { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 14px; margin-bottom: 14px; }
-.sp-card-head h4 { font-size: 19px; }
-.sp-card-head h4 a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; transition: color 0.2s; }
-.sp-card-head h4 a:hover { color: var(--coral-d); }
-.sp-ext { display: inline-flex; color: var(--muted); transition: transform 0.2s; }
+.sp-info { grid-area: info; }
+.sp-card-head h4 { font-size: 20px; }
+.sp-card-head h4 a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; }
+.sp-card-head h4 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.sp-ext { display: inline-flex; color: var(--muted); }
 .sp-ext svg { width: 14px; height: 14px; }
-.sp-card-head h4 a:hover .sp-ext { transform: translate(2px, -2px); }
-.sp-card-sub { font-size: 14px; color: var(--muted); }
-.sp-card-tag { font-size: 12px; font-weight: 700; background: var(--cream-2); border-radius: 999px; padding: 4px 12px; white-space: nowrap; }
-.sp-desc, .sp-made p { font-size: 15px; line-height: 1.8; max-width: 70ch; }
-.sp-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
-.sp-points li { background: var(--cream-2); border-radius: 6px; padding: 14px 16px; }
-.sp-points b { display: block; font-size: 14px; margin-bottom: 4px; }
-.sp-points span { font-size: 13.5px; line-height: 1.65; }
-.sp-frame { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--cream-2); }
-.sp-frame-bar { display: flex; align-items: center; gap: 11px; padding: 9px 13px; border-bottom: 1px solid var(--line); }
-.sp-dots { display: flex; gap: 5px; }
-.sp-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line-d); }
+.sp-card-sub { margin-top: 4px; font-size: 15px; color: var(--muted); }
+.sp-card-tag { display: block; margin-top: 2px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.sp-desc { margin-top: 18px; font-size: 15px; line-height: 1.8; }
+.sp-made { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.sp-made-label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.sp-made p { font-size: 15px; line-height: 1.8; }
+.sp-points { grid-area: points; align-self: start; border-top: 1px solid var(--line); }
+.sp-points li { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.sp-points b { display: block; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+.sp-points span { display: block; font-size: 14px; line-height: 1.65; color: var(--muted); }
+.sp-try { grid-area: try; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line); }
+.sp-toggle { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 0; background: none; border: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.sp-toggle-main { font-size: 14px; color: var(--muted); }
+.sp-toggle-cta { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: var(--navy); }
+.sp-toggle:hover .sp-toggle-cta-text, .sp-toggle:focus-visible .sp-toggle-cta-text { text-decoration: underline; text-underline-offset: 4px; }
+.sp-toggle-icon { border-block: 4px solid transparent; border-left: 6px solid currentColor; transition: transform 0.25s; }
+.sp-toggle[aria-expanded="true"] .sp-toggle-icon { transform: rotate(90deg); }
+.sp-newtab { font-size: 14px; font-weight: 600; color: var(--navy); text-underline-offset: 4px; }
+.sp-panel { grid-area: panel; padding-top: 18px; }
+.sp-frame { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.sp-frame-bar { padding: 9px 14px; border-bottom: 1px solid var(--line); background: var(--cream); }
 .sp-frame-url { font-size: 12px; color: var(--muted); }
 .sp-frame iframe { display: block; width: 100%; height: 620px; border: 0; background: #fff; }
-.sp-note { margin-top: 12px; font-size: 13.5px; color: var(--muted); }
-.sp-note a { color: var(--coral-d); font-weight: 700; }
-.sp-made { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--line); }
-.sp-made-label { display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.13em; color: var(--coral-d); margin-bottom: 6px; }
+@media (max-width: 860px) {
+  .sp-card { grid-template-columns: 1fr; grid-template-areas: "info" "points" "try" "panel"; padding: 26px 22px; }
+  .sp-points { margin-top: 24px; }
+  .sp-frame iframe { height: 520px; }
+}
+
+
 
 /* [연락처] */
 #contact { background: var(--navy); }
@@ -468,12 +460,6 @@ section + section { border-top: 1px solid var(--line); }
 .cert-badge.is-completed { color: var(--muted); border: 0; }
 
 /* 사이드 프로젝트 · 팝업 */
-.sp-toggle, .sp-card, .d-note, .d-logic li { box-shadow: none; }
-.sp-toggle:hover { transform: none; box-shadow: none; border-color: var(--navy); }
-.sp-dot::after { display: none; }
-.sp-panel:not([hidden]) .sp-card { animation: none; }
-.sp-toggle-main b { letter-spacing: 0; font-size: 14px; }
-.sp-toggle-cta, .sp-note a { color: var(--navy); }
 .d-note.accent { background: var(--surface); }
 .d-logic li.is-pivot { background: var(--surface); }
 
@@ -497,7 +483,6 @@ section#contact { border-top: 0; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-3 > .comp-card, .grid-3 > .stack-card { padding: 24px 0 0; }
   .grid-3 > .comp-card + .comp-card, .grid-3 > .stack-card + .stack-card { border-left: 0; border-top: 1px solid var(--line); margin-top: 24px; }
-  .sp-points { grid-template-columns: 1fr; }
   .work-card { flex-direction: column; gap: 20px; }
   .work-side { flex: none; }
   .work-main { width: 100%; }
@@ -521,14 +506,8 @@ section#contact { border-top: 0; }
   .hero-title { font-size: clamp(26px, 7.4vw, 36px); }
   .cert-card { grid-template-columns: 1fr auto; } .cert-cat { grid-column: 1 / -1; }
   .about-card { padding: 26px 24px; }
-  .sp-card { padding: 24px 22px; }
   .work-card { padding: 28px 22px 24px 26px; }
   .work-card h3 { font-size: 21px; }
-  .sp-toggle { padding: 14px 16px; gap: 11px; }
-  .sp-toggle-cta-text { display: none; }
-  .sp-card-head { grid-template-columns: 1fr; gap: 10px; }
-  .sp-card-tag { justify-self: start; }
-  .sp-frame iframe { height: 520px; }
   .footer-inner { flex-direction: column; gap: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {

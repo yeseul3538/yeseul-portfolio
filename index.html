@@ -723,39 +723,40 @@
       <h2>업무 밖에서 만든 도구</h2>
       <p class="sec-sub">문제 정의부터 배포까지 혼자 진행한 개인 프로젝트입니다.</p>
     </header>
+    <!-- 기본으로 펼쳐 보이는 사례 소개. 무거운 데모(iframe)만 접어 두고, 누를 때 불러옴 (main.js 8) -->
     <div class="side-project">
-      <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
-        <span class="sp-dot" aria-hidden="true"></span>
-        <span class="sp-toggle-main"><b>고유명사 지킴이</b><span>웹소설 맞춤법 검사 도우미 · 펼쳐서 바로 사용해 볼 수 있습니다</span></span>
-        <span class="sp-toggle-cta"><span class="sp-toggle-cta-text">펼쳐보기</span><span class="sp-toggle-icon" aria-hidden="true"></span></span>
-      </button>
-
-      <div class="sp-panel" id="spPanel" hidden>
-        <article class="sp-card">
+      <article class="sp-card">
+        <div class="sp-info">
           <header class="sp-card-head">
-            <div>
-              <h4><a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">고유명사 지킴이<span class="sp-ext" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></h4>
-              <p class="sp-card-sub">웹소설 맞춤법 검사 도우미</p>
-            </div>
+            <h4><a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">고유명사 지킴이<span class="sp-ext" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></h4>
+            <p class="sp-card-sub">웹소설 맞춤법 검사 도우미</p>
             <span class="sp-card-tag">단독 진행</span>
           </header>
           <p class="sp-desc">맞춤법 검사기를 돌리면 소설 속 인물 이름과 지명까지 일반 단어로 고쳐버립니다. 그래서 고유명사를 잠시 코드로 바꿔 검사를 돌리고, 끝나면 원래 이름으로 되돌리도록 만들었습니다.</p>
-          <ul class="sp-points">
-            <li><b>치환 → 검사 → 복원</b><span>고유명사를 코드로 바꿔 검사를 돌린 뒤 원래 이름으로 되돌립니다</span></li>
-            <li><b>조사 자동 검증</b><span>받침에 따라 은/는, 이/가가 맞는지 확인합니다</span></li>
-            <li><b>서버 없이 동작</b><span>사전은 브라우저에만 저장되고 외부로 전송되지 않습니다</span></li>
-          </ul>
-          <div class="sp-frame">
-            <div class="sp-frame-bar"><span class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span></div>
-            <iframe id="spFrame" data-src="https://kurotoni.github.io/novel-spell-checker/" title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          </div>
-          <p class="sp-note"><a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기</a></p>
           <div class="sp-made">
             <span class="sp-made-label">만드는 과정</span>
             <p>문제 정의부터 화면 설계, 개발, 배포까지 혼자 진행했습니다. 업무에서 쓰던 방식이 낯선 영역에서도 통하는지 확인해 보고 싶었고, 구현은 AI와 주고받으며 완성했습니다.</p>
           </div>
-        </article>
-      </div>
+        </div>
+        <ul class="sp-points">
+            <li><b>치환 → 검사 → 복원</b><span>고유명사를 코드로 바꿔 검사를 돌린 뒤 원래 이름으로 되돌립니다</span></li>
+            <li><b>조사 자동 검증</b><span>받침에 따라 은/는, 이/가가 맞는지 확인합니다</span></li>
+            <li><b>서버 없이 동작</b><span>사전은 브라우저에만 저장되고 외부로 전송되지 않습니다</span></li>
+          </ul>
+        <div class="sp-try">
+          <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
+            <span class="sp-toggle-main">펼쳐서 바로 사용해 볼 수 있습니다</span>
+            <span class="sp-toggle-cta"><span class="sp-toggle-cta-text">펼쳐보기</span><span class="sp-toggle-icon" aria-hidden="true"></span></span>
+          </button>
+          <a class="sp-newtab" href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기</a>
+        </div>
+        <div class="sp-panel" id="spPanel" hidden>
+          <div class="sp-frame">
+            <div class="sp-frame-bar"><span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span></div>
+            <iframe id="spFrame" data-src="https://kurotoni.github.io/novel-spell-checker/" title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
