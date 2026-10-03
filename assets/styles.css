@@ -208,14 +208,8 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .career-top span { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .career-list p { font-size: 15px; }
 
-/* [핵심 역량] */
-.comp-card { padding: 34px 30px; }
-.comp-card header { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
-.comp-card h3 { font-size: 21px; }
-.comp-card header span { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--coral-d); margin-top: 4px; }
-.comp-card > p { font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
 
-/* [프로젝트] 목록 — 8개 모두 펼쳐 보임 */
+/* [프로젝트] 대표 카드(01~04) */
 .work-card {
   display: flex; gap: 48px; align-items: flex-start; padding: 36px 36px 32px 40px; cursor: pointer;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm);
@@ -257,45 +251,6 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .cert-badge.is-earned { background: var(--navy); color: #fff; }
 .cert-badge.is-completed { color: var(--coral-d); border: 1px solid var(--coral); }
 
-/* [사이드 프로젝트] 펼쳐 보이는 사례 소개 — 왼쪽: 소개·문제·과정 / 오른쪽: 기능 3가지 / 아래: 데모(누르면 열림) */
-.sp-card {
-  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-areas: "info points" "try try" "panel panel";
-  gap: 0 56px; padding: 36px 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
-}
-.sp-info { grid-area: info; }
-.sp-card-head h4 { font-size: 20px; }
-.sp-card-head h4 a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; }
-.sp-card-head h4 a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.sp-ext { display: inline-flex; color: var(--muted); }
-.sp-ext svg { width: 14px; height: 14px; }
-.sp-card-sub { margin-top: 4px; font-size: 15px; color: var(--muted); }
-.sp-card-tag { display: block; margin-top: 2px; font-size: 13px; font-weight: 600; color: var(--muted); }
-.sp-desc { margin-top: 18px; font-size: 15px; line-height: 1.8; }
-.sp-made { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
-.sp-made-label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
-.sp-made p { font-size: 15px; line-height: 1.8; }
-.sp-points { grid-area: points; align-self: start; border-top: 1px solid var(--line); }
-.sp-points li { padding: 16px 0; border-bottom: 1px solid var(--line); }
-.sp-points b { display: block; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
-.sp-points span { display: block; font-size: 14px; line-height: 1.65; color: var(--muted); }
-.sp-try { grid-area: try; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line); }
-.sp-toggle { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 0; background: none; border: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
-.sp-toggle-main { font-size: 14px; color: var(--muted); }
-.sp-toggle-cta { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: var(--navy); }
-.sp-toggle:hover .sp-toggle-cta-text, .sp-toggle:focus-visible .sp-toggle-cta-text { text-decoration: underline; text-underline-offset: 4px; }
-.sp-toggle-icon { border-block: 4px solid transparent; border-left: 6px solid currentColor; transition: transform 0.25s; }
-.sp-toggle[aria-expanded="true"] .sp-toggle-icon { transform: rotate(90deg); }
-.sp-newtab { font-size: 14px; font-weight: 600; color: var(--navy); text-underline-offset: 4px; }
-.sp-panel { grid-area: panel; padding-top: 18px; }
-.sp-frame { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-.sp-frame-bar { padding: 9px 14px; border-bottom: 1px solid var(--line); background: var(--cream); }
-.sp-frame-url { font-size: 12px; color: var(--muted); }
-.sp-frame iframe { display: block; width: 100%; height: 620px; border: 0; background: #fff; }
-@media (max-width: 860px) {
-  .sp-card { grid-template-columns: 1fr; grid-template-areas: "info" "points" "try" "panel"; padding: 26px 22px; }
-  .sp-points { margin-top: 24px; }
-  .sp-frame iframe { height: 520px; }
-}
 
 
 
@@ -449,15 +404,6 @@ section#contact { border-top: 0; }
 .wf-n { font-size: 26px; font-weight: 800; line-height: 1.2; color: var(--navy); letter-spacing: -0.015em; white-space: nowrap; }
 .wf-l { font-size: 13px; font-weight: 600; color: var(--muted); }
 
-/* 팝업: AS-IS → 변화 → TO-BE */
-.d-asis { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-bottom: 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
-.d-asis > div { position: relative; padding: 16px 20px 18px; }
-.d-asis > div + div { border-left: 1px solid var(--line); }
-.d-asis > div + div::before { content: ""; position: absolute; left: -7px; top: 50%; width: 12px; height: 12px; margin-top: -6px; background: var(--surface); border-top: 1px solid var(--line-d); border-right: 1px solid var(--line-d); transform: rotate(45deg); }
-.d-asis-k { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 700; color: var(--muted); }
-.d-asis p { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--text); }
-.d-asis .is-to { background: var(--cream); border-radius: 0 6px 6px 0; }
-.d-asis .is-to p { color: var(--navy); font-weight: 800; }
 /* 문제 정의 | 목표 2단, 역할은 칩 */
 .d-pair { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 14px; margin-bottom: 14px; }
 .d-pair > .d-note { margin: 0; }
@@ -485,10 +431,6 @@ section#contact { border-top: 0; }
 @media (max-width: 860px) {
   .work-card:not(.is-compact) { grid-template-columns: 1fr; }
   .wf-n { font-size: 24px; white-space: normal; }
-  .d-asis { grid-template-columns: 1fr; }
-  .d-asis > div + div { border-left: 0; border-top: 1px solid var(--line); }
-  .d-asis > div + div::before { left: 24px; top: -7px; margin-top: 0; transform: rotate(135deg); }
-  .d-asis .is-to { border-radius: 0 0 6px 6px; }
   .d-pair { grid-template-columns: 1fr; }
   #stack .grid-3 { grid-template-columns: 1fr; }
   #stack .grid-3 > .stack-card:nth-child(n) { grid-column: 1; grid-row: auto; padding-left: 0; border-left: 0; }
@@ -544,33 +486,6 @@ section#contact { border-top: 0; }
 .work-pal span + span::before { content: "›"; margin: 0 8px; color: var(--coral-d); font-weight: 700; }
 .work-pal span:last-child { font-weight: 700; color: var(--navy); }
 
-/* 그 밖의 프로젝트 (05–08): 카드 대신 인덱스 목록 — 박스 없이 얇은 선으로 나뉜 행, 행 전체를 누르면 상세 팝업
-   열: 번호 | 제목 + 한 줄 요약 | 분야·연도(오른쪽 정렬) */
-.works-sub-label { margin: 44px 0 0; padding-bottom: 14px; border-bottom: 1px solid var(--line-d); font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--muted); }
-.works-sub-label ~ .work-card.is-compact { margin-top: -14px; }   /* 목록 행끼리는 간격 없이 선으로만 구분 */
-.work-card.is-compact {
-  display: block; padding: 22px 16px; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
-  transition: background-color 0.2s;
-}
-.work-card.is-compact:hover { background: var(--surface); border-color: var(--line); }
-.work-card.is-compact:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
-.work-card.is-compact .work-main { display: none; }   /* 불릿·태그·'자세히 보기'는 팝업에서 확인 (aria-label로 안내) */
-.work-card.is-compact .work-side {
-  display: grid; grid-template-columns: 104px minmax(0, 1fr) auto; grid-template-areas: "no title meta" "no pal meta";
-  column-gap: 28px; row-gap: 6px; align-items: baseline;
-}
-.work-card.is-compact .work-no { grid-area: no; margin: 0; }
-.work-card.is-compact h3 { grid-area: title; margin: 0; font-size: 19px; }
-.work-card.is-compact:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
-.work-card.is-compact .work-sub { display: none; }
-.work-card.is-compact .work-pal { grid-area: pal; margin: 0; color: var(--muted); }
-.work-card.is-compact .work-pal span + span::before { color: var(--line-d); font-weight: 400; }   /* 단계 구분은 조용하게, 결과만 네이비 굵게 */
-.work-card.is-compact .work-meta { grid-area: meta; align-self: center; justify-self: end; margin: 0; }
-@media (max-width: 760px) {
-  .work-card.is-compact { padding: 20px 4px; }
-  .work-card.is-compact .work-side { grid-template-columns: 1fr; grid-template-areas: "no" "title" "pal" "meta"; row-gap: 6px; }
-  .work-card.is-compact .work-meta { justify-self: start; margin-top: 4px; }
-}
 
 /* 프로젝트 팝업 — 구조 도식 (assets/diagrams 원본을 index.html에 인라인) */
 .d-figure { margin: 0 0 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 22px 20px 14px; }
@@ -593,7 +508,7 @@ section#contact { border-top: 0; }
 .btn-accent:hover { background: var(--coral-btn-h); }
 #contact .eyebrow { color: var(--sand); }   /* 남색 배경 위에서는 회색 대신 모래색 */
 
-.hero-card b, .tags span, .d-asis-k, .footer-inner span { font-size: 13px; }
+.hero-card b, .tags span, .footer-inner span { font-size: 13px; }
 
 .modal-body .work-pal { display: none; }
 
@@ -611,3 +526,50 @@ section#contact { border-top: 0; }
 .career-now .career-top b { font-size: 16px; font-weight: 700; color: var(--text); }
 .career-now p { font-size: 15px; }
 .career-now p + .career-top { margin-top: 12px; }   /* '그 외 경력' 안에서 항목 사이 간격 */
+
+/* ── 4-4. 2026-10 2차 리뷰 반영 ─────────────────────────────
+   · 프로젝트 섹션: 도식 안내 문구(한 번만), 역량별 색인, 05~07 3줄 카드
+   · 팝업: 기준점 출처(d-source), 역할 보충 설명(d-roles-note), 상세 도식 '크게 보기' 링크(d-zoom)
+   · 도구 섹션 맨 아래 '직접 만든 도구'(side-mini) */
+.sec-note { margin-top: 6px; font-size: 13px; color: var(--muted); }
+
+/* 역량별 색인: 한 줄 = 역량 이름 + 프로젝트 번호 링크 */
+.works-index { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 24px; margin: -20px 0 32px; padding: 16px 0; border-block: 1px solid var(--line); }
+.works-index p { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 14px; }
+.works-index b { margin-right: 4px; font-size: 14px; font-weight: 700; }
+.works-index .ref { margin-left: 0; }
+
+/* 그 밖의 프로젝트(05~07): 팝업 없는 3줄 카드. 왼쪽 작은 글자 = 문제·실행·결과 */
+.mini-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.work-mini { display: flex; flex-direction: column; padding: 24px 26px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; scroll-margin-top: 96px; }
+.work-mini .work-no { margin-bottom: 8px; }
+.work-mini h3 { font-size: 19px; line-height: 1.35; margin-bottom: 14px; }
+.work-mini ul { display: flex; flex-direction: column; gap: 8px; }
+.work-mini li { display: grid; grid-template-columns: 2.6em 1fr; gap: 6px; font-size: 14.5px; line-height: 1.65; }
+.work-mini li b { font-size: 13px; font-weight: 700; color: var(--muted); }
+.work-mini li.is-result { color: var(--navy); font-weight: 700; }
+.mini-zoom { margin-top: auto; padding-top: 14px; font-size: 13.5px; font-weight: 600; color: var(--navy); text-underline-offset: 4px; }
+
+/* 팝업 안 보충 요소 */
+.d-source { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line-d); font-size: 13.5px; line-height: 1.7; color: var(--muted); }
+.d-roles-note { margin-top: 12px; font-size: 14px; line-height: 1.7; color: var(--muted); }
+.d-zoom { display: inline-block; margin: -6px 0 22px; font-size: 14px; font-weight: 600; color: var(--navy); text-underline-offset: 4px; }
+
+/* 도구 섹션 맨 아래 '직접 만든 도구' (사이드 프로젝트 3줄) */
+.side-mini { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.side-mini h3 { font-size: 16px; margin-bottom: 12px; }
+.side-mini h3 a { color: var(--navy); text-underline-offset: 4px; }
+
+@media (max-width: 980px) {
+  .works-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mini-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .works-index { grid-template-columns: 1fr; }
+}
+
+/* 도구 섹션: 태블릿 폭(861~1080px)에서 오른쪽 '도메인 이해' 칸이 아래로 밀리고 세로선에 붙는 문제 보정 */
+@media (min-width: 861px) and (max-width: 1080px) {
+  #stack .grid-3 > .stack-card:nth-child(1) { padding-top: 0; }
+  #stack .grid-3 > .stack-card:nth-child(2) { margin-top: 0; padding: 0 0 0 28px; border-top: 0; border-left: 1px solid var(--line); }
+}
