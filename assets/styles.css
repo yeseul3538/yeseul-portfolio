@@ -547,3 +547,15 @@ section#contact { border-top: 0; }
   .work-card.is-compact .work-side { grid-template-columns: 1fr; grid-template-areas: "no" "title" "pal" "meta"; row-gap: 6px; }
   .work-card.is-compact .work-meta { justify-self: start; margin-top: 4px; }
 }
+
+/* 프로젝트 팝업 — 구조 도식 (assets/diagrams 원본을 index.html에 인라인) */
+.d-figure { margin: 0 0 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 22px 20px 14px; }
+.d-figure svg { display: block; width: 100%; height: auto; }
+.d-figure figcaption { margin-top: 10px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+@media (max-width: 640px) {
+  .d-figure { padding: 14px 0 12px; }
+  .d-figure-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 14px; }
+  .d-figure svg { width: 600px; max-width: none; }
+  .d-figure figcaption { padding: 0 14px; }
+  .d-figure figcaption::after { content: " · 좌우로 밀어서 보기"; }
+}
