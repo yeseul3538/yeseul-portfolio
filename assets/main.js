@@ -1,5 +1,5 @@
 /* Yeseul You — 포트폴리오 2026
-   2) 메뉴  3) 첫화면 실 연출  6) 프로젝트 목록  7) 프로젝트 팝업 (01~04만. 05~07은 팝업 없는 카드) */
+   2) 메뉴  3) 첫화면 실 연출  6) 프로젝트 목록  7) 프로젝트 팝업  8) 사이드 프로젝트 */
 (function () {
   'use strict';
 
@@ -217,4 +217,14 @@
     if (e.key === 'Escape') { closeModal(); setMenu(false); }
   });
 
+  /* 8) 사이드 프로젝트 — 처음 펼칠 때만 iframe 로드 */
+  var spToggle = $('#spToggle');
+  var spPanel = $('#spPanel');
+  var spFrame = $('#spFrame');
+  spToggle.addEventListener('click', function () {
+    var open = spPanel.hidden;
+    spPanel.hidden = !open;
+    if (open && !spFrame.getAttribute('src')) spFrame.src = spFrame.dataset.src;
+    spToggle.setAttribute('aria-expanded', String(open));
+  });
 })();

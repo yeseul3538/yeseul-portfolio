@@ -39,6 +39,7 @@
     <li><a href="#about">소개</a></li>
     <li><a href="#works">프로젝트</a></li>
     <li><a href="#stack">도구</a></li>
+    <li><a href="#side">사이드 프로젝트</a></li>
     <li><a href="#credentials">자격증</a></li>
   </ul>
   <a class="nav-cta" href="#contact">연락하기</a>
@@ -131,7 +132,7 @@
        - work-side   : 번호 · 제목 · 한 줄 설명 · 한 줄 요약(문제 › 변화 › 결과) · 회사·기간·분야 (팝업 머리글로도 자동 사용)
        - work-main   : 카드에 보이는 성과 3줄 + 태그
        - work-detail (hidden) : 팝업 본문. hidden은 지우지 마세요.
-     · 그 밖의 프로젝트 05~07: 카드 1개 = <article class="work-mini"> … </article>. 팝업 없이 문제·실행·결과 3줄만 보입니다.
+     · 그 밖의 프로젝트 05~07: <article class="work-card is-compact">. 목록 한 줄로 보이고, 누르면 01~04와 같은 팝업이 열립니다.
      · 도식(svg)은 이 파일 안에 직접 들어 있습니다. assets/diagrams 폴더에는 같은 그림의 사본과,
        '크게 보기' 링크로 여는 상세 도식(p02-detect.svg, p07-flow.svg)이 있습니다. -->
 <section id="works">
@@ -170,7 +171,7 @@
             <li>부분 출금 전환 전 <b>수수료 역전 구간</b>(잔액 200원 미만)을 찾아 <b>최소 출금 단위 1,000원</b>으로 차단</li>
           </ul>
           <div class="work-foot">
-            <div class="tags"><span>정책 기획</span><span>회수 일정 설계</span><span>Apps Script</span></div>
+            <div class="tags"><span>정책 기획</span><span>아웃바운드 운영</span><span>Apps Script</span></div>
             <span class="work-more">자세히 보기</span>
           </div>
         </div>
@@ -196,7 +197,7 @@
             <ul>
               <li>출금 정책 분석·부분 출금 변경안 적용</li>
               <li>미납 데이터 구축·장기·고액·일반 분류 기준</li>
-              <li>안내 일정 설계·미납 안내 알림톡 발송</li>
+              <li>안내 일정 설계, 전화·알림톡·문자 안내 직접 진행</li>
               <li>국세청 휴·폐업 자동 조회 Apps Script</li>
             </ul>
             <p class="d-roles-note">가맹점 문의 응대는 CX팀(응대 매뉴얼 전달), 수수료·세금계산서 처리와 추심 이관 기준은 Finance팀과 협의했습니다.</p>
@@ -206,11 +207,11 @@
             <li><div class="d-box">정책 진단</div><p>잔액이 총 미납금 이상일 때만 출금하는 방식 때문에 저잔액 가맹점의 미납이 회수 없이 쌓이는 구조 확인</p></li>
             <li><div class="d-box">정책 변경과 리스크 검증</div><p>부분 출금 전환 전, 잔액 200원 미만에서 출금액보다 이체 수수료가 커지는 <b>역전 구간</b> 발견 → <b>최소 출금 단위 1,000원</b>으로 차단. 월 CMS 1천 원 미만 소액 가맹점은 금액대별로 분석해 의사결정 근거 마련</p></li>
             <li><div class="d-box">감지와 분류</div><p>미납 데이터 신규 구축, 2026년 4월 기준 월 <b>약 2,300만 원</b> 규모의 미납을 장기·고액·일반으로 분류. 국세청 휴·폐업 자동 조회(30분 주기)로 폐업 가맹점을 별도 트랙으로 분리</p></li>
-            <li><div class="d-box">월간 회수 일정</div><p>출금은 매월 <b>5·10·14·20·30일</b>(잔액만큼 부분 출금), 안내는 매월 <b>5·15·30일</b>. 6개월 미입금 시 외부 추심사 이관 기준 수립</p></li>
+            <li><div class="d-box">월간 회수 일정</div><p>정상 영업 가맹점은 매월 <b>5·10·14·20·30일</b> 잔액만큼 부분 출금하고, 출금이 실패하면 다음 영업일부터 <b>전화·알림톡</b>으로 안내. 휴·폐업 가맹점은 매월 <b>5·15·30일 문자</b>로 안내. 6개월 미입금 시 외부 추심사 이관 기준 수립</p></li>
             <li><div class="d-box">주간 보고</div><p>매주 팀 위클리 미팅에 미납·회수 현황 보고 → 리더 미팅의 의사결정 자료로 활용</p></li>
           </ol>
           <h4 class="d-label">구조 도식</h4>
-          <figure class="d-figure"><div class="d-figure-scroll"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 664" font-family="'Pretendard Variable',Pretendard,-apple-system,'Noto Sans CJK KR','Noto Sans KR',sans-serif" role="img" aria-label="미납 감지와 분류, 매월 출금일과 안내일, 입금 확인 또는 추심 이관, 역할 분담을 보여 주는 회수 흐름도"><rect x="40" y="20" width="280" height="68" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="40" y="30" width="3" height="48" rx="1.5" fill="#1e3a5f"/><text x="180" y="51" font-size="16" font-weight="700" fill="#13253f" text-anchor="middle">미납 발생</text><text x="180" y="72" font-size="13" font-weight="500" fill="#66717d" text-anchor="middle">CMS 자동이체 출금 실패</text><path d="M320,54 L358,54" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="349,49 349,59 358,54" fill="#8e9db2"/><rect x="360" y="20" width="280" height="68" rx="8" fill="#13253f"/><text x="500" y="51" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">국세청 휴·폐업 자동 조회</text><text x="500" y="72" font-size="13" font-weight="500" fill="#8e9db2" text-anchor="middle">Apps Script · 30분 주기</text><path d="M500,88 L500,130" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="495,121 505,121 500,130" fill="#8e9db2"/><path d="M500,108 L180,108 L180,130" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="175,121 185,121 180,130" fill="#8e9db2"/><rect x="40" y="132" width="280" height="68" rx="8" fill="#fdf1ed" stroke="#e07a5f" stroke-width="1.2"/><rect x="40" y="142" width="3" height="48" rx="1.5" fill="#e07a5f"/><text x="180" y="163" font-size="16" font-weight="700" fill="#c2583f" text-anchor="middle">휴·폐업 가맹점</text><text x="180" y="184" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="middle">별도 트랙으로 분리해 안내</text><rect x="360" y="132" width="280" height="68" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="360" y="142" width="3" height="48" rx="1.5" fill="#1e3a5f"/><text x="500" y="163" font-size="16" font-weight="700" fill="#13253f" text-anchor="middle">정상 영업 가맹점</text><text x="500" y="184" font-size="13" font-weight="500" fill="#66717d" text-anchor="middle">장기 · 고액 · 일반으로 분류</text><path d="M180,200 L180,238" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="175,229 185,229 180,238" fill="#8e9db2"/><path d="M500,200 L500,238" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="495,229 505,229 500,238" fill="#8e9db2"/><rect x="40" y="240" width="600" height="184" rx="8" fill="#13253f"/><text x="64" y="270" font-size="15" font-weight="700" fill="#f2cc8f" text-anchor="start">매월 출금 · 안내 일정</text><text x="616" y="270" font-size="12.5" font-weight="500" fill="#8e9db2" text-anchor="end">숫자는 매월 n일</text><text x="64" y="318" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">출금</text><text x="64" y="335" font-size="11.5" font-weight="500" fill="#8e9db2" text-anchor="start">잔액만큼</text><line x1="120" y1="314" x2="610" y2="314" stroke="#8e9db2" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="187.6" cy="314" r="7" fill="#e07a5f"/><circle cx="272.1" cy="314" r="7" fill="#e07a5f"/><circle cx="339.7" cy="314" r="7" fill="#e07a5f"/><circle cx="441" cy="314" r="7" fill="#e07a5f"/><circle cx="610" cy="314" r="7" fill="#e07a5f"/><text x="187.6" y="344" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">5일</text><text x="272.1" y="344" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">10일</text><text x="339.7" y="344" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">14일</text><text x="441" y="344" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">20일</text><text x="610" y="344" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">30일</text><text x="64" y="382" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">안내</text><line x1="120" y1="378" x2="610" y2="378" stroke="#8e9db2" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="187.6" cy="378" r="7" fill="#f2cc8f"/><circle cx="356.6" cy="378" r="7" fill="#f2cc8f"/><circle cx="610" cy="378" r="7" fill="#f2cc8f"/><text x="187.6" y="408" font-size="14" font-weight="700" fill="#f2cc8f" text-anchor="middle">5일</text><text x="356.6" y="408" font-size="14" font-weight="700" fill="#f2cc8f" text-anchor="middle">15일</text><text x="610" y="408" font-size="14" font-weight="700" fill="#f2cc8f" text-anchor="middle">30일</text><path d="M180,424 L180,460" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="175,451 185,451 180,460" fill="#8e9db2"/><path d="M500,424 L500,460" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="495,451 505,451 500,460" fill="#8e9db2"/><rect x="40" y="462" width="280" height="68" rx="8" fill="#fffaf0" stroke="#f2cc8f" stroke-width="1.2"/><rect x="40" y="472" width="3" height="48" rx="1.5" fill="#f2cc8f"/><text x="180" y="493" font-size="16" font-weight="700" fill="#13253f" text-anchor="middle">입금 확인</text><text x="180" y="514" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="middle">회수 완료 · 관리 종료</text><rect x="360" y="462" width="280" height="68" rx="8" fill="#fdf1ed" stroke="#e07a5f" stroke-width="1.2"/><rect x="360" y="472" width="3" height="48" rx="1.5" fill="#e07a5f"/><text x="500" y="493" font-size="16" font-weight="700" fill="#c2583f" text-anchor="middle">6개월 미입금</text><text x="500" y="514" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="middle">외부 추심사 이관</text><rect x="40" y="554" width="600" height="96" rx="8" fill="none" stroke="#e6e2da" stroke-width="1.2" stroke-dasharray="5 4"/><text x="64" y="584" font-size="13" font-weight="700" fill="#c2583f" text-anchor="start">역할</text><text x="110" y="584" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="start">본인 · 부분 출금·분류 기준·안내 일정 설계, 미납 안내 알림톡 발송</text><text x="110" y="608" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="start">CX팀 · 가맹점 문의 응대 (응대 매뉴얼 전달)</text><text x="110" y="632" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="start">Finance팀 · 수수료·세금계산서 처리 기준, 추심 이관 협의</text></svg></div><figcaption>미납 감지·분류 → 매월 출금(5·10·14·20·30일)과 안내(5·15·30일) → 입금 확인 또는 6개월 후 추심 이관</figcaption></figure>
+          <figure class="d-figure"><div class="d-figure-scroll"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 632" font-family="'Pretendard Variable',Pretendard,-apple-system,'Noto Sans CJK KR','Noto Sans KR',sans-serif" role="img" aria-label="미납 감지와 분류 후 정상 영업 가맹점은 매월 5·10·14·20·30일 부분 출금과 실패 시 전화·알림톡 안내, 휴·폐업 가맹점은 매월 5·15·30일 문자 안내, 입금 확인 또는 추심 이관, 역할 분담을 보여 주는 회수 흐름도"><rect x="40" y="20" width="280" height="68" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="40" y="30" width="3" height="48" rx="1.5" fill="#1e3a5f"/><text x="180" y="51" font-size="16" font-weight="700" fill="#13253f" text-anchor="middle">미납 발생</text><text x="180" y="72" font-size="13" font-weight="500" fill="#66717d" text-anchor="middle">CMS 자동이체 출금 실패</text><path d="M320,54 L358,54" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="349,49 349,59 358,54" fill="#8e9db2"/><rect x="360" y="20" width="280" height="68" rx="8" fill="#13253f"/><text x="500" y="51" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">국세청 휴·폐업 자동 조회</text><text x="500" y="72" font-size="13" font-weight="500" fill="#8e9db2" text-anchor="middle">Apps Script · 30분 주기</text><path d="M500,88 L500,130" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="495,121 505,121 500,130" fill="#8e9db2"/><path d="M500,108 L180,108 L180,130" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="175,121 185,121 180,130" fill="#8e9db2"/><rect x="40" y="132" width="280" height="68" rx="8" fill="#fdf1ed" stroke="#e07a5f" stroke-width="1.2"/><rect x="40" y="142" width="3" height="48" rx="1.5" fill="#e07a5f"/><text x="180" y="163" font-size="16" font-weight="700" fill="#c2583f" text-anchor="middle">휴·폐업 가맹점</text><text x="180" y="184" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="middle">별도 트랙으로 분리</text><rect x="360" y="132" width="280" height="68" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="360" y="142" width="3" height="48" rx="1.5" fill="#1e3a5f"/><text x="500" y="163" font-size="16" font-weight="700" fill="#13253f" text-anchor="middle">정상 영업 가맹점</text><text x="500" y="184" font-size="13" font-weight="500" fill="#66717d" text-anchor="middle">장기 · 고액 · 일반으로 분류</text><path d="M180,200 L180,238" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="175,229 185,229 180,238" fill="#8e9db2"/><path d="M500,200 L500,238" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="495,229 505,229 500,238" fill="#8e9db2"/><rect x="40" y="240" width="600" height="152" rx="8" fill="#13253f"/><line x1="340" y1="256" x2="340" y2="376" stroke="#2f3f56" stroke-width="1.5"/><text x="64" y="268" font-size="15" font-weight="700" fill="#f2cc8f" text-anchor="start">매월 문자 안내</text><line x1="72" y1="304" x2="308" y2="304" stroke="#8e9db2" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="104.6" cy="304" r="7" fill="#f2cc8f"/><circle cx="185.9" cy="304" r="7" fill="#f2cc8f"/><circle cx="308" cy="304" r="7" fill="#f2cc8f"/><text x="104.6" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">5일</text><text x="185.9" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">15일</text><text x="300" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">30일</text><text x="64" y="366" font-size="12" font-weight="500" fill="#8e9db2" text-anchor="start">휴·폐업 가맹점 대상, 총 3회</text><text x="384" y="268" font-size="15" font-weight="700" fill="#f2cc8f" text-anchor="start">매월 부분 출금</text><line x1="384" y1="304" x2="616" y2="304" stroke="#8e9db2" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="416" cy="304" r="7" fill="#e07a5f"/><circle cx="456" cy="304" r="7" fill="#e07a5f"/><circle cx="488" cy="304" r="7" fill="#e07a5f"/><circle cx="536" cy="304" r="7" fill="#e07a5f"/><circle cx="616" cy="304" r="7" fill="#e07a5f"/><text x="416" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">5일</text><text x="456" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">10일</text><text x="490" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">14일</text><text x="536" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">20일</text><text x="608" y="332" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">30일</text><text x="384" y="366" font-size="12" font-weight="500" fill="#8e9db2" text-anchor="start">실패 시 다음 영업일부터 전화·알림톡</text><path d="M180,392 L180,428" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="175,419 185,419 180,428" fill="#8e9db2"/><path d="M500,392 L500,428" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="495,419 505,419 500,428" fill="#8e9db2"/><rect x="40" y="430" width="280" height="68" rx="8" fill="#fffaf0" stroke="#f2cc8f" stroke-width="1.2"/><rect x="40" y="440" width="3" height="48" rx="1.5" fill="#f2cc8f"/><text x="180" y="461" font-size="16" font-weight="700" fill="#13253f" text-anchor="middle">입금 확인</text><text x="180" y="482" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="middle">회수 완료 · 관리 종료</text><rect x="360" y="430" width="280" height="68" rx="8" fill="#fdf1ed" stroke="#e07a5f" stroke-width="1.2"/><rect x="360" y="440" width="3" height="48" rx="1.5" fill="#e07a5f"/><text x="500" y="461" font-size="16" font-weight="700" fill="#c2583f" text-anchor="middle">6개월 미입금</text><text x="500" y="482" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="middle">외부 추심사 이관</text><rect x="40" y="522" width="600" height="96" rx="8" fill="none" stroke="#e6e2da" stroke-width="1.2" stroke-dasharray="5 4"/><text x="64" y="552" font-size="13" font-weight="700" fill="#c2583f" text-anchor="start">역할</text><text x="110" y="552" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="start">본인 · 부분 출금·분류 기준·안내 일정 설계, 전화·알림톡·문자 안내 직접 진행</text><text x="110" y="576" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="start">CX팀 · 가맹점 문의 응대 (응대 매뉴얼 전달)</text><text x="110" y="600" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="start">Finance팀 · 수수료·세금계산서 처리 기준, 추심 이관 협의</text></svg></div><figcaption>정상 영업은 매월 5·10·14·20·30일 부분 출금과 실패 시 전화·알림톡, 휴·폐업은 매월 5·15·30일 문자 안내 → 입금 확인 또는 6개월 후 추심 이관</figcaption></figure>
           <figure class="d-figure"><div class="d-figure-scroll"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 450" font-family="'Pretendard Variable',Pretendard,-apple-system,'Noto Sans CJK KR','Noto Sans KR',sans-serif" role="img" aria-label="일괄 출금과 부분 출금 정책 비교, 수수료 역전 구간 차단"><text x="340" y="34" font-size="14" font-weight="600" fill="#66717d" text-anchor="middle">예시: 총 미납금 30,000원 · 통장 잔액 12,000원</text><rect x="40" y="56" width="280" height="250" rx="8" fill="#fff" stroke="#e6e2da" stroke-width="1.2"/><rect x="64" y="76" width="55" height="24" rx="12.0" fill="#fdf1ed"/><text x="91.6" y="91" font-size="12" font-weight="700" fill="#c2583f" text-anchor="middle">AS-IS</text><text x="64" y="132" font-size="18" font-weight="700" fill="#13253f" text-anchor="start">일괄 출금</text><text x="64" y="156" font-size="13" font-weight="500" fill="#66717d" text-anchor="start">잔액 ≥ 총 미납금일 때만 출금</text><rect x="64" y="178" width="232" height="30" rx="4" fill="#f4f0e9"/><text x="180.0" y="198" font-size="12" font-weight="600" fill="#c2583f" text-anchor="middle">미납 30,000원 전액 이월</text><text x="64" y="256" font-size="24" font-weight="800" fill="#c2583f" text-anchor="start">회수 0원</text><text x="64" y="282" font-size="13" font-weight="500" fill="#66717d" text-anchor="start">잔액이 모자라면 전혀 출금되지 않음</text><rect x="360" y="56" width="280" height="250" rx="8" fill="#fff" stroke="#e6e2da" stroke-width="1.2"/><rect x="384" y="76" width="55" height="24" rx="12.0" fill="#13253f"/><text x="411.6" y="91" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">TO-BE</text><text x="384" y="132" font-size="18" font-weight="700" fill="#13253f" text-anchor="start">부분 출금</text><text x="384" y="156" font-size="13" font-weight="500" fill="#66717d" text-anchor="start">잔액만큼 먼저 출금</text><rect x="384" y="178" width="232" height="30" rx="4" fill="#f4f0e9"/><rect x="384" y="178" width="92.8" height="30" rx="4" fill="#1e3a5f"/><text x="430.4" y="198" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">12,000원</text><text x="546.4" y="198" font-size="12" font-weight="600" fill="#66717d" text-anchor="middle">잔여 18,000원</text><text x="384" y="256" font-size="24" font-weight="800" fill="#13253f" text-anchor="start">회수 12,000원</text><text x="384" y="282" font-size="13" font-weight="500" fill="#66717d" text-anchor="start">남은 미납은 다음 출금일에 이어서 회수</text><path d="M324,192 L356,192" fill="none" stroke="#e07a5f" stroke-width="1.6"/><polygon points="347,187 347,197 356,192" fill="#e07a5f"/><rect x="40" y="330" width="600" height="104" rx="8" fill="#fdf1ed" stroke="#e07a5f" stroke-width="1.2"/><text x="64" y="362" font-size="15" font-weight="700" fill="#c2583f" text-anchor="start">역전 구간 차단</text><text x="64" y="388" font-size="13" font-weight="500" fill="#3f4b57" text-anchor="start">잔액이 200원 미만일 때 출금하면 이체 수수료가 출금액보다 커져 회수할수록 손해</text><text x="64" y="412" font-size="13" font-weight="600" fill="#13253f" text-anchor="start">→ 최소 출금 단위 1,000원을 두어 이 구간은 출금하지 않도록 정책에 반영</text></svg></div><figcaption>일괄 출금 → 부분 출금 전환과 수수료 역전 구간 차단 (금액은 예시)</figcaption></figure>
           <div class="d-note accent">
             <h4>결과·산출물</h4>
@@ -460,46 +461,224 @@
 
       <p class="works-sub-label">그 밖의 프로젝트</p>
 
-      <!-- 그 밖의 프로젝트 05~07: 3줄 카드 (문제 · 실행 · 결과). 결과 줄에는 class="is-result" -->
-      <div class="mini-grid">
-        <!-- 05 -->
-        <article class="work-mini" id="project-05">
-          <span class="work-no">프로젝트 05 · 아이샵케어 · 2024–2025</span>
+      <!-- 05 -->
+      <article class="work-card is-compact" id="project-05" tabindex="0" role="button" aria-label="위약금 계산기 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">프로젝트 05</span>
           <h3>위약금 계산기</h3>
-          <ul>
-            <li><b>문제</b>계약서 버전마다 다른 위약금 산정식을 Google Sheet로 수기 계산</li>
-            <li><b>실행</b>4개 계약 유형 분기 명세·PRD 작성, QA 보완 요구사항 11건 반영, CX팀 온보딩</li>
-            <li class="is-result"><b>결과</b>위약금 문의 처리 시간 7분 → 3분</li>
+          <p class="work-sub">영업·CX 업무 자동화 툴 기획</p>
+          <p class="work-pal"><span>계약 버전마다 다른 산정식</span><span>4개 유형 통합 계산기</span><span>문의 처리 7분 → 3분</span></p>
+          <span class="work-meta parts"><span>아이샵케어</span><span>2024–2025</span><span>업무 툴 기획</span></span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>위약금 문의 처리 시간 <b>7분 → 3분</b></li>
+            <li><b>4가지 계약 유형</b> 통합 (오프라인·온라인 초회·온라인 갱신·케어서비스)</li>
+            <li><b>11건</b> QA 보완 요구사항 도출 및 반영</li>
+            <li>부가세 처리 분기 표준화·사용자 가이드 작성·사내 배포 완료</li>
           </ul>
-        </article>
-        <!-- 06 -->
-        <article class="work-mini" id="project-06">
-          <span class="work-no">프로젝트 06 · 현대카드 · 2023</span>
+          <div class="work-foot">
+            <div class="tags"><span>분기 명세</span><span>개발 협업</span><span>QA</span></div>
+            <span class="work-more">자세히 보기</span>
+          </div>
+        </div>
+        <div class="work-detail" hidden>
+          <div class="d-pair">
+          <div class="d-note">
+            <h4>문제 정의</h4>
+            <ul>
+              <li>고객 측 계약 해지 시 위약금 부과가 진행되어야 하나 계약서 버전별로 위약금 산정식에 차이가 있었습니다.</li>
+              <li>계약서를 개선하는 동안 우선 Google Sheet 계산기를 만들어 배포했습니다.</li>
+              <li>늘어나는 CX 문의와 다양해지는 계약 내용으로 Google Sheet 수기 진행에 병목이 발생했습니다.</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>목표</h4>
+            <ul>
+              <li>계약서 버전별로 다른 산정식을 하나의 툴로 통합해, 누가 계산해도 같은 결과가 나오게 하기</li>
+            </ul>
+          </div>
+          </div>
+          <div class="d-note d-roles">
+            <h4>내 역할</h4>
+            <ul>
+              <li>계약 조건 분해·분기 명세, 개발 명세서(PRD) 작성</li>
+              <li>QA (보완 요구사항 11건 도출)·사용자 가이드 작성·CX 온보딩</li>
+              <li>개발은 개발팀이 담당</li>
+            </ul>
+          </div>
+          <h4 class="d-label">진행 과정</h4>
+          <ol class="d-flow">
+            <li><div class="d-box">계약 내용 분해</div><p>3-Step UI (계약 유형 → 메인 → 추가 장비)로 분기 명세화</p></li>
+            <li><div class="d-box">개발 명세서 작성</div><p>4가지 조건별 산정식·부가세 처리 분기를 명세서로 정리해 개발자에게 전달</p></li>
+            <li><div class="d-box">QA</div><p>1차 빌드 검증 → <b>11건</b> 보완 요구사항 도출 (미설치 케이스·설치비 추가 청구 등)</p></li>
+            <li><div class="d-box">배포</div><p>사용자 가이드 작성·사내 공지·CX팀 온보딩</p></li>
+          </ol>
+          <div class="d-note accent">
+            <h4>결과·산출물</h4>
+            <ul>
+              <li>위약금 문의 처리 시간 <b>7분 → 3분</b></li>
+              <li>계약서 버전마다 달랐던 산정식을 <b>4가지 계약 유형</b> 하나의 계산기로 통합 (오프라인·온라인 초회·온라인 갱신·케어서비스)</li>
+              <li>CX팀이 쓰던 Google Sheet 수기 계산을 사내 계산기로 대체</li>
+              <li><b>11건</b> QA 보완 요구사항 도출 및 반영</li>
+              <li>부가세 처리 분기 표준화·사용자 가이드 작성·사내 배포 완료</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>배운 점</h4>
+            <ul>
+              <li>조건을 개발자가 구현할 수 있는 수준까지 쪼개는 것이 기획의 핵심이었습니다.</li>
+              <li>엣지 케이스는 실제 빌드를 검증하면서 드러났습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06 -->
+      <article class="work-card is-compact" id="project-06" tabindex="0" role="button" aria-label="대량 발급 오류 사전 표기 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">프로젝트 06</span>
           <h3>대량 발급 오류 사전 표기</h3>
-          <ul>
-            <li><b>문제</b>오류 비율 50% 이상(고객 입력 오류)인데 최종 단계에서야 발견, 오류 건마다 30분–1시간 수기 재발급</li>
-            <li><b>실행</b>처리 시간 근거와 '기존 화면 유지 + 조건값 추가' 대안을 함께 내 우선순위 낮던 개발 요청 반영</li>
-            <li class="is-result"><b>결과</b>오류 건 처리 건당 30분–1시간 → 10–20분</li>
+          <p class="work-sub">현업의 불편을 개발 가능한 요구사항으로 전환</p>
+          <p class="work-pal"><span>최종 단계에서야 잡히던 발급 오류</span><span>조건값 기반 오류 사전 표기</span><span>오류 건 처리 건당 30분–1시간 → 10–20분</span></p>
+          <span class="work-meta parts"><span>현대카드</span><span>2023</span><span>개발 협업</span></span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>오류 건 처리 시간 <b>건당 30분–1시간 → 10–20분</b></li>
+            <li>기존 화면·단계를 유지하는 대안으로 <b>개발 우선순위가 낮던 요청 반영</b></li>
           </ul>
-        </article>
-        <!-- 07 -->
-        <article class="work-mini" id="project-07">
-          <span class="work-no">프로젝트 07 · 아이샵케어 · 2024</span>
+          <div class="work-foot">
+            <div class="tags"><span>요구사항 정의</span><span>개발 협업</span><span>근거 기반 제안</span></div>
+            <span class="work-more">자세히 보기</span>
+          </div>
+        </div>
+        <div class="work-detail" hidden>
+          <div class="d-pair">
+          <div class="d-note">
+            <h4>문제 정의</h4>
+            <ul>
+              <li>법인카드 대량 발급 도중에는 오류를 확인할 수 없어, 최종 단계에서야 오류 건을 걸러냈습니다.</li>
+              <li>걸러진 오류 건은 예외로 빼 두었다가 수기로 다시 발급해야 했고, 건당 30분–1시간이 걸렸습니다.</li>
+              <li>고객이 잘못 입력하는 경우가 많아 오류 비율이 50% 이상이었습니다.</li>
+              <li>법인카드 시스템은 개인카드 시스템보다 개발 우선순위가 낮아 개선 요청이 반영되기 어려웠습니다.</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>목표</h4>
+            <ul>
+              <li>오류를 최종 단계가 아니라 발급 처리 도중에 확인할 수 있게 하기</li>
+            </ul>
+          </div>
+          </div>
+          <div class="d-note d-roles">
+            <h4>내 역할</h4>
+            <ul>
+              <li>현업 요청을 핵심 요구·제약·대안으로 나눠 정리</li>
+              <li>오류 건 수기 재발급에 드는 시간을 정리해 개발 필요성의 근거로 제시</li>
+              <li>개발 부담이 적은 대안 방식 제안</li>
+            </ul>
+          </div>
+          <h4 class="d-label">진행 과정</h4>
+          <ol class="d-flow">
+            <li><div class="d-box">핵심 요구</div><p>오류를 최종 단계가 아니라 처리 도중에 확인해야 한다는 요구로 정리</p></li>
+            <li><div class="d-box">근거 정리</div><p>개발 우선순위가 낮은 제약을 넘기 위해 오류 건 수기 재발급에 드는 시간(건당 30분–1시간)을 정리해 제시</p></li>
+            <li><div class="d-box">대안 제안</div><p>기존 화면과 단계는 그대로 두고, 발급 정보에 조건값을 걸어 조건에 맞지 않는 데이터를 바로 표기하는 방식 제안</p></li>
+            <li><div class="d-box">반영</div><p>화면을 바꾸지 않아 개발 부담이 적은 방식으로 제안 반영</p></li>
+          </ol>
+          <div class="d-note accent">
+            <h4>결과·산출물</h4>
+            <ul>
+              <li>발급 처리 도중 오류 건을 바로 확인</li>
+              <li>오류 건 처리 시간 <b>건당 30분–1시간 → 10–20분</b></li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>배운 점</h4>
+            <ul>
+              <li>현업의 불편을 개발팀이 판단할 수 있는 요구사항으로 바꾸는 것이 협업의 출발점이었습니다.</li>
+              <li>우선순위가 낮은 요청일수록 처리 시간 같은 근거와 개발 부담이 적은 대안을 함께 제시해야 반영되었습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 07 -->
+      <article class="work-card is-compact" id="project-07" tabindex="0" role="button" aria-label="출고·계약 데이터 정합성 관리 자세히 보기">
+        <div class="work-side">
+          <span class="work-no">프로젝트 07</span>
           <h3>출고·계약 데이터 정합성 관리</h3>
-          <ul>
-            <li><b>문제</b>출고·계약서·회계 데이터를 팀마다 따로 관리, 출고 요청 미적재로 오출고 발생</li>
-            <li><b>실행</b>출고 요청 표준 워크플로우·시트 자동 적재, 48시간 미확인 알림(Zapier), 부서별 R&amp;R과 월간 크로스체크</li>
-            <li class="is-result"><b>결과</b>오출고 건수 80% 이상 감소</li>
+          <p class="work-sub">출고 워크플로우 표준화와 부서 간 R&amp;R 정리</p>
+          <p class="work-pal"><span>팀마다 따로 관리하던 출고·계약 데이터</span><span>표준 워크플로우·R&amp;R 정리</span><span>오출고 80% 이상 감소</span></p>
+          <span class="work-meta parts"><span>아이샵케어</span><span>2024</span><span>데이터 정합성</span></span>
+        </div>
+        <div class="work-main">
+          <ul class="bullets">
+            <li>오출고 건수 <b>80% 이상 감소</b></li>
+            <li>출고 요청 워크플로우 도입, 스프레드시트 <b>자동 적재</b></li>
+            <li>출고 요청 <b>48시간 내 미확인</b> 시 담당자 자동 메일·Slack 알림 (Zapier)</li>
+            <li>월간 출고 ↔ 계약서 <b>크로스체크 도입</b></li>
           </ul>
-          <a class="mini-zoom" href="assets/diagrams/p07-flow.svg" target="_blank" rel="noopener noreferrer">R&amp;R 흐름도 크게 보기 ↗</a>
-        </article>
-      </div>
+          <div class="work-foot">
+            <div class="tags"><span>R&amp;R</span><span>Zapier</span><span>워크플로우</span></div>
+            <span class="work-more">자세히 보기</span>
+          </div>
+        </div>
+        <div class="work-detail" hidden>
+          <div class="d-pair">
+          <div class="d-note">
+            <h4>문제 정의</h4>
+            <ul>
+              <li>장비 출고·계약서·회계 데이터가 각각 다른 팀에서 관리되어 정합성이 무너지고, 백업 부재로 오출고·계약서 미수취 등이 발생했습니다.</li>
+              <li>임대장비는 회사 귀속 자산이므로 누락된 데이터로 인해 회계 감사 시에도 문제가 생길 수 있는 상황이었습니다.</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>목표</h4>
+            <ul>
+              <li>출고·계약서·회계 데이터를 하나의 기준으로 맞추고, 오출고와 감사 리스크를 미리 차단하기</li>
+            </ul>
+          </div>
+          </div>
+          <div class="d-note d-roles">
+            <h4>내 역할</h4>
+            <ul>
+              <li>문제 진단, 출고 워크플로우·자동 적재·48시간 알림(Zapier) 설계</li>
+              <li>R&amp;R로 부서별 책임 정리, SCM·Finance·Commerce팀 협업 조율</li>
+            </ul>
+          </div>
+          <h4 class="d-label">진행 과정</h4>
+          <ol class="d-flow">
+            <li><div class="d-box">진단</div><p>출고 요청 데이터 미적재로 인한 오출고·이중 출고, 고객 요청에 따른 예외 처리가 기록되지 않아 생긴 데이터 오류 확인</p></li>
+            <li><div class="d-box">표준화</div><p>출고 요청 표준 워크플로우 전환, <b>48시간</b> 내 미확인 시 담당자 자동 메일·Slack 알림 (Zapier). 업무 분장표로 출고부터 회수까지 담당 부서 정리</p></li>
+            <li><div class="d-box">정기 점검</div><p>월간 출고 ↔ 계약서 크로스체크로 계약서 미수취·오출고·미회수 건을 담당자에게 전달</p></li>
+          </ol>
+          <h4 class="d-label">구조 도식</h4>
+          <figure class="d-figure"><div class="d-figure-scroll"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" font-family="'Pretendard Variable',Pretendard,-apple-system,'Noto Sans CJK KR','Noto Sans KR',sans-serif" role="img" aria-label="출고·계약 데이터 정합성 관리 핵심 6단계: 출고 요청, SCM 출고, 1차 확인, 2차 확인, 월마감 크로스체크, 부서별 R&amp;R"><rect x="40" y="28" width="184" height="90" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="40" y="38" width="3" height="70" rx="1.5" fill="#1e3a5f"/><text x="58" y="56" font-size="13" font-weight="800" fill="#c2583f">1</text><text x="74" y="56" font-size="15" font-weight="700" fill="#13253f">출고 요청</text><text x="58" y="81" font-size="12.5" font-weight="500" fill="#66717d">MD가 표준 양식으로</text><text x="58" y="100" font-size="12.5" font-weight="500" fill="#66717d">요청 · 시트 자동 적재</text><path d="M224,73 L246,73" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="237,68 237,78 246,73" fill="#8e9db2"/><rect x="248" y="28" width="184" height="90" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="248" y="38" width="3" height="70" rx="1.5" fill="#1e3a5f"/><text x="266" y="56" font-size="13" font-weight="800" fill="#c2583f">2</text><text x="282" y="56" font-size="15" font-weight="700" fill="#13253f">SCM 출고</text><text x="266" y="81" font-size="12.5" font-weight="500" fill="#66717d">48시간 미확인 시</text><text x="266" y="100" font-size="12.5" font-weight="500" fill="#66717d">Zapier 자동 알림</text><path d="M432,73 L454,73" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="445,68 445,78 454,73" fill="#8e9db2"/><rect x="456" y="28" width="184" height="90" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="456" y="38" width="3" height="70" rx="1.5" fill="#1e3a5f"/><text x="474" y="56" font-size="13" font-weight="800" fill="#c2583f">3</text><text x="490" y="56" font-size="15" font-weight="700" fill="#13253f">1차 확인</text><text x="474" y="81" font-size="12.5" font-weight="500" fill="#66717d">Operation</text><text x="474" y="100" font-size="12.5" font-weight="500" fill="#66717d">계약서·품목·채널 대조</text><path d="M548,118 L548,138 L132,138 L132,156" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="127,147 137,147 132,156" fill="#8e9db2"/><rect x="40" y="158" width="184" height="90" rx="8" fill="#ffffff" stroke="#e6e2da" stroke-width="1.2"/><rect x="40" y="168" width="3" height="70" rx="1.5" fill="#1e3a5f"/><text x="58" y="186" font-size="13" font-weight="800" fill="#c2583f">4</text><text x="74" y="186" font-size="15" font-weight="700" fill="#13253f">2차 확인</text><text x="58" y="211" font-size="12.5" font-weight="500" fill="#66717d">출고 담당자 재확인</text><text x="58" y="230" font-size="12.5" font-weight="500" fill="#66717d">주문·출고내역 대조</text><path d="M224,203 L246,203" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="237,198 237,208 246,203" fill="#8e9db2"/><rect x="248" y="158" width="184" height="90" rx="8" fill="#13253f"/><text x="266" y="186" font-size="13" font-weight="800" fill="#f2cc8f">5</text><text x="282" y="186" font-size="15" font-weight="700" fill="#ffffff">월마감</text><text x="266" y="211" font-size="12.5" font-weight="500" fill="#8e9db2">출고 ↔ 계약서 대조</text><text x="266" y="230" font-size="12.5" font-weight="500" fill="#8e9db2">SCM 마감·Finance 검증</text><path d="M432,203 L454,203" fill="none" stroke="#8e9db2" stroke-width="1.6"/><polygon points="445,198 445,208 454,203" fill="#8e9db2"/><rect x="456" y="158" width="184" height="90" rx="8" fill="#fdf1ed" stroke="#e07a5f" stroke-width="1.2"/><rect x="456" y="168" width="3" height="70" rx="1.5" fill="#e07a5f"/><text x="474" y="186" font-size="13" font-weight="800" fill="#c2583f">6</text><text x="490" y="186" font-size="15" font-weight="700" fill="#c2583f">R&amp;R 정리</text><text x="474" y="211" font-size="12.5" font-weight="500" fill="#3f4b57">부서별 책임 정리</text><text x="474" y="230" font-size="12.5" font-weight="500" fill="#3f4b57">신규 입사자 교육 자료</text><rect x="40" y="276" width="600" height="48" rx="8" fill="#fffaf0" stroke="#f2cc8f" stroke-width="1.2"/><text x="64" y="306" font-size="13" font-weight="700" fill="#c2583f">결과</text><text x="110" y="306" font-size="15" font-weight="700" fill="#13253f">오출고 건수 80% 이상 감소</text></svg></div><figcaption>출고 요청부터 1·2차 확인, 월마감 크로스체크, 부서별 R&amp;R까지 핵심 6단계</figcaption></figure>
+          <a class="d-zoom" href="assets/diagrams/p07-flow.svg" target="_blank" rel="noopener noreferrer">상세 흐름도 크게 보기 ↗</a>
+          <div class="d-note accent">
+            <h4>결과·산출물</h4>
+            <ul>
+              <li>오출고 건수 <b>80% 이상 감소</b></li>
+              <li>오출고·이중 출고의 원인이던 출고 요청 미적재를 막기 위해 표준 워크플로우와 시트 자동 적재 도입</li>
+              <li>출고 요청 <b>48시간</b> 미확인 시 담당자 자동 메일·Slack 알림 (Zapier)</li>
+              <li>월간 출고 ↔ 계약서 크로스체크 정착, 계약서 미수취·오출고·미회수 건을 담당자에게 전달</li>
+              <li>출고부터 회수까지 SCM·Finance·Commerce R&amp;R 정리, R&amp;R 흐름도를 신규 입사자 교육 자료로 활용</li>
+            </ul>
+          </div>
+          <div class="d-note">
+            <h4>배운 점</h4>
+            <ul>
+              <li>여러 팀이 같은 데이터를 다룰 때는 도구보다 책임 소재를 먼저 정해야 했습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- [사용 도구] 2단: 왼쪽 위 자동화 / 오른쪽 도메인 이해 / 왼쪽 아래 데이터 정리·기획. 괄호 안 숫자는 프로젝트 번호
-     맨 아래 '직접 만든 도구'는 사이드 프로젝트 3줄 소개입니다 (데모는 링크로만 연결) -->
+<!-- [사용 도구] 2단: 왼쪽 위 자동화 / 오른쪽 도메인 이해 / 왼쪽 아래 데이터 정리·기획. 괄호 안 숫자는 프로젝트 번호 -->
 <section id="stack" class="tint">
   <div class="wrap">
     <header class="sec-head">
@@ -522,12 +701,13 @@
           <li>결제·정산 (CMS 자동이체 출금·VAN 카드 결제 중계망·PG 전자결제대행)</li>
           <li>결제 단말기 (POS·CAT 카드 단말기·토스 프론트)</li>
           <li>ERP (이카운트·아마란스)·모두싸인 (전자계약)</li>
-          <li><b>채널톡·솔라피</b>: 미납 안내 알림톡 발송 (01)</li>
+          <li><b>채널톡·솔라피</b>: 미납 안내 알림톡·휴폐업 안내 문자 발송 (01)</li>
         </ul>
       </article>
       <article class="stack-card panel">
         <h3>데이터 정리·기획</h3>
         <ul class="bullets">
+          <li><b>Google Sheets·Excel</b>: 피벗 테이블·그래프로 보고서 작성</li>
           <li><b>Google Sheets</b>: 해지·폐업 접수 자동 적재 (02), 인입 경로별 주간 집계·전주 대비 리포트 (03), 출고 요청 적재와 출고 ↔ 계약서 월간 대조 (07)</li>
           <li><b>Excel</b>: 법인카드 재발급 일괄 업로드 흐름 설계 (04)</li>
           <li><b>Figma</b>: 위약금 계산기 3-Step UI 와이어프레임·플로우 (05)</li>
@@ -541,15 +721,51 @@
       <h3>일하는 방식</h3>
       <p class="parts"><span>요구사항 정의·PRD (04, 05, 06)</span><span>분기 명세 (01, 02, 03, 05)</span><span>엣지 케이스 검증 (01, 03, 05)</span><span>QA 테스트 케이스 (05)</span><span>SOP·매뉴얼 (01, 02, 07)</span><span>사용자 가이드 (03, 05)</span><span>R&amp;R (07)</span><span>트레이드오프 분석 (01, 06)</span><span>AS-IS / TO-BE</span></p>
     </div>
+  </div>
+</section>
 
-    <!-- 직접 만든 도구: 사이드 프로젝트 3줄 -->
-    <div class="side-mini">
-      <h3>직접 만든 도구 · <a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">고유명사 지킴이 ↗</a></h3>
-      <ul class="bullets">
-        <li><b>문제</b>: 맞춤법 검사기가 웹소설 속 인물 이름·지명까지 일반 단어로 고쳐 버림</li>
-        <li><b>방법</b>: 바꿀 수 없는 검사기는 그대로 두고, 고유명사를 잠시 코드로 바꿔 검사한 뒤 원래 이름으로 되돌리는 흐름 설계</li>
-        <li><b>결과</b>: 문제 정의부터 배포까지 혼자 진행(구현은 AI와 협업), 서버 없이 브라우저에서 동작</li>
-      </ul>
+<!-- [사이드 프로젝트] '도구' 섹션 바로 다음에 둡니다. 데모(iframe)는 펼칠 때만 불러옵니다 (main.js 8) -->
+<section id="side" class="tint">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow">사이드 프로젝트</span>
+      <h2>업무 밖에서 만든 도구</h2>
+      <p class="sec-sub">문제 정의부터 배포까지 혼자 진행한 개인 프로젝트입니다.</p>
+    </header>
+    <!-- 기본으로 펼쳐 보이는 사례 소개. 무거운 데모(iframe)만 접어 두고, 누를 때 불러옴 (main.js 8) -->
+    <div class="side-project">
+      <article class="sp-card">
+        <div class="sp-info">
+          <header class="sp-card-head">
+            <h4><a href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">고유명사 지킴이<span class="sp-ext" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></h4>
+            <p class="sp-card-sub">웹소설 맞춤법 검사 도우미</p>
+            <span class="sp-card-tag">단독 진행</span>
+          </header>
+          <p class="sp-desc">맞춤법 검사기는 소설 속 인물 이름과 지명까지 일반 단어로 고쳐 버립니다. 검사기 자체는 바꿀 수 없으니 앞뒤 흐름을 설계해 풀었습니다. 고유명사를 잠시 코드로 바꿔 검사를 돌리고, 끝나면 원래 이름으로 되돌립니다.</p>
+          <div class="sp-made">
+            <span class="sp-made-label">만드는 과정</span>
+            <p>문제 정의부터 화면 설계, 개발, 배포까지 혼자 진행했고, 구현은 AI와 주고받으며 완성했습니다. 바꿀 수 없는 시스템은 그대로 두고 앞뒤 흐름으로 문제를 푸는, 업무에서 쓰던 방식을 낯선 영역에 적용해 본 프로젝트입니다.</p>
+          </div>
+        </div>
+        <ul class="sp-points">
+            <li><b>치환 → 검사 → 복원</b><span>고유명사를 코드로 바꿔 검사를 돌린 뒤 원래 이름으로 되돌립니다</span></li>
+            <li><b>조사 자동 검증</b><span>받침에 따라 은/는, 이/가가 맞는지 확인합니다</span></li>
+            <li><b>서버 없이 동작</b><span>사전은 브라우저에만 저장되고 외부로 전송되지 않습니다</span></li>
+          </ul>
+        <div class="sp-try">
+          <button type="button" class="sp-toggle" id="spToggle" aria-expanded="false" aria-controls="spPanel">
+            <span class="sp-toggle-main">펼쳐서 바로 사용해 볼 수 있습니다</span>
+            <span class="sp-toggle-cta"><span class="sp-toggle-cta-text">펼쳐보기</span><span class="sp-toggle-icon" aria-hidden="true"></span></span>
+          </button>
+          <a class="sp-newtab" href="https://kurotoni.github.io/novel-spell-checker/" target="_blank" rel="noopener noreferrer">새 탭에서 열기</a>
+        </div>
+        <div class="sp-panel" id="spPanel" hidden>
+          <div class="sp-frame">
+            <div class="sp-frame-bar"><span class="sp-frame-url">kurotoni.github.io/novel-spell-checker</span></div>
+            <iframe id="spFrame" data-src="https://kurotoni.github.io/novel-spell-checker/" title="고유명사 지킴이 - 웹소설 맞춤법 검사 도우미" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
