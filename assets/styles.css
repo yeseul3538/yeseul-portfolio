@@ -610,3 +610,4 @@ section#contact { border-top: 0; }
 .career-now-k { display: block; margin-bottom: 4px; font-size: 13px; font-weight: 600; color: var(--muted); }
 .career-now .career-top b { font-size: 16px; font-weight: 700; color: var(--text); }
 .career-now p { font-size: 15px; }
+.career-now p + .career-top { margin-top: 12px; }   /* '그 외 경력' 안에서 항목 사이 간격 */
