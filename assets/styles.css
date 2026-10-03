@@ -286,6 +286,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 
 /* [사이드 프로젝트] */
 .side-project { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
+#side .side-project { margin-top: 0; padding-top: 0; border-top: 0; }
 .sp-toggle {
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
   width: 100%; text-align: left; cursor: pointer; font: inherit; color: inherit;
