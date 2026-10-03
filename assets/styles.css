@@ -534,3 +534,18 @@ section#contact { border-top: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001s !important; animation-iteration-count: 1 !important; transition-duration: 0.001s !important; }
 }
+
+/* 카드 겉면 한 줄 요약: 문제 › 행동 › 결과 */
+.work-pal { display: flex; flex-wrap: wrap; row-gap: 2px; margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text); }
+.work-pal span + span::before { content: "›"; margin: 0 8px; color: var(--coral-d); font-weight: 700; }
+.work-pal span:last-child { font-weight: 700; color: var(--navy); }
+
+/* 접힌 카드 (05–07): 제목과 한 줄 요약만 표시, 누르면 상세 팝업 */
+.works-sub-label { margin: 22px 0 0; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: var(--muted); }
+.work-card.is-compact { padding: 22px 34px; align-items: center; }
+.work-card.is-compact h3 { font-size: 19px; }
+.work-card.is-compact .work-sub, .work-card.is-compact .bullets, .work-card.is-compact .tags { display: none; }
+.work-card.is-compact .work-side { flex: 1; }
+.work-card.is-compact .work-main { flex: 0 0 auto; align-self: center; }
+.work-card.is-compact .work-foot { margin-top: 0; padding-top: 0; }
+@media (max-width: 640px) { .work-card.is-compact { padding: 20px 22px; } }
