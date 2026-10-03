@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- ==========================================================================
+     링크 미리보기 이미지 원본 (카카오톡·슬랙·링크드인에 링크를 보낼 때 뜨는 그림)
+     · 결과물: assets/og-image.png (1200×630)
+     · 글자를 바꾼 뒤 이미지를 다시 만드는 방법은 '수정가이드.md'의 "링크 미리보기 이미지" 항목 참고
+     · 대표 문장은 index.html 첫 화면 제목(hero-title)과 같아야 합니다
+     ========================================================================== -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>og-image</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<style>
+  /* 색은 사이트(assets/styles.css :root)와 같은 값 */
+  :root {
+    --navy-900: #13253f;  /* 배경 */
+    --navy-300: #8e9db2;  /* 흐린 글자 */
+    --coral:    #e07a5f;  /* 왼쪽 세로 막대 */
+    --sand:     #f2cc8f;  /* 성과 숫자 */
+  }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative; background: var(--navy-900); color: #fff;
+    font-family: "Pretendard Variable", Pretendard, "Malgun Gothic", sans-serif;
+    -webkit-font-smoothing: antialiased; word-break: keep-all;
+  }
+  .bar  { position: absolute; left: 80px; top: 84px; width: 6px; height: 40px; border-radius: 3px; background: var(--coral); }
+  .name { position: absolute; left: 104px; top: 80px; font-size: 28px; font-weight: 600; color: var(--navy-300); letter-spacing: -0.01em; }
+  .name b { margin-right: 14px; font-weight: 800; color: #fff; }
+  h1 {
+    position: absolute; left: 80px; top: 160px; margin: 0;
+    font-size: 76px; font-weight: 800; line-height: 1.22; letter-spacing: -0.025em;
+  }
+  .kpis { position: absolute; left: 80px; right: 80px; bottom: 72px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .kpi { padding-top: 18px; border-top: 2px solid rgba(255, 255, 255, 0.18); }
+  .kpi span { display: block; font-size: 22px; font-weight: 600; color: var(--navy-300); }
+  .kpi b { display: block; margin-top: 6px; font-size: 38px; font-weight: 800; color: var(--sand); letter-spacing: -0.01em; white-space: nowrap; }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <div class="name"><b>유예슬</b>운영 기획 포트폴리오</div>
+  <h1>운영에서 새는 돈과 시간,<br />구조로 막습니다</h1>
+  <div class="kpis">
+    <div class="kpi"><span>미납금 회수율</span><b>8% → 15%</b></div>
+    <div class="kpi"><span>리드 매칭 (하루)</span><b>2시간 → 20분</b></div>
+    <div class="kpi"><span>법인카드 재발급 (기업당)</span><b>4–6시간 → 15분</b></div>
+  </div>
+</body>
+</html>

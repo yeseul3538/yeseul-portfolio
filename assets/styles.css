@@ -13,6 +13,8 @@
   --navy-300: #8e9db2;  /* 남색 위 흐린 글자 */
   --coral:    #e07a5f;
   --coral-d:  #c2583f;
+  --coral-btn:   #b04f36;  /* 주요 버튼(프로젝트 보기) 배경: 흰 글자가 잘 읽히는 진한 코랄 (대비 4.5:1 이상) */
+  --coral-btn-h: #963f2a;  /* 주요 버튼에 마우스를 올렸을 때 */
   --sand:     #f2cc8f;
   --cream:    #faf7f2;
   --cream-2:  #f4f0e9;
@@ -581,3 +583,30 @@ section#contact { border-top: 0; }
   .d-figure figcaption { padding: 0 14px; }
   .d-figure figcaption::after { content: "좌우로 밀어서 보기"; display: block; }
 }
+
+/* ── 4-3. 2026-10 리뷰 반영 ─────────────────────────────────
+   · 주요 버튼·연락처 작은 제목의 글자 대비 보강 (웹 접근성 기준 4.5:1 이상)
+   · 작은 글씨는 최소 13px
+   · 팝업 머리글의 한 줄 요약(work-pal) 숨김: 바로 아래 AS-IS → TO-BE 상자와 내용이 같음
+   · 핵심 역량 근거 링크(.ref), 경력 카드 '현재' 줄(.career-now) */
+.btn-accent { background: var(--coral-btn); }
+.btn-accent:hover { background: var(--coral-btn-h); }
+#contact .eyebrow { color: var(--sand); }   /* 남색 배경 위에서는 회색 대신 모래색 */
+
+.hero-card b, .tags span, .d-asis-k, .footer-inner span { font-size: 13px; }
+
+.modal-body .work-pal { display: none; }
+
+/* 핵심 역량: 줄 끝 프로젝트 번호. 누르면 해당 프로젝트 카드로 이동 */
+.ref {
+  display: inline-block; margin-left: 6px; padding: 0 7px; vertical-align: 1px;
+  font-size: 13px; font-weight: 700; line-height: 1.6; color: var(--navy); text-decoration: none;
+  border: 1px solid var(--line-d); border-radius: 4px; transition: border-color 0.2s;
+}
+.ref:hover, .ref:focus-visible { border-color: var(--navy); }
+
+/* 소개 > 경력 카드 맨 아래 '현재' 줄: 운영 경력 합계와 구분되도록 점선 위에 한 단계 흐리게 */
+.career-now { margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--line-d); }
+.career-now-k { display: block; margin-bottom: 4px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.career-now .career-top b { font-size: 16px; font-weight: 700; color: var(--text); }
+.career-now p { font-size: 15px; }
