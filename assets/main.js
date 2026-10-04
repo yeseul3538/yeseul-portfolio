@@ -48,7 +48,8 @@
 
   /* 3) 첫화면 배경 실 — 페이지가 열리면 한 번 저절로 진행 (스크롤과 무관)
         ① 코랄·블루그레이 두 가닥이 꼬인 끈이 오른쪽 빈 공간에서 고리를 지으며 그려짐
-        ② 꼬임이 풀려 두 가닥으로 벌어졌다가 한 가닥으로 합쳐지며, 성과 카드 위를 지나는 선으로 정렬
+        ② 꼬임이 풀려 두 가닥으로 벌어졌다가 한 가닥으로 합쳐지며, 성과 카드 위에 놓인 실로 정렬
+           (넓은 화면: 왼쪽 끝은 살짝 처지고 오른쪽 끝은 꼬임이 있던 위쪽으로 들려, 멈춘 화면에서도 '풀린 실'로 보임)
         ③ 각 카드로 내려가는 짧은 선과 점이 그려짐
         움직이는 동안 끈 모양은 '늘어나지 않음 + 급하게 꺾이지 않음' 규칙(rope)으로 정함 */
   var hsvg = hero && $('.hero-thread', hero);
@@ -66,6 +67,8 @@
         var t = (d - L[j]) / ((L[j + 1] - L[j]) || 1); out.push([lerp(pts[j][0], pts[j + 1][0], t), lerp(pts[j][1], pts[j + 1][1], t)]); }
       return out;
     };
+    var bez = function (p0, p1, p2, n) { var o = []; for (var i = 0; i <= n; i++) { var t = i / n, u = 1 - t;
+      o.push([u * u * p0[0] + 2 * u * t * p1[0] + t * t * p2[0], u * u * p0[1] + 2 * u * t * p1[1] + t * t * p2[1]]); } return o; };
     var smooth = function (P, w, passes) { for (var k = 0; k < passes; k++) { var o = [];
       for (var i = 0; i < P.length; i++) { var sx = 0, sy = 0, c = 0; for (var j = Math.max(0, i - w); j <= Math.min(P.length - 1, i + w); j++) { sx += P[j][0]; sy += P[j][1]; c++; } o.push([sx / c, sy / c]); }
       o[0] = P[0]; o[P.length - 1] = P[P.length - 1]; P = o; } return P; };
@@ -91,19 +94,25 @@
     };
     var G = null;
     var build = function () {
-      var W = hero.clientWidth, H = hero.clientHeight, narrow = W < 760, hr = hero.getBoundingClientRect();
+      var W = hero.clientWidth, H = hero.clientHeight, hr = hero.getBoundingClientRect();
       hsvg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); while (hsvg.firstChild) hsvg.removeChild(hsvg.firstChild);
       var cards = $$('.hero-card', hero).map(function (c) { var r = c.getBoundingClientRect(); return { x: r.left - hr.left, y: r.top - hr.top, w: r.width, h: r.height }; });
       if (!cards.length) return;
+      // 카드가 세로로 쌓이는 폭(태블릿·모바일)에서는 카드 왼쪽을 따라 내려가는 세로선 모양
+      var narrow = W < 760 || (cards.length > 1 && cards[1].y > cards[0].y + 4), tablet = narrow && W >= 760;
       var lead = $('.hero-lead', hero).getBoundingClientRect(), lx = lead.right - hr.left;
-      // 완성 모양: 왼쪽 밖에서 들어와 카드 위를 지나 마지막 카드 위에서 끝나는 선 (+ 카드로 내려가는 짧은 선)
+      // 완성 모양 — 넓은 화면: 첫 카드 왼쪽 끝(살짝 처진 실 끝)에서 카드 위를 지나, 마지막 카드 오른쪽 끝에서 위로 들리며 끝남
+      //             좁은 화면: 왼쪽에서 들어와 카드 왼쪽을 따라 내려감 (+ 카드로 이어지는 짧은 선)
       var yL = narrow ? null : cards[0].y - 26, fin;
       if (narrow) { var xL = Math.max(8, cards[0].x - 14); fin = [[-20, cards[0].y - 22], [xL - 12, cards[0].y - 22], [xL, cards[0].y - 10], [xL, cards[cards.length - 1].y + cards[cards.length - 1].h / 2]]; }
-      else fin = [[-20, yL], [cards[cards.length - 1].x + cards[cards.length - 1].w / 2, yL]];
+      else {
+        var x0 = cards[0].x, xR = cards[cards.length - 1].x + cards[cards.length - 1].w;
+        fin = bez([x0 + 2, yL + 14], [x0 + 8, yL], [x0 + 44, yL], 14).concat(bez([xR - 52, yL], [xR + 2, yL], [xR + 10, yL - 38], 14));
+      }
       fin = resample(fin, N);
-      // 시작 모양: 오른쪽 빈 공간(모바일은 제목 오른쪽 위)에서 고리 두 개를 지은 꼬인 끈
-      var ax0 = narrow ? W * 0.45 : Math.max(lx + 40, W * 0.56), ax1 = W * 0.98, ay0 = narrow ? H * 0.06 : H * 0.14, ay1 = narrow ? cards[0].y - 40 : yL - 30;
-      var raw = [[-20, fin[0][1]]], cx, cy, rr;
+      // 시작 모양: 오른쪽 빈 공간(모바일은 제목 오른쪽 위, 태블릿은 글 오른쪽)에서 고리 두 개를 지은 꼬인 끈
+      var ax0 = narrow ? (tablet ? Math.max(W * 0.45, Math.min(lx + 24, W * 0.7)) : W * 0.45) : Math.max(lx + 40, W * 0.56), ax1 = W * 0.98, ay0 = narrow ? H * 0.06 : H * 0.14, ay1 = narrow ? cards[0].y - 40 : yL - 30;
+      var raw = [fin[0].slice()], cx, cy, rr;
       var add = function (x, y) { raw.push([x, y]); };
       add(ax0 - 60, ay1); add(ax0 + (ax1 - ax0) * 0.2, lerp(ay0, ay1, 0.75));
       cx = ax0 + (ax1 - ax0) * 0.32; cy = lerp(ay0, ay1, 0.55); rr = Math.min(ax1 - ax0, ay1 - ay0) * 0.16;
@@ -227,4 +236,7 @@
     if (open && !spFrame.getAttribute('src')) spFrame.src = spFrame.dataset.src;
     spToggle.setAttribute('aria-expanded', String(open));
   });
+
+  /* 9) 바닥글 연도 — 공개하는 해에 맞춰 자동으로 바뀜 */
+  $$('[data-year]').forEach(function (e) { e.textContent = new Date().getFullYear(); });
 })();

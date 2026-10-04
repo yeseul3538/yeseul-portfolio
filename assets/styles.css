@@ -626,3 +626,41 @@ section#contact { border-top: 0; }
   #stack .grid-3 > .stack-card:nth-child(1) { padding-top: 0; }
   #stack .grid-3 > .stack-card:nth-child(2) { margin-top: 0; padding: 0 0 0 28px; border-top: 0; border-left: 1px solid var(--line); }
 }
+
+/* ── 4-5. 2026-10 3차 반영 ─────────────────────────────────
+   · 줄바꿈 묶음(.nb): 첫화면 제목 '두 번 하지 않도록,', '40만 → 160만 원' 같은 숫자·단위
+   · 카드 불릿: 핵심 한 줄 + 흐린 보조 줄(<small>) — 정보는 그대로, 읽는 순서만 정리
+   · '자세히 보기'를 버튼 모양으로, 팝업 '내 역할'은 칩 대신 목록
+   · 소개 아래 강점 3칸(.strengths), 자격증 수료 줄은 취득보다 한 단계 흐리게 */
+.nb, .bullets li b { white-space: nowrap; }   /* 숫자·단위 묶음이 줄 끝에서 갈라지지 않게 */
+
+.bullets li small, .d-note li small { display: block; margin-top: 1px; font-size: 13.5px; line-height: 1.6; color: var(--muted); }
+
+.work-more { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border: 1px solid var(--line-d); border-radius: 4px; transition: border-color 0.2s; }
+.work-more::after { content: "→"; transition: transform 0.2s; }
+.work-card:hover .work-more { text-decoration: none; border-color: var(--navy); }
+.work-card:hover .work-more::after { transform: translateX(3px); }
+
+/* 소개 > 강점: 소개·경력 아래 전체 폭 3칸 (세로선 구분은 4-1의 .comp-card 규칙을 그대로 씀) */
+.strengths { margin-top: 80px; padding-top: 36px; border-top: 1px solid var(--line); }
+.strengths-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; margin-bottom: 30px; }
+.strengths-head h3 { font-size: clamp(22px, 2.4vw, 28px); }
+.strengths-head p { font-size: 14px; color: var(--muted); }
+.comp-k { display: block; margin-bottom: 10px; font-size: 13px; font-weight: 700; color: var(--coral-d); }
+.comp-card h4 { font-size: 19px; line-height: 1.45; margin-bottom: 12px; }
+.comp-card > p { font-size: 15px; line-height: 1.8; }
+.comp-proof { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line-d); }
+.comp-proof li { display: flex; align-items: baseline; gap: 10px; font-size: 14px; line-height: 1.6; }
+.comp-proof .ref { flex-shrink: 0; margin-left: 0; }
+
+/* 팝업 '내 역할': 문장 길이 항목은 칩보다 목록이 읽기 쉬움 */
+.d-note.d-roles ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; }
+.d-note.d-roles li { display: block; padding: 0 0 0 18px; border: 0; border-radius: 0; background: none; font-size: 15px; line-height: 1.7; }
+.d-note.d-roles li::before { display: block; }
+
+.cert-card.is-course h3 { font-weight: 600; color: var(--text); }
+
+@media (max-width: 860px) {
+  .d-note.d-roles ul { grid-template-columns: 1fr; }
+  .strengths { margin-top: 64px; }
+}
