@@ -4,43 +4,55 @@
      · 결과물: assets/og-image.png (1200×630)
      · 글자를 바꾼 뒤 이미지를 다시 만드는 방법은 '수정가이드.md'의 "링크 미리보기 이미지" 항목 참고
      · 대표 문장은 index.html 첫 화면 제목(hero-title)과 같아야 합니다
+     · 아래쪽 초록 선은 첫 화면의 '풀린 실'이 성과 3개를 잇는 마지막 모습을 옮긴 것
      ========================================================================== -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
 <title>og-image</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&amp;display=swap" />
 <style>
   /* 색은 사이트(assets/styles.css :root)와 같은 값 */
   :root {
-    --navy-900: #13253f;  /* 배경 */
-    --navy-300: #8e9db2;  /* 흐린 글자 */
-    --coral:    #e07a5f;  /* 왼쪽 세로 막대 */
-    --sand:     #f2cc8f;  /* 성과 숫자 */
+    --paper:  #f2f2ee;  /* 배경 */
+    --ink:    #141414;  /* 제목 · 굵은 선 */
+    --muted:  #66665f;  /* 흐린 글자 */
+    --accent: #145c43;  /* 장부 초록: 표시 · 실 */
   }
   html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
   body {
-    position: relative; background: var(--navy-900); color: #fff;
+    position: relative; background: var(--paper); color: var(--ink);
     font-family: "Pretendard Variable", Pretendard, "Malgun Gothic", sans-serif;
     -webkit-font-smoothing: antialiased; word-break: keep-all;
   }
-  .bar  { position: absolute; left: 80px; top: 84px; width: 6px; height: 40px; border-radius: 3px; background: var(--coral); }
-  .name { position: absolute; left: 104px; top: 80px; font-size: 28px; font-weight: 600; color: var(--navy-300); letter-spacing: -0.01em; }
-  .name b { margin-right: 14px; font-weight: 800; color: #fff; }
+  .bar  { position: absolute; left: 80px; top: 91px; width: 12px; height: 12px; background: var(--accent); }
+  .name { position: absolute; left: 108px; top: 78px; font-size: 26px; font-weight: 500; color: var(--muted); letter-spacing: -0.01em; }
+  .name b { margin-right: 14px; font-weight: 700; color: var(--ink); }
   h1 {
-    position: absolute; left: 80px; top: 160px; margin: 0;
-    font-size: 76px; font-weight: 800; line-height: 1.22; letter-spacing: -0.025em;
+    position: absolute; left: 80px; top: 150px; margin: 0;
+    font-family: "Noto Serif KR", serif; font-size: 74px; font-weight: 600; line-height: 1.24; letter-spacing: -0.035em;
   }
-  .kpis { position: absolute; left: 80px; right: 80px; bottom: 72px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .kpi { padding-top: 18px; border-top: 2px solid rgba(255, 255, 255, 0.18); }
-  .kpi span { display: block; font-size: 22px; font-weight: 600; color: var(--navy-300); }
-  .kpi b { display: block; margin-top: 6px; font-size: 38px; font-weight: 800; color: var(--sand); letter-spacing: -0.01em; white-space: nowrap; }
+  .thread { position: absolute; inset: 0; }
+  .kpis { position: absolute; left: 80px; right: 80px; top: 452px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .kpi { padding-top: 20px; border-top: 2px solid var(--ink); }
+  .kpi span { display: block; font-size: 22px; font-weight: 500; color: var(--muted); }
+  .kpi b { display: block; margin-top: 8px; font-family: "Noto Serif KR", serif; font-size: 42px; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap; }
 </style>
 </head>
 <body>
   <div class="bar"></div>
   <div class="name"><b>유예슬</b>운영 기획 포트폴리오</div>
   <h1>운영에서 새는 돈과 시간,<br />구조로 막습니다</h1>
+  <svg class="thread" viewBox="0 0 1200 630" aria-hidden="true">
+    <g fill="none" stroke="#145c43" stroke-width="2.4" stroke-linecap="round" opacity="0.85">
+      <path d="M82 440 Q88 426 124 426 L1066 426 Q1122 426 1130 388" />
+      <path d="M244 426 V452 M600 426 V452 M956 426 V452" />
+    </g>
+    <g fill="#145c43" stroke="#f2f2ee" stroke-width="3">
+      <circle cx="244" cy="452" r="4.5" /><circle cx="600" cy="452" r="4.5" /><circle cx="956" cy="452" r="4.5" />
+    </g>
+  </svg>
   <div class="kpis">
     <div class="kpi"><span>미납금 회수율</span><b>8% → 15%</b></div>
     <div class="kpi"><span>수동 매칭 (하루)</span><b>2시간 → 20분</b></div>

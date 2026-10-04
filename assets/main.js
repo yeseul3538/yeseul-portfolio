@@ -6,7 +6,7 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* 2) 메뉴 — 스크롤 상태, 남색 구간 위 흰 글자, 현재 섹션 표시 */
+  /* 2) 메뉴 — 스크롤 상태, 먹색 구간 위 흰 글자, 현재 섹션 표시 */
   var nav = $('#nav');
   var hero = $('#hero');
   var darkZones = [$('.stats'), $('#contact')].filter(Boolean);
@@ -47,14 +47,14 @@
   burger.addEventListener('click', function () { setMenu(!mobileMenu.classList.contains('open')); });
 
   /* 3) 첫화면 배경 실 — 페이지가 열리면 한 번 저절로 진행 (스크롤과 무관)
-        ① 코랄·블루그레이 두 가닥이 꼬인 끈이 오른쪽 빈 공간에서 고리를 지으며 그려짐
+        ① 초록·회색 두 가닥이 꼬인 끈이 오른쪽 빈 공간에서 고리를 지으며 그려짐
         ② 꼬임이 풀려 두 가닥으로 벌어졌다가 한 가닥으로 합쳐지며, 성과 카드 위에 놓인 실로 정렬
            (넓은 화면: 왼쪽 끝은 살짝 처지고 오른쪽 끝은 꼬임이 있던 위쪽으로 들려, 멈춘 화면에서도 '풀린 실'로 보임)
         ③ 각 카드로 내려가는 짧은 선과 점이 그려짐
         움직이는 동안 끈 모양은 '늘어나지 않음 + 급하게 꺾이지 않음' 규칙(rope)으로 정함 */
   var hsvg = hero && $('.hero-thread', hero);
   if (hsvg) {
-    var NS = 'http://www.w3.org/2000/svg', N = 900, C1 = '#c2583f', C2 = '#8e9db2', CREAM = '#faf7f2';
+    var NS = 'http://www.w3.org/2000/svg', N = 900, C1 = '#145c43', C2 = '#a3a39b', CREAM = '#f2f2ee';
     var clamp01 = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
     var ease = function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
     var lerp = function (a2, b2, t) { return a2 + (b2 - a2) * t; };
