@@ -730,7 +730,7 @@
       </article>
     </div>
 
-    <!-- [사이드 프로젝트] 프로젝트 섹션 맨 아래. 메인 프로젝트보다 가볍게: 머리글 한 줄 + 문제·접근·결과 3칸 (팝업 없음)
+    <!-- [사이드 프로젝트] 프로젝트 섹션 맨 아래. 메인 프로젝트보다 가볍게: 테두리만 있는 투명한 상자 + 문제·접근·결과 3칸 (팝업 없음)
          · 역량 태그(sp-tags): <li> 하나가 태그 하나
          · 데모(iframe)는 '펼쳐서 체험'을 처음 누를 때만 불러옵니다 (main.js 8)
          · 데모 주소가 바뀌면 3곳을 함께 고치세요: sp-newtab의 href, sp-frame-url 글자, spFrame의 data-src -->
@@ -772,60 +772,68 @@
   </div>
 </section>
 
-<!-- [사용 도구] 사양표처럼 한 줄 = 분야 1개 (자동화 / 도메인 이해 / 데이터 정리·기획 / 일하는 방식)
-     불릿은 모두 '<b>도구·분야 이름</b>: 내용' 형식으로 씁니다 -->
-<section id="stack" class="tint">
+<!-- [사용 도구] 장부처럼 '이름 | 한 일' 두 칸 표 4개 (자동화 / 도메인 이해 / 데이터 정리·기획 / 일하는 방식)
+     · 표 하나 = <div class="spec-group"> : 왼쪽 제목(h3) · 칸 이름 줄(spec-head) · 표(dl.spec)
+     · 표의 한 줄 = <div><dt>이름</dt><dd><span>한 일</span><span>한 일</span></dd></div>
+       → 줄을 늘리려면 <div>…</div> 를 통째로 복사해 글자만 바꾸세요
+     · <dd> 안의 <span> 하나가 화면에서 한 줄입니다. 쉼표로 길게 잇지 말고 일마다 <span>을 나누세요
+       (짧은 이름 나열은 '이카운트, 아마란스'처럼 한 <span> 안에 쉼표로 써도 됩니다) -->
+<section id="stack">
   <div class="wrap">
     <header class="sec-head">
       <span class="eyebrow">업무 도구</span>
       <h2>도구·도메인·일하는 방식</h2>
-      <p class="sec-sub">실무에서 직접 써 온 도구와 도메인 지식, 일하는 방식입니다.</p>
+      <p class="sec-sub">도구 이름만 늘어놓지 않고, 그 도구로 한 일을 옆에 적었습니다.</p>
     </header>
 
-    <div class="grid-3">
-      <article class="stack-card">
-        <h3>자동화</h3>
-        <ul class="bullets">
-          <li><b>Apps Script</b>: 국세청 휴·폐업 30분 주기 자동 조회, 인입 경로 자동 분류</li>
-          <li><b>Zapier</b>: 출고 요청 48시간 미확인 시 담당자 자동 메일, 시트 → Slack 자동 업로드</li>
-          <li><b>Slack Workflow·Webhook</b>: 해지·폐업 접수 → 시트 자동 적재·후속 처리 알림, 분류 결과 실시간 공유</li>
-        </ul>
-      </article>
-      <article class="stack-card">
-        <h3>도메인 이해</h3>
-        <ul class="bullets">
-          <li><b>결제·정산</b>: CMS 자동이체 출금, VAN 카드 결제 중계망, PG 전자결제대행</li>
-          <li><b>결제 단말기</b>: POS, CAT 카드 단말기, 토스 프론트</li>
-          <li><b>ERP·전자계약</b>: 이카운트, 아마란스, 모두싸인</li>
-          <li><b>채널톡·솔라피</b>: 미납 안내 알림톡, 휴·폐업 안내 문자 발송</li>
-        </ul>
-      </article>
-      <article class="stack-card">
-        <h3>데이터 정리·기획</h3>
-        <ul class="bullets">
-          <li><b>Excel</b>: 피벗 테이블·그래프로 보고서 작성</li>
-          <li><b>Google Sheets</b>: 해지·폐업 접수 자동 적재, 인입 경로별 주간 집계·전주 대비 리포트, 출고 ↔ 계약서 월간 대조</li>
-          <li><b>데이터 설계</b>: 인입 경로·담당자별 분류 데이터 구조 설계, Data팀 KPI 대시보드의 기초 데이터로 사용</li>
-          <li><b>Figma</b>: 위약금 계산기 3단계 UI 와이어프레임·플로우</li>
-        </ul>
-        <p class="stack-note">기본 도구: Notion·Google Workspace</p>
-      </article>
+    <div class="spec-group">
+      <h3>자동화</h3>
+      <p class="spec-head"><span>도구</span><span>한 일</span></p>
+      <dl class="spec">
+        <div><dt>Apps Script</dt><dd><span>국세청 휴·폐업 30분 주기 자동 조회</span><span>인입 경로 자동 분류</span></dd></div>
+        <div><dt>Zapier</dt><dd><span>출고 요청 48시간 미확인 시 담당자 자동 메일</span><span>시트 → Slack 자동 업로드</span></dd></div>
+        <div><dt>Slack Workflow·Webhook</dt><dd><span>해지·폐업 접수 → 시트 자동 적재·후속 처리 알림</span><span>분류 결과 실시간 공유</span></dd></div>
+      </dl>
     </div>
 
-    <!-- 일하는 방식: 한 칸 = <b>방식</b> + <span>그 방식을 쓴 프로젝트 이름</span> (이름은 [강점] 주석의 짧은 이름 목록과 같게) -->
-    <div class="frameworks">
+    <div class="spec-group">
+      <h3>도메인 이해</h3>
+      <p class="spec-head"><span>분야</span><span>다뤄 본 것</span></p>
+      <dl class="spec">
+        <div><dt>결제·정산</dt><dd><span>CMS 자동이체 출금</span><span>VAN 카드 결제 중계망</span><span>PG 전자결제대행</span></dd></div>
+        <div><dt>결제 단말기</dt><dd><span>POS, CAT 카드 단말기, 토스 프론트</span></dd></div>
+        <div><dt>ERP·전자계약</dt><dd><span>이카운트, 아마란스 (ERP)</span><span>모두싸인 (전자계약)</span></dd></div>
+        <div><dt>채널톡·솔라피</dt><dd><span>미납 안내 알림톡</span><span>휴·폐업 안내 문자 발송</span></dd></div>
+      </dl>
+    </div>
+
+    <div class="spec-group">
+      <h3>데이터 정리·기획</h3>
+      <p class="spec-head"><span>도구</span><span>한 일</span></p>
+      <dl class="spec">
+        <div><dt>Excel</dt><dd><span>피벗 테이블·그래프로 보고서 작성</span></dd></div>
+        <div><dt>Google Sheets</dt><dd><span>해지·폐업 접수 자동 적재</span><span>인입 경로별 주간 집계·전주 대비 리포트</span><span>출고 ↔ 계약서 월간 대조</span></dd></div>
+        <div><dt>데이터 설계</dt><dd><span>인입 경로·담당자별 분류 데이터 구조 설계</span><span>Data팀 KPI 대시보드의 기초 데이터로 사용</span></dd></div>
+        <div><dt>Figma</dt><dd><span>위약금 계산기 3단계 UI 와이어프레임·플로우</span></dd></div>
+        <div><dt>기본 도구</dt><dd><span>Notion, Google Workspace</span></dd></div>
+      </dl>
+    </div>
+
+    <!-- 일하는 방식: 오른쪽 칸은 그 방식을 쓴 프로젝트의 짧은 이름 ([강점] 주석의 이름 목록과 같게) -->
+    <div class="spec-group">
       <h3>일하는 방식</h3>
-      <ul class="ways">
-        <li><b>요구사항 정의·PRD</b><span>법인카드 일괄 재발급, 위약금 통합 계산기, 발급 오류 조기 표시</span></li>
-        <li><b>분기 명세</b><span>미납 관리 체계, 해지·폐업 조기 감지, 인입 경로 자동 분류, 위약금 통합 계산기</span></li>
-        <li><b>엣지 케이스 검증</b><span>미납 관리 체계, 인입 경로 자동 분류, 위약금 통합 계산기</span></li>
-        <li><b>QA 테스트 케이스</b><span>위약금 통합 계산기</span></li>
-        <li><b>SOP·매뉴얼</b><span>미납 관리 체계, 해지·폐업 조기 감지, 출고·계약 정합성</span></li>
-        <li><b>사용자 가이드</b><span>인입 경로 자동 분류, 위약금 통합 계산기</span></li>
-        <li><b>R&amp;R</b><span>출고·계약 정합성</span></li>
-        <li><b>트레이드오프 분석</b><span>미납 관리 체계, 발급 오류 조기 표시</span></li>
-        <li><b>AS-IS / TO-BE</b><span>미납 관리 체계, 해지·폐업 조기 감지</span></li>
-      </ul>
+      <p class="spec-head"><span>방식</span><span>쓴 프로젝트</span></p>
+      <dl class="spec">
+        <div><dt>요구사항 정의·PRD</dt><dd><span>법인카드 일괄 재발급, 위약금 통합 계산기, 발급 오류 조기 표시</span></dd></div>
+        <div><dt>분기 명세</dt><dd><span>미납 관리 체계, 해지·폐업 조기 감지, 인입 경로 자동 분류, 위약금 통합 계산기</span></dd></div>
+        <div><dt>엣지 케이스 검증</dt><dd><span>미납 관리 체계, 인입 경로 자동 분류, 위약금 통합 계산기</span></dd></div>
+        <div><dt>QA 테스트 케이스</dt><dd><span>위약금 통합 계산기</span></dd></div>
+        <div><dt>SOP·매뉴얼</dt><dd><span>미납 관리 체계, 해지·폐업 조기 감지, 출고·계약 정합성</span></dd></div>
+        <div><dt>사용자 가이드</dt><dd><span>인입 경로 자동 분류, 위약금 통합 계산기</span></dd></div>
+        <div><dt>R&amp;R</dt><dd><span>출고·계약 정합성</span></dd></div>
+        <div><dt>트레이드오프 분석</dt><dd><span>미납 관리 체계, 발급 오류 조기 표시</span></dd></div>
+        <div><dt>AS-IS / TO-BE</dt><dd><span>미납 관리 체계, 해지·폐업 조기 감지</span></dd></div>
+      </dl>
     </div>
   </div>
 </section>
@@ -851,13 +859,14 @@
   </div>
 </section>
 
-<!-- [연락처] 제목은 첫 화면 대표 문장(새는 돈과 시간)을 이어받는 마무리 문장입니다 -->
+<!-- [연락처] 제목은 첫 화면 대표 문장(같은 일을 두 번 하지 않도록)을 '입사하면 무엇부터 할지'로 이어받는 마무리입니다.
+     '더 나은 경험', '최적의', '가치' 같은 누구나 쓰는 말 대신, 실제로 할 일을 구체적으로 씁니다 -->
 <section id="contact">
   <div class="wrap">
     <header class="sec-head">
       <span class="eyebrow">연락처</span>
-      <h2>더 나은 경험을 위한<br />최적의 운영을 만들겠습니다</h2>
-      <p class="sec-sub">운영 흐름과 반복 문의, 예외 처리 사례를 수치로 먼저 파악하고<br class="br-pc" /> 우선순위가 높은 문제부터 정책·프로세스·자동화로 바꾸겠습니다.</p>
+      <h2>매주 반복되는 일부터<br />하나씩 줄이겠습니다</h2>
+      <p class="sec-sub">입사하면 반복 문의와 예외 처리가 어디서 몇 건씩 생기는지 먼저 세어 봅니다.<br class="br-pc" /> 가장 자주 새는 곳에 기준을 세우고, 사람이 볼 필요 없는 일은 자동화로 넘기겠습니다.</p>
     </header>
 
     <div class="contact-grid">
