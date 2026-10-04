@@ -55,7 +55,7 @@ body {
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
 ::selection { background: var(--accent); color: #fff; }
-h1, h2, h3, h4, h5 { color: var(--ink); font-weight: 600; line-height: 1.35; letter-spacing: -0.025em; }
+h1, h2, h3, h4 { color: var(--ink); font-weight: 600; line-height: 1.35; letter-spacing: -0.025em; }
 b, strong { color: var(--ink); font-weight: 600; }
 a { color: inherit; }
 ul, ol { list-style: none; }
@@ -72,7 +72,7 @@ section { padding: 112px 0; }
 }
 .sec-head > * { grid-column: 5 / -1; }
 .sec-head > .eyebrow { grid-column: 1 / span 4; grid-row: 1 / span 4; align-self: start; margin-top: 0.85em; }
-.sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h2); line-height: 1.3; letter-spacing: -0.03em; }
+.sec-head h2 { font-family: var(--serif); font-size: var(--fs-h2); line-height: 1.3; letter-spacing: -0.03em; }
 .sec-sub { margin-top: 20px; max-width: 40em; font-size: var(--fs-body); color: var(--sub); }
 .sec-note { margin-top: 6px; max-width: 48em; font-size: var(--fs-label); line-height: 1.7; color: var(--sub); }
 
@@ -85,7 +85,7 @@ section { padding: 112px 0; }
 .bullets li::before, .d-note li::before {
   content: ""; position: absolute; left: 0; top: 0.85em; width: 8px; border-top: 1px solid var(--ink);   /* 배경 대신 테두리: 줄마다 선이 흐려지지 않게 */
 }
-.bullets li small, .d-note li small { display: block; margin-top: 2px; font-size: var(--fs-label); line-height: 1.6; color: var(--sub); }
+.bullets li small { display: block; margin-top: 2px; font-size: var(--fs-label); line-height: 1.6; color: var(--sub); }
 .nb, .bullets li b { white-space: nowrap; }   /* 숫자·단위 묶음이 줄 끝에서 갈라지지 않게 */
 
 /* 성격이 다른 정보는 기호 대신 간격과 색으로 구분 */
@@ -187,7 +187,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .hero-eyebrow { column-gap: 0; margin-bottom: 28px; font-size: var(--fs-label); font-weight: 400; line-height: 1.6; color: var(--sub); }
 .hero-eyebrow > span:first-child { font-weight: 600; color: var(--ink); }
 .hero-eyebrow > span + span { margin-left: 12px; padding-left: 13px; border-left: 1px solid var(--line-2); }
-.hero-title { margin-bottom: 26px; font-family: var(--serif); font-weight: 600; font-size: var(--fs-display); line-height: 1.22; letter-spacing: -0.035em; }
+.hero-title { margin-bottom: 26px; font-family: var(--serif); font-size: var(--fs-display); line-height: 1.22; letter-spacing: -0.035em; }
 .hero-sub { max-width: 34em; font-size: var(--fs-lead); line-height: 1.75; color: var(--sub); }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 32px; margin-top: 40px; }
 
@@ -220,13 +220,12 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .chips li::before { content: ""; flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
 .career-head { display: flex; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--ink); }
-.career-icon { display: none; }
-.career-head h3 { font-size: var(--fs-body); font-weight: 600; letter-spacing: -0.01em; }
+.career-head h3 { font-size: var(--fs-body); letter-spacing: -0.01em; }
 .career-head em { margin-left: 8px; font-style: normal; font-weight: 400; color: var(--muted); }
 .career-list li { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .career-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
 .career-top > b { margin-right: auto; }
-.career-top b { font-size: var(--fs-lead); font-weight: 600; letter-spacing: -0.02em; }
+.career-top b { font-size: var(--fs-lead); letter-spacing: -0.02em; }
 .career-top span { font-size: var(--fs-label); color: var(--muted); font-variant-numeric: tabular-nums; }
 .career-top .parts { column-gap: 10px; }
 .career-list p { margin-top: 4px; font-size: var(--fs-label); line-height: 1.6; }
@@ -235,9 +234,8 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .career-now { margin-top: 28px; }
 .career-now-k { display: block; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: var(--fs-label); font-weight: 600; color: var(--muted); }
 .career-now .career-top { margin-top: 14px; }
-.career-now .career-top b { font-size: var(--fs-body); font-weight: 600; color: var(--text); }
+.career-now .career-top b { font-size: var(--fs-body); color: var(--text); }
 .career-now p { margin-top: 2px; font-size: var(--fs-label); line-height: 1.6; }
-.career-now p + .career-top { margin-top: 14px; }
 
 /* 핵심 역량: 한 줄 = 강점 1개 (레일: 이름·한 문장 / 설명 / 근거 프로젝트) */
 .strengths { margin-top: 120px; }
@@ -245,15 +243,14 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: baseline;
   padding-top: 18px; border-top: 1px solid var(--ink);
 }
-.strengths-head h3 { grid-column: 1 / span 4; font-family: var(--serif); font-weight: 600; font-size: var(--fs-title); letter-spacing: -0.03em; }
-.strengths-head p { grid-column: 5 / -1; font-size: var(--fs-body); color: var(--sub); }
+.strengths-head h3 { grid-column: 1 / span 4; font-family: var(--serif); font-size: var(--fs-title); letter-spacing: -0.03em; }
 .strengths .grid-3 { margin-top: 28px; border-top: 1px solid var(--line); }
 .comp-card {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: var(--gutter);
   padding: 32px 0 36px; border-bottom: 1px solid var(--line);
 }
 .comp-k { grid-column: 1 / span 4; grid-row: 1; margin-bottom: 10px; font-size: var(--fs-label); font-weight: 600; color: var(--accent); }
-.comp-card h4 { grid-column: 1 / span 4; grid-row: 2; padding-right: 32px; font-family: var(--serif); font-weight: 600; font-size: var(--fs-lead); line-height: 1.55; letter-spacing: -0.03em; }
+.comp-card h4 { grid-column: 1 / span 4; grid-row: 2; padding-right: 32px; font-family: var(--serif); font-size: var(--fs-lead); line-height: 1.55; letter-spacing: -0.03em; }
 .comp-card > p { grid-column: 5 / span 4; grid-row: 1 / span 2; padding-right: 8px; font-size: var(--fs-body); line-height: 1.85; }
 /* 근거 한 줄 = 프로젝트 이름 링크(위) + 무엇을 했는지(아래) */
 .comp-proof { grid-column: 9 / -1; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: 16px; }
@@ -288,21 +285,20 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .work-side { grid-column: 5 / span 4; padding-right: 16px; }
 .work-main { grid-column: 9 / -1; align-self: stretch; display: flex; flex-direction: column; }
 
-.work-no, .d-label { display: block; }
-.work-no { margin-bottom: 14px; font-size: var(--fs-label); font-weight: 400; color: var(--muted); }
+.work-no { display: block; margin-bottom: 14px; font-size: var(--fs-label); font-weight: 400; color: var(--muted); }
 .work-card h3 { font-size: var(--fs-title); line-height: 1.4; }
 .work-sub { margin-top: 8px; font-size: var(--fs-body); line-height: 1.65; color: var(--sub); }
 .work-meta { display: flex; margin-top: 20px; font-size: var(--fs-label); font-weight: 400; line-height: 1.6; color: var(--muted); }
 .work-meta > span:first-child { color: var(--ink); font-weight: 600; }
 
 /* 한 줄 요약: 문제 › 행동 › 결과 (그 밖의 프로젝트 05~07 목록에서만 씁니다) */
-.work-pal { display: flex; flex-wrap: wrap; row-gap: 2px; margin-top: 16px; font-size: var(--fs-body); line-height: 1.6; color: var(--text); }
+.work-pal { display: flex; flex-wrap: wrap; row-gap: 2px; font-size: var(--fs-body); line-height: 1.6; color: var(--sub); }
 .work-pal span + span::before { content: "›"; margin: 0 8px; color: var(--muted); }
 .work-pal span:last-child { font-weight: 600; color: var(--ink); }
 
 .work-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px 16px; margin-top: auto; padding-top: 24px; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tags span { padding: 2px 9px; border: 1px solid var(--line-2); border-radius: 2px; font-size: var(--fs-label); font-weight: 400; color: var(--text); }
+.tags, .sp-tags { display: flex; flex-wrap: wrap; gap: 6px; }   /* 태그: 프로젝트 카드(.tags) · 사이드 프로젝트(.sp-tags) 공통 */
+.tags span, .sp-tags li { padding: 2px 9px; border: 1px solid var(--line-2); border-radius: 2px; font-size: var(--fs-label); font-weight: 400; color: var(--text); }
 .work-more {
   display: inline-flex; align-items: center; gap: 8px; padding-bottom: 2px; border-bottom: 1px solid var(--ink);
   font-size: var(--fs-label); font-weight: 600; color: var(--ink); white-space: nowrap; transition: color 0.2s, border-color 0.2s;
@@ -314,15 +310,15 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 /* 그 밖의 프로젝트(05~07): 상자 없이 선으로 나뉜 목록. 행 전체를 누르면 상세 팝업
    열: 번호(레일) | 제목 + 한 줄 요약 | 회사·연도·분야 */
 .works-sub-label { margin-top: 80px; padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-size: var(--fs-label); font-weight: 600; color: var(--ink); }
-.work-card.is-compact { display: block; padding: 24px 0; border-bottom: 1px solid var(--line); }
-.work-card.is-compact .work-main, .work-card.is-compact .work-sub { display: none; }   /* 불릿·태그·'자세히 보기'는 팝업에서 확인 (aria-label로 안내) */
+.work-card.is-compact { padding: 24px 0; border-bottom: 1px solid var(--line); }
+.work-card.is-compact .work-sub { display: none; }   /* 한 줄 설명은 목록에서 숨기고 팝업 머리글에서만 보임 */
 .work-card.is-compact .work-side {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 6px; align-items: baseline; padding: 0;
 }
 .work-card.is-compact .work-no { grid-column: 1 / span 4; grid-row: 1; margin: 0; }
 .work-card.is-compact h3 { grid-column: 5 / span 5; grid-row: 1; font-size: var(--fs-lead); }
 .work-card.is-compact:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
-.work-card.is-compact .work-pal { grid-column: 5 / span 5; grid-row: 2; margin: 0; color: var(--sub); }
+.work-card.is-compact .work-pal { grid-column: 5 / span 5; grid-row: 2; }
 .work-card.is-compact .work-meta { grid-column: 10 / -1; grid-row: 1 / span 2; align-self: center; justify-self: end; justify-content: flex-end; margin: 0; text-align: right; }
 
 /* ── 8. 사이드 프로젝트 ──────────────────────────────── */
@@ -333,15 +329,14 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: baseline;
   margin-top: 120px; padding-top: 18px; border-top: 1px solid var(--ink);
 }
-.side-project > h3 { grid-column: 1 / span 4; grid-row: 1; font-family: var(--serif); font-weight: 600; font-size: var(--fs-title); letter-spacing: -0.03em; }
+.side-project > h3 { grid-column: 1 / span 4; grid-row: 1; font-family: var(--serif); font-size: var(--fs-title); letter-spacing: -0.03em; }
 .side-label { grid-column: 5 / -1; grid-row: 1; font-size: var(--fs-body); color: var(--sub); }
-.sp-card { grid-column: 1 / -1; margin-top: 32px; padding: 28px 32px 24px; background: transparent; border: 1px solid var(--line-2); border-radius: 2px; }
+.sp-card { grid-column: 1 / -1; margin-top: 32px; padding: 28px 32px 24px; border: 1px solid var(--line-2); border-radius: 2px; }
 .sp-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
 .sp-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; }
 .sp-title h4 { font-size: var(--fs-lead); }
 .sp-title p { font-size: var(--fs-body); color: var(--sub); }
-.sp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.sp-tags li { padding: 2px 9px; border: 1px solid var(--line-2); border-radius: 2px; font-size: var(--fs-label); font-weight: 400; line-height: 1.6; color: var(--text); }
+.sp-tags li { line-height: 1.6; }
 .sp-pal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 32px; padding-top: 20px; }
 .sp-pal dt { font-size: var(--fs-label); font-weight: 600; color: var(--accent); }
 .sp-pal dd { margin-top: 6px; font-size: var(--fs-body); line-height: 1.7; }
@@ -389,7 +384,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
   padding: 20px 0; border-bottom: 1px solid var(--line);
 }
 .cert-cat { grid-column: 1 / span 4; font-size: var(--fs-label); font-weight: 400; color: var(--muted); }
-.cert-card h3 { grid-column: 5 / span 6; font-size: var(--fs-lead); font-weight: 600; line-height: 1.5; letter-spacing: -0.02em; }
+.cert-card h3 { grid-column: 5 / span 6; font-size: var(--fs-lead); line-height: 1.5; letter-spacing: -0.02em; }
 .cert-card small { display: inline-flex; margin-left: 12px; font-size: var(--fs-label); font-weight: 400; letter-spacing: 0; color: var(--muted); font-variant-numeric: tabular-nums; }
 .cert-badge { grid-column: 11 / -1; justify-self: end; display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-label); font-weight: 600; white-space: nowrap; }
 .cert-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; }
@@ -406,7 +401,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 #contact .eyebrow { color: var(--paper); }
 #contact .eyebrow::before { background: var(--accent-on-dark); }
 #contact h2 { font-size: var(--fs-display); line-height: 1.24; color: var(--paper); }
-#contact .sec-sub { margin-top: 24px; max-width: none; font-size: var(--fs-body); line-height: 1.85; color: var(--on-dark); }
+#contact .sec-sub { margin-top: 24px; max-width: none; line-height: 1.85; color: var(--on-dark); }
 .contact-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
 .contact-card {
   grid-column: 5 / -1; display: grid; grid-template-columns: 140px minmax(0, 1fr) auto; align-items: baseline; gap: 16px;
@@ -419,7 +414,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .contact-card:hover span { color: var(--accent-on-dark); }
 .contact-card:hover::after { color: var(--accent-on-dark); transform: translate(2px, -2px); }
 /* 값이 단어 중간에서 끊기지 않게 */
-.contact-card span, .contact-card b { white-space: nowrap; word-break: keep-all; overflow-wrap: normal; }
+.contact-card span, .contact-card b { white-space: nowrap; }
 
 body > footer { background: var(--ink); border-top: 1px solid rgba(242, 242, 238, 0.1); }
 .footer-inner { display: flex; justify-content: space-between; gap: 16px; padding-block: 26px; }
@@ -448,7 +443,7 @@ body.modal-open { overflow: hidden; }
 
 /* 팝업 머리글 (카드의 work-side 를 복사해 씀). 한 줄 요약은 아래 문제 정의와 겹쳐 숨김 */
 .modal-body .work-side { padding: 0 48px 32px 0; border-bottom: 1px solid var(--ink); }
-.modal-body .work-side h3 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h2); line-height: 1.3; letter-spacing: -0.035em; }
+.modal-body .work-side h3 { font-family: var(--serif); font-size: var(--fs-h2); line-height: 1.3; letter-spacing: -0.035em; }
 .modal-body .work-pal { display: none; }
 
 /* 문제 정의 | 목표 2단 */
@@ -463,7 +458,7 @@ body.modal-open { overflow: hidden; }
 .d-source { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line-2); font-size: var(--fs-label); line-height: 1.7; color: var(--sub); }
 
 /* 소제목: 글자 뒤로 이어지는 얇은 선 */
-.d-label { display: flex; align-items: center; gap: 14px; margin: 56px 0 24px; font-size: var(--fs-label); font-weight: 600; letter-spacing: 0; color: var(--ink); }
+.d-label { display: flex; align-items: center; gap: 14px; margin: 56px 0 24px; font-size: var(--fs-label); letter-spacing: 0; }
 .d-label::after { content: ""; flex: 1; height: 1px; background: var(--line-2); }
 .d-zoom { display: inline-block; margin: -8px 0 20px; font-size: var(--fs-label); font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color 0.2s; }
 .d-zoom:hover { color: var(--accent); }
@@ -501,7 +496,6 @@ body.modal-open { overflow: hidden; }
 
   .strengths { margin-top: 96px; }
   .strengths-head { display: block; }
-  .strengths-head p { margin-top: 6px; }
   .comp-card { display: block; }
   .comp-card h4 { padding-right: 0; margin-bottom: 12px; }
   .comp-card > p { max-width: 40em; }
@@ -565,8 +559,7 @@ body.modal-open { overflow: hidden; }
   .nav-burger { margin-left: auto; }
 
   .hero-inner { padding: 100px var(--pad) 48px; }
-  .hero-eyebrow { row-gap: 2px; margin-bottom: 20px; }
-  .hero-eyebrow { column-gap: 12px; }
+  .hero-eyebrow { column-gap: 12px; margin-bottom: 20px; }
   .hero-eyebrow > span + span { margin-left: 0; padding-left: 0; border-left: 0; }
   .hero-sub { font-size: var(--fs-body); }
 

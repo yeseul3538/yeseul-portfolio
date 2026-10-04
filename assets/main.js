@@ -1,5 +1,5 @@
 /* Yeseul You — 포트폴리오 2026
-   2) 메뉴  3) 첫화면 실 연출  6) 프로젝트 목록  7) 프로젝트 팝업  8) 사이드 프로젝트 */
+   2) 메뉴  3) 첫화면 실 연출  6) 프로젝트 목록  7) 프로젝트 팝업  8) 사이드 프로젝트  9) 바닥글 연도 */
 (function () {
   'use strict';
 
@@ -9,17 +9,15 @@
   /* 2) 메뉴 — 스크롤 상태, 먹색 구간 위 흰 글자, 현재 섹션 표시 */
   var nav = $('#nav');
   var hero = $('#hero');
-  var darkZones = [$('.stats'), $('#contact')].filter(Boolean);
+  var contact = $('#contact');   /* 메뉴가 흰 글자로 바뀌는 먹색 구간 */
   var navLinks = $$('.nav-links a');
-  var sections = navLinks.map(function (a) { return $(a.getAttribute('href')); }).concat($('#contact'));
+  var sections = navLinks.map(function (a) { return $(a.getAttribute('href')); }).concat(contact);
 
   function onScroll() {
     var y = window.scrollY;
     var probe = y + 40;
     nav.classList.toggle('scrolled', y > 40);
-    nav.classList.toggle('on-dark', darkZones.some(function (z) {
-      return probe >= z.offsetTop && probe < z.offsetTop + z.offsetHeight;
-    }));
+    nav.classList.toggle('on-dark', probe >= contact.offsetTop && probe < contact.offsetTop + contact.offsetHeight);
     var pos = y + window.innerHeight * 0.35;
     var current = '';
     sections.forEach(function (s) { if (s && s.offsetTop <= pos) current = '#' + s.id; });
