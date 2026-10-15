@@ -260,7 +260,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 /* ── 7. 프로젝트 ─────────────────────────────────────── */
 /* 역량별 색인: 한 칸 = 역량 이름 + 프로젝트 이름 링크 (칸 수를 바꾸면 repeat(5, …)의 5도 함께) */
 .works-index { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px var(--gutter); margin: -24px 0 56px; padding: 18px 0; border-block: 1px solid var(--line); }
-.works-index p { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: var(--fs-label); }
+.works-index p { display: flex; flex-wrap: wrap; align-content: flex-start; align-items: center; gap: 6px; font-size: var(--fs-label); }
 .works-index b { flex-basis: 100%; margin-bottom: 2px; font-size: var(--fs-label); font-weight: 600; }
 
 /* 대표 프로젝트(01~04): 한 줄 = 레일의 큰 숫자·근거 | 제목·설명 | 다른 성과·태그. 줄 전체를 누르면 팝업
