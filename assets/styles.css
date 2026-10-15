@@ -258,8 +258,8 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .comp-proof li > span { font-size: var(--fs-label); line-height: 1.6; color: var(--sub); }
 
 /* ── 7. 프로젝트 ─────────────────────────────────────── */
-/* 역량별 색인: 한 칸 = 역량 이름 + 프로젝트 이름 링크 */
-.works-index { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px var(--gutter); margin: -24px 0 56px; padding: 18px 0; border-block: 1px solid var(--line); }
+/* 역량별 색인: 한 칸 = 역량 이름 + 프로젝트 이름 링크 (칸 수를 바꾸면 repeat(5, …)의 5도 함께) */
+.works-index { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px var(--gutter); margin: -24px 0 56px; padding: 18px 0; border-block: 1px solid var(--line); }
 .works-index p { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: var(--fs-label); }
 .works-index b { flex-basis: 100%; margin-bottom: 2px; font-size: var(--fs-label); font-weight: 600; }
 
@@ -550,7 +550,7 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 760px) {
   .work-card.is-compact { padding: 22px 0; }
   .work-card.is-compact .work-side { display: flex; flex-direction: column; gap: 6px; }
-  .work-card.is-compact .work-meta { justify-content: flex-start; margin-top: 4px; text-align: left; }
+  .work-card.is-compact .work-meta { align-self: flex-start; justify-content: flex-start; margin-top: 4px; text-align: left; }
 }
 @media (max-width: 640px) {
   :root { --pad: 20px; --gutter: 16px; }
