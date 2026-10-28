@@ -225,12 +225,18 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .career-top .parts { column-gap: 10px; }
 .career-list p { margin-top: 4px; font-size: var(--fs-label); line-height: 1.6; }
 
-/* 그 밖의 이력: 경력 합계와 구분되도록 한 단계 흐리게 */
+/* 그 외 이력: 위 경력과 같은 구조, 한 단계 흐리게. 한 줄 = 이력 1개 */
 .career-now { margin-top: 28px; }
 .career-now-k { display: block; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: var(--fs-label); font-weight: 600; color: var(--muted); }
-.career-now .career-top { margin-top: 14px; }
+.career-etc > li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.career-etc > li:last-child { border-bottom: 0; padding-bottom: 0; }
 .career-now .career-top b { font-size: var(--fs-body); color: var(--text); }
 .career-now p { margin-top: 2px; font-size: var(--fs-label); line-height: 1.6; }
+/* 한 이력 안의 근무지 여러 곳: 왼쪽 선으로 묶고 한 단계 작게 */
+.career-sub { margin-top: 10px; padding-left: 12px; border-left: 1px solid var(--line-2); }
+.career-sub li + li { margin-top: 10px; }
+.career-sub .career-top b { font-size: var(--fs-label); font-weight: 400; }
+.career-sub p { margin-top: 0; color: var(--muted); }
 
 /* 핵심 역량: 한 줄 = 강점 1개 (레일: 이름·한 문장 / 설명 / 근거 프로젝트) */
 .strengths { margin-top: 120px; }
@@ -469,6 +475,7 @@ body.modal-open { overflow: hidden; }
 .d-figure { margin: 0 0 20px; padding: 24px 24px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 2px; }
 .d-figure svg { display: block; width: 100%; height: auto; }
 .d-figure figcaption { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); font-size: var(--fs-label); line-height: 1.6; color: var(--sub); }
+.d-figure figcaption:empty { display: none; }   /* 설명을 비우면 빈 줄을 숨김 */
 
 /* ── 13. 반응형 ──────────────────────────────────────── */
 @media (max-width: 1080px) {
@@ -579,6 +586,7 @@ body.modal-open { overflow: hidden; }
   .d-figure svg { width: 600px; max-width: none; }
   .d-figure figcaption { margin-inline: 14px; }
   .d-figure figcaption::after { content: "좌우로 밀어서 보기"; display: block; }
+  .d-figure figcaption:empty { display: block; }   /* 설명이 비어도 휴대폰에서는 안내 문구는 보이게 */
 }
 @media (max-width: 560px) {
   .works-index { grid-template-columns: 1fr; }
