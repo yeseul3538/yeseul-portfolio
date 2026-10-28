@@ -1,15 +1,7 @@
-/* ==========================================================================
-   Yeseul You — 포트폴리오 2026
+/* 유예슬 포트폴리오
    1. :root 색·글꼴·간격  2. 기본  3. 공통 부품  4. 메뉴  5. 첫화면
-   6. 소개·핵심 역량  7. 프로젝트  8. 사이드 프로젝트  9. 도구  10. 자격증
-   11. 연락처·바닥글  12. 프로젝트 팝업  13. 반응형
-
-   디자인 원칙
-   · 색은 세 가지: 종이(바탕) · 먹(글자·굵은 선) · 장부 초록(강조, 첫화면 실)
-   · 12칸 격자. 왼쪽 4칸은 섹션 이름 자리(레일), 오른쪽 8칸은 내용
-   · 상자·그림자·둥근 알약 대신 선과 여백으로 나눔. 큰 제목만 명조(Noto Serif KR), 나머지는 Pretendard
-   · 글자 크기는 :root 의 --fs-* 여섯 단계, 굵기는 400(보통)·600(굵게) 두 가지만 씁니다
-   ========================================================================== */
+   6. 소개·핵심 역량  7. 프로젝트  8. 사이드 프로젝트  9. 도구  10. 자격증·이수
+   11. 연락처·바닥글  12. 프로젝트 팝업  13. 반응형 */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -19,7 +11,7 @@
   --surface: #ffffff;  /* 팝업 결과 상자 · 도식 */
   --ink:     #141414;  /* 제목 · 굵은 선 · 연락처 배경 */
   --text:    #2c2c2a;  /* 본문 */
-  --sub:     #4a4a44;  /* 근거·설명 문장 (바탕 대비 7.9:1). 숫자를 믿게 만드는 문장이라 회색보다 진하게 */
+  --sub:     #4a4a44;  /* 근거·설명 문장 (바탕 대비 7.9:1) */
   --muted:   #66665f;  /* 작은 이름표·날짜 (바탕 대비 5.1:1) */
   --line:    #d9d9d2;  /* 얇은 구분선 */
   --line-2:  #bebeb6;  /* 태그·번호 테두리 */
@@ -32,7 +24,7 @@
   --sans:  "Pretendard Variable", Pretendard, system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
   --serif: "Noto Serif KR", "Nanum Myeongjo", AppleMyungjo, Batang, serif;
 
-  /* 글자 크기 6단계. 새 글자를 넣을 때도 이 여섯 개 중에서 고르세요 (중간 크기를 새로 만들지 않기) */
+  /* 글자 크기 6단계 */
   --fs-label:   14px;                     /* 작은 이름표 · 날짜 · 태그 · 메뉴 · 근거 문장 */
   --fs-body:    16px;                     /* 본문 · 불릿 (본문 최소 크기) */
   --fs-lead:    18px;                     /* 리드 문장 · 목록 제목 · 연락처 값 */
@@ -56,7 +48,7 @@ body {
 }
 ::selection { background: var(--accent); color: #fff; }
 h1, h2, h3, h4 { color: var(--ink); font-weight: 600; line-height: 1.35; letter-spacing: -0.025em; }
-/* 줄바꿈: 제목은 줄 길이를 고르게, 문단은 마지막 줄에 단어 하나만 남지 않게 (지원하지 않는 브라우저는 예전처럼 보임) */
+/* 제목은 줄 길이를 고르게, 문단은 마지막 줄에 단어 하나만 남지 않게 */
 h1, h2, h3, h4 { text-wrap: balance; }
 p, li, dd, figcaption { text-wrap: pretty; }
 b, strong { color: var(--ink); font-weight: 600; }
@@ -107,7 +99,7 @@ section { padding: 112px 0; }
 .btn-outline { padding: 6px 0; border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; color: var(--ink); }
 .btn-outline:hover { color: var(--accent); border-color: var(--accent); }
 
-/* 프로젝트 이름 링크 (핵심 역량 근거 · 역량별 색인). 번호 대신 짧은 프로젝트 이름을 씁니다 */
+/* 프로젝트 이름 링크 (핵심 역량 근거 · 역량별 색인) */
 .ref {
   display: inline-flex; align-items: center; padding: 1px 8px; white-space: nowrap;
   font-size: var(--fs-label); font-weight: 600; line-height: 1.6; color: var(--accent); text-decoration: none;
@@ -177,7 +169,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .mobile-menu a:hover { color: var(--accent-on-dark); }
 
 /* ── 5. 첫화면 ───────────────────────────────────────── */
-/* 소개 줄 · 제목 · 성과 3개가 첫 화면 안에. 오른쪽 빈자리는 꼬인 실(.hero-thread, main.js 3)이 쓰는 자리라 비워 둡니다 */
+/* 오른쪽 빈자리는 꼬인 실(.hero-thread, main.js 3) 자리 */
 #hero { position: relative; overflow: hidden; background: var(--paper); }
 .hero-thread { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .hero-thread path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -266,8 +258,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .works-index p { display: flex; flex-wrap: wrap; align-content: flex-start; align-items: center; gap: 6px; font-size: var(--fs-label); }
 .works-index b { flex-basis: 100%; margin-bottom: 2px; font-size: var(--fs-label); font-weight: 600; }
 
-/* 대표 프로젝트(01~04): 한 줄 = 레일의 큰 숫자·근거 | 제목·설명 | 다른 성과·태그. 줄 전체를 누르면 팝업
-   결과 숫자는 왼쪽 큰 숫자에 한 번만 씁니다 (오른쪽 불릿에 같은 숫자를 다시 쓰지 않기) */
+/* 대표 프로젝트(01~04): 큰 숫자 | 제목·설명 | 다른 성과·태그 */
 .works-list { border-top: 1px solid var(--ink); }
 .work-card { position: relative; z-index: 0; cursor: pointer; }
 .work-card::before {   /* hover 배경: 격자보다 조금 넓게 */
@@ -294,7 +285,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .work-meta { display: flex; margin-top: 20px; font-size: var(--fs-label); font-weight: 400; line-height: 1.6; color: var(--muted); }
 .work-meta > span:first-child { color: var(--ink); font-weight: 600; }
 
-/* 한 줄 요약: 문제 › 행동 › 결과 (그 밖의 프로젝트 05~07 목록에서만 씁니다) */
+/* 한 줄 요약: 문제 › 행동 › 결과 (05~07·SOP 목록) */
 .work-pal { display: flex; flex-wrap: wrap; row-gap: 2px; font-size: var(--fs-body); line-height: 1.6; color: var(--sub); }
 .work-pal span + span::before { content: "›"; margin: 0 8px; color: var(--muted); }
 .work-pal span:last-child { font-weight: 600; color: var(--ink); }
@@ -310,8 +301,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .work-card:hover .work-more { color: var(--accent); border-color: var(--accent); }
 .work-card:hover .work-more::after { transform: translateX(3px); }
 
-/* 그 밖의 프로젝트(05~07): 상자 없이 선으로 나뉜 목록. 행 전체를 누르면 상세 팝업
-   열: 번호(레일) | 제목 + 한 줄 요약 | 회사·연도·분야 */
+/* 05~07·SOP 목록: 번호 | 제목 + 한 줄 요약 | 회사·연도 */
 .works-sub-label { margin-top: 80px; padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-size: var(--fs-label); font-weight: 600; color: var(--ink); }
 .work-card.is-compact { padding: 24px 0; border-bottom: 1px solid var(--line); }
 .work-card.is-compact .work-sub { display: none; }   /* 한 줄 설명은 목록에서 숨기고 팝업 머리글에서만 보임 */
@@ -325,9 +315,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .work-card.is-compact .work-meta { grid-column: 10 / -1; grid-row: 1 / span 2; align-self: center; justify-self: end; justify-content: flex-end; margin: 0; text-align: right; }
 
 /* ── 8. 사이드 프로젝트 ──────────────────────────────── */
-/* 프로젝트 섹션 맨 아래. 머리(레일: 제목 / 설명) + 상자 한 장(이름·태그 / 문제·접근·결과 / '펼쳐서 체험')
-   상자는 바탕을 칠하지 않고 테두리만: 대표 프로젝트(선으로 나뉜 줄)와 구분은 되지만 흰 카드처럼 튀지 않게.
-   바깥 테두리(--line-2)를 안쪽 구분선(--line)보다 한 단계 진하게 해 상자 윤곽이 먼저 보이도록 합니다 */
+/* 테두리만 있는 상자 한 장 */
 .side-project {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: baseline;
   margin-top: 120px; padding-top: 18px; border-top: 1px solid var(--ink);
@@ -361,8 +349,7 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .sp-frame iframe { display: block; width: 100%; height: 620px; border: 0; background: #fff; }
 
 /* ── 9. 도구 ─────────────────────────────────────────── */
-/* 장부처럼 두 칸 표: 레일에 표 제목, 오른쪽에 '이름 | 한 일'.
-   선 굵기로 위계: 표 사이 = 먹색 선 / 칸 이름 아래 = 진한 회색 선 / 줄 사이 = 옅은 선 */
+/* 두 칸 표: 레일에 표 제목, 오른쪽에 '이름 | 한 일' */
 .spec-group {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: baseline;
   padding: 28px 0 40px; border-top: 1px solid var(--ink);
@@ -379,8 +366,8 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .spec dd span { display: block; font-size: var(--fs-body); line-height: 1.7; }   /* span 하나 = 한 줄 */
 .spec dd span + span { margin-top: 4px; }
 
-/* ── 10. 자격증·수료 ─────────────────────────────────── */
-/* 도구 섹션과 같은 장부 구조: 레일에 묶음 제목(자격증 / 수료증)과 개수, 오른쪽에 '이름·발급처 | 증명하는 역량' */
+/* ── 10. 자격증·이수 ─────────────────────────────────── */
+/* 도구 섹션과 같은 두 칸 표: 레일에 묶음 제목과 개수 */
 .cert-group {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: baseline;
   padding: 28px 0 40px; border-top: 1px solid var(--ink);
@@ -388,7 +375,6 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .cert-group-head { grid-column: 1 / span 4; grid-row: 1; }
 .cert-group-head h3 { font-size: var(--fs-lead); letter-spacing: -0.02em; }
 .cert-group-head h3 em { margin-left: 8px; font-style: normal; color: var(--accent); font-variant-numeric: tabular-nums; }
-.cert-group-head p { margin-top: 4px; font-size: var(--fs-label); line-height: 1.6; color: var(--sub); }
 .cert-head, .cert-list { grid-column: 5 / -1; }
 /* 이름 칸 5 : 역량 칸 4 */
 .cert-head, .cert-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); column-gap: var(--gutter); }
@@ -398,8 +384,6 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .cert-row:last-child { border-bottom: 0; padding-bottom: 0; }
 .cert-row h4 { font-size: var(--fs-lead); font-weight: 600; line-height: 1.5; letter-spacing: -0.02em; color: var(--ink); }
 .cert-row h4 small { margin-left: 8px; font-size: var(--fs-label); font-weight: 400; letter-spacing: 0; color: var(--muted); }
-/* 국가공인 표시: 프로젝트 이름 링크(.ref)와 같은 초록 테두리 이름표 */
-.cert-flag { display: inline-block; margin-left: 8px; padding: 0 7px; border: 1px solid var(--accent); border-radius: 2px; font-size: var(--fs-label); font-weight: 600; line-height: 1.6; letter-spacing: 0; color: var(--accent); vertical-align: 2px; }
 .cert-main .parts { margin-top: 2px; font-size: var(--fs-label); line-height: 1.6; font-variant-numeric: tabular-nums; }
 .cert-use { font-size: var(--fs-body); line-height: 1.7; color: var(--text); }
 
@@ -481,7 +465,7 @@ body.modal-open { overflow: hidden; }
 .d-box { font-size: var(--fs-body); font-weight: 600; line-height: 1.6; color: var(--ink); letter-spacing: -0.02em; }
 .d-flow p { min-width: 0; font-size: var(--fs-body); line-height: 1.7; }
 
-/* 구조 도식 (assets/diagrams 원본을 index.html에 인라인) */
+/* 구조 도식 */
 .d-figure { margin: 0 0 20px; padding: 24px 24px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 2px; }
 .d-figure svg { display: block; width: 100%; height: auto; }
 .d-figure figcaption { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); font-size: var(--fs-label); line-height: 1.6; color: var(--sub); }

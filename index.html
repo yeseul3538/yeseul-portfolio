@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<!-- 글 수정: 이 파일 / 색·크기: assets/styles.css 맨 위 :root / 동작: assets/main.js -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>유예슬 | 운영 기획 포트폴리오</title>
-<!-- 대표 문장(같은 일을 두 번 하지 않도록, 구조를 만듭니다)은 아래 description·og:description, 첫 화면 제목,
-     링크 미리보기 이미지(assets/og-image.png), 노션 첫 화면에 같은 문장으로 들어갑니다. 바꿀 때는 모두 함께 바꾸세요. -->
 <meta name="description" content="같은 일을 두 번 하지 않도록 구조를 만듭니다. 카드사와 결제 서비스 회사에서 4년 동안 미납금 회수, 주문 경로 수기 매칭, 법인카드 재발급처럼 돈과 시간이 새던 일을 데이터로 찾아 줄여 온 운영 기획자 유예슬입니다." />
 <meta name="author" content="Yeseul You" />
 <meta name="theme-color" content="#f2f2ee" />
@@ -14,7 +11,6 @@
 <meta property="og:title" content="유예슬 | 운영 기획 포트폴리오" />
 <meta property="og:description" content="같은 일을 두 번 하지 않도록, 구조를 만듭니다. 미납 회수율 8% → 15%, 수동 매칭 하루 2시간 → 20분, 법인카드 재발급 기업당 4–6시간 → 15분." />
 <meta property="og:url" content="https://yeseul-portfolio.vercel.app/" />
-<!-- 카카오톡·슬랙에 링크를 보낼 때 뜨는 미리보기 이미지 (1200×630). 원본은 tools/og-image.html -->
 <meta property="og:image" content="https://yeseul-portfolio.vercel.app/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -27,13 +23,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
-<!-- 큰 제목용 명조(Noto Serif KR). 나머지 글자는 모두 Pretendard -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&amp;display=swap" />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
 
-<!-- 메뉴 (모바일 메뉴는 main.js가 이 목록을 복사해 만듭니다) -->
 <nav id="nav" aria-label="주요 메뉴">
   <a class="nav-logo" href="#hero"><i></i>유예슬</a>
   <ul class="nav-links">
@@ -49,14 +43,10 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu"></div>
 
-<!-- [첫 화면] 이름·직무 줄 · 소개 줄 · 큰 제목 · 성과 카드 3개가 첫 화면 안에 보입니다.
-     배경의 꼬인 실은 페이지가 열릴 때 한 번 저절로 풀려 성과 카드를 잇는 선이 됩니다 (main.js 3)
-     ※ 큰 제목(hero-title)은 사이트의 대표 문장입니다. 바꿀 때는 <head>의 description·og:description도 함께 바꾸세요. -->
 <header id="hero">
   <svg class="hero-thread" aria-hidden="true"></svg>
   <div class="hero-inner">
     <div class="hero-lead">
-      <!-- 이름 · 지원 직무 (hero-role 글자를 바꾸면 지원 직무 표시가 바뀝니다) -->
       <p class="hero-id"><span class="hero-name">유예슬</span><span class="hero-role">운영 기획</span></p>
       <p class="hero-eyebrow parts"><span>운영 경력 4년 4개월</span><span>현대카드 · 아이샵케어</span></p>
       <h1 class="hero-title">같은 일을 <span class="nb">두 번 하지 않도록</span><br />구조를 만듭니다</h1>
@@ -67,9 +57,6 @@
       </div>
     </div>
 
-    <!-- 성과 카드: 누르면 해당 프로젝트(data-go = 0부터 시작하는 순서)로 이동
-         <b> = 회사 · 분야 / 다음 <span> = 프로젝트 이름 / hero-card-l = 숫자 앞 작은 설명
-         ※ hero-card-l(지표 이름)은 프로젝트 카드의 wf-l, 노션 이력서 숫자 3칸, 링크 미리보기 그림과 같은 말로 씁니다 -->
     <div class="hero-cards">
       <a class="hero-card" href="#project-01" data-go="0">
         <span><b>아이샵케어 · 결제 운영</b><span>미납 가맹점 관리 체계</span><em class="hero-card-n"><span class="hero-card-l">미납금 평균 회수율</span>8% → 15%</em></span>
@@ -84,12 +71,11 @@
   </div>
 </header>
 
-<!-- [소개] 위: 섹션 머리 / 가운데: 경력(왼쪽 레일) · 소개 글(오른쪽) / 아래: 핵심 역량 3줄 -->
 <section id="about">
   <div class="wrap">
     <header class="sec-head">
       <span class="eyebrow">소개</span>
-      <h2>현장을 잘 아는 팀원 입니다.</h2>
+      <h2>현장을 잘 아는 팀원입니다</h2>
     </header>
     <div class="about-inner">
       <div class="about-text">
@@ -115,8 +101,6 @@
             <p class="parts"><span>법인카드운영팀</span><span>법인카드 운영·개발 협업</span></p>
           </li>
         </ol>
-        <!-- 그 외 이력: 위 '경력 4년 4개월' 합계에는 넣지 않고, 이력이 끊김 없이 이어진다는 것을 보여 주는 칸입니다.
-             공개 전 확인: 워킹홀리데이가 끝났다면 '2026.08 – 현재'를 '2026.08 – 2027.OO'처럼 종료 연월로 바꾸세요. -->
         <div class="career-now">
           <span class="career-now-k">그 외 이력</span>
           <div class="career-top"><b>워킹홀리데이</b><span>2026.08 – 현재</span></div>
@@ -128,13 +112,6 @@
       </div>
     </div>
 
-    <!-- [강점] 한 줄 = 강점 1개: 작은 제목(comp-k) · 한 문장 제목 · 설명 · 근거
-         근거 한 줄 = <a class="ref">프로젝트 이름</a> + <span>무엇을 했는지</span>
-         프로젝트 이름은 아래 '역량별 색인'·'일하는 방식'과 같은 짧은 이름을 씁니다:
-         미납 관리 체계(01) · 해지·폐업 조기 감지(02) · 인입 경로 자동 분류(03) · 법인카드 일괄 재발급(04)
-         위약금 통합 계산기(05) · 발급 오류 조기 표시(06) · 출고·계약 정합성(07)
-         운영 문서: CMS 조회 SOP(sop-01) · 고객 여정 도식(sop-02)
-         링크 주소(href="#project-0N", SOP는 href="#sop-0N")는 괄호 안 번호에 맞추세요 -->
     <div class="strengths">
       <header class="strengths-head">
         <h3>핵심 역량</h3>
@@ -175,18 +152,6 @@
   </div>
 </section>
 
-<!-- [프로젝트]
-     · 대표 프로젝트 01~04: 카드 1개 = <article class="work-card"> … </article>. 누르면 팝업이 열립니다.
-       - work-figure : 왼쪽 큰 숫자(wf-n) · 지표 이름(wf-l) · 숫자의 기준(wf-note)
-       - work-side   : 번호 · 제목 · 한 줄 설명 · 회사·기간·분야 (팝업 머리글로도 자동 사용)
-       - work-main   : 큰 숫자 말고 다른 성과 2~3줄 + 태그. 큰 숫자와 같은 결과를 여기 다시 쓰지 마세요
-       - work-detail (hidden) : 팝업 본문. hidden은 지우지 마세요.
-     · 그 밖의 프로젝트 05~07: <article class="work-card is-compact">. 목록 한 줄(제목 + 한 줄 요약 work-pal: 문제 › 변화 › 결과)로 보이고,
-       누르면 01~04와 같은 팝업이 열립니다. work-figure·work-main 없이 work-side와 work-detail만 씁니다.
-     · 운영 문서(SOP 01~): 07 아래 '운영 문서' 이름표 밑. 05~07과 같은 is-compact 카드이고 번호만 'SOP 0N', id="sop-0N"
-     · 사이드 프로젝트(고유명사 지킴이): 운영 문서 아래 맨 끝. 팝업 없이 카드 한 장 (아래 [사이드 프로젝트] 주석 참고)
-     · 도식(svg)은 이 파일 안에만 있습니다(도식 글자는 여기서 고치세요). assets/diagrams 폴더에는
-       '흐름도 상세보기' 링크로 여는 상세 도식(p02-detect.svg, p07-flow.svg)만 있습니다. -->
 <section id="works">
   <div class="wrap">
     <header class="sec-head">
@@ -196,7 +161,6 @@
       <p class="sec-note">도식과 화면은 보안을 위해 다시 그렸습니다. 성과 수치는 실제 값이며, 기준과 계산 방법을 함께 적었습니다.</p>
     </header>
 
-    <!-- 역량별로 보기: 프로젝트 이름을 누르면 해당 카드로 이동합니다 (이름은 [강점] 주석의 짧은 이름 목록과 같게) -->
     <div class="works-index" role="navigation" aria-label="역량별 프로젝트">
       <p><b>정책 설계</b><a class="ref" href="#project-01">미납 관리 체계</a><a class="ref" href="#project-02">해지·폐업 조기 감지</a></p>
       <p><b>업무 자동화</b><a class="ref" href="#project-01">미납 관리 체계</a><a class="ref" href="#project-02">해지·폐업 조기 감지</a><a class="ref" href="#project-03">인입 경로 자동 분류</a><a class="ref" href="#project-07">출고·계약 정합성</a></p>
@@ -207,7 +171,6 @@
 
     <div class="works-list">
 
-      <!-- 01 -->
       <article class="work-card" id="project-01" tabindex="0" role="button" aria-label="미납 가맹점 관리 체계 구축 자세히 보기">
         <div class="work-figure"><span class="wf-n">8% → 15%</span><span class="wf-l">미납금 평균 회수율</span><span class="wf-note">8%는 회수 활동 없이 들어오던 자연 입금 비율</span></div>
         <div class="work-side">
@@ -285,7 +248,6 @@
         </div>
       </article>
 
-      <!-- 02 -->
       <article class="work-card" id="project-02" tabindex="0" role="button" aria-label="해지·폐업 가맹점 조기 감지와 위약금 재설계 자세히 보기">
         <div class="work-figure"><span class="wf-n">15 → 90건</span><span class="wf-l">월 해지·폐업 청구 건수</span><span class="wf-note">놓치던 청구를 먼저 찾아내 6배로</span></div>
         <div class="work-side">
@@ -361,7 +323,6 @@
         </div>
       </article>
 
-      <!-- 03 -->
       <article class="work-card" id="project-03" tabindex="0" role="button" aria-label="인입 경로 자동 분류·성과 리포트 자세히 보기">
         <div class="work-figure"><span class="wf-n">2시간 → 20분</span><span class="wf-l">하루 수동 매칭 시간</span><span class="wf-note">예외 케이스(5% 미만)만 사람이 처리</span></div>
         <div class="work-side">
@@ -436,7 +397,6 @@
         </div>
       </article>
 
-      <!-- 04 -->
       <article class="work-card" id="project-04" tabindex="0" role="button" aria-label="법인카드 일괄 재발급 도입 자세히 보기">
         <div class="work-figure"><span class="wf-n">4–6시간 → 15분</span><span class="wf-l">기업당 재발급 처리 시간</span><span class="wf-note">94–96% 단축</span></div>
         <div class="work-side">
@@ -511,7 +471,6 @@
 
       <p class="works-sub-label">그 밖의 프로젝트</p>
 
-      <!-- 05 -->
       <article class="work-card is-compact" id="project-05" tabindex="0" role="button" aria-label="위약금 통합 계산기 자세히 보기">
         <div class="work-side">
           <span class="work-no">프로젝트 05</span>
@@ -574,7 +533,6 @@
         </div>
       </article>
 
-      <!-- 06 -->
       <article class="work-card is-compact" id="project-06" tabindex="0" role="button" aria-label="대량 발급 오류 조기 표시 자세히 보기">
         <div class="work-side">
           <span class="work-no">프로젝트 06</span>
@@ -633,7 +591,6 @@
         </div>
       </article>
 
-      <!-- 07 -->
       <article class="work-card is-compact" id="project-07" tabindex="0" role="button" aria-label="출고·계약 데이터 정합성 관리 자세히 보기">
         <div class="work-side">
           <span class="work-no">프로젝트 07</span>
@@ -695,9 +652,6 @@
 
       <p class="works-sub-label">운영 문서</p>
 
-      <!-- SOP 01: 실제 근무 중 만든 SOP를 가맹점 정보 없이 다시 그린 것. 05~07과 같은 '목록 한 줄 + 팝업' 구조입니다.
-           원본은 실제 관리자 화면 캡처(가맹점명·대표자명·사업자번호 포함)라 그대로 올리지 않습니다. 도식 2개는 이 파일 안의 svg.
-           SOP를 더 올릴 때는 이 article을 통째로 복사해 id="sop-02", 'SOP 02'로 바꾸세요 (수정가이드 ⑬) -->
       <article class="work-card is-compact" id="sop-01" tabindex="0" role="button" aria-label="CMS 관리자 화면 조회 SOP 자세히 보기">
         <div class="work-side">
           <span class="work-no">SOP 01</span>
@@ -762,7 +716,6 @@
         </div>
       </article>
 
-      <!-- SOP 02: 신규 입사자 교육용 고객 여정 도식(FigJam)을 담당 주체별 3줄로 다시 그린 것. 도식은 이 파일 안의 svg -->
       <article class="work-card is-compact" id="sop-02" tabindex="0" role="button" aria-label="구매부터 설치까지 고객 여정 도식 자세히 보기">
         <div class="work-side">
           <span class="work-no">SOP 02</span>
@@ -827,10 +780,6 @@
       </article>
     </div>
 
-    <!-- [사이드 프로젝트] 프로젝트 섹션 맨 아래. 메인 프로젝트보다 가볍게: 테두리만 있는 투명한 상자 + 문제·접근·결과 3칸 (팝업 없음)
-         · 역량 태그(sp-tags): <li> 하나가 태그 하나
-         · 데모(iframe)는 '펼쳐서 체험'을 처음 누를 때만 불러옵니다 (main.js 8)
-         · 데모 주소가 바뀌면 3곳을 함께 고치세요: sp-newtab의 href, sp-frame-url 글자, spFrame의 data-src -->
     <div class="side-project" id="side">
       <span class="side-label">운영에서 쓰던 방식을 업무 밖 문제에 적용해 봤습니다</span>
       <h3>사이드 프로젝트</h3>
@@ -869,12 +818,6 @@
   </div>
 </section>
 
-<!-- [사용 도구] 장부처럼 '이름 | 한 일' 두 칸 표 4개 (자동화 / 도메인 이해 / 데이터 정리·기획 / 일하는 방식)
-     · 표 하나 = <div class="spec-group"> : 왼쪽 제목(h3) · 칸 이름 줄(spec-head) · 표(dl.spec)
-     · 표의 한 줄 = <div><dt>이름</dt><dd><span>한 일</span><span>한 일</span></dd></div>
-       → 줄을 늘리려면 <div>…</div> 를 통째로 복사해 글자만 바꾸세요
-     · <dd> 안의 <span> 하나가 화면에서 한 줄입니다. 쉼표로 길게 잇지 말고 일마다 <span>을 나누세요
-       (짧은 이름 나열은 '이카운트, 아마란스'처럼 한 <span> 안에 쉼표로 써도 됩니다) -->
 <section id="stack">
   <div class="wrap">
     <header class="sec-head">
@@ -916,7 +859,6 @@
       </dl>
     </div>
 
-    <!-- 일하는 방식: 오른쪽 칸은 그 방식을 쓴 프로젝트의 짧은 이름 ([강점] 주석의 이름 목록과 같게) -->
     <div class="spec-group">
       <h3>일하는 방식</h3>
       <p class="spec-head"><span>방식</span><span>쓴 프로젝트</span></p>
@@ -936,13 +878,6 @@
   </div>
 </section>
 
-<!-- [자격증·이수] 도구 섹션과 같은 장부 구조로 두 묶음: 자격증(시험 합격) / 수료증(강좌 이수). 묶음 안에서는 최신순
-     · 묶음 = <div class="cert-group">: 왼쪽 제목(h3 + 개수 em) · 칸 이름 줄(cert-head) · 목록(cert-list)
-     · 한 줄 = <article class="cert-row">: 이름(h4) · 발급처·연월(p.parts) | 증명하는 역량 / 배운 분야(p.cert-use)
-     · 국가공인 표시(cert-flag)는 공인 여부를 확인한 자격에만 붙입니다 (ADsP·SMAT: 국가공인 민간자격 / AI-POT: 등록 민간자격)
-     · 줄을 더하면 h3 옆 개수(em)와 sec-sub의 개수도 함께 바꾸세요
-     · 자격증·이수증 원본(PDF)에는 생년월일이 있어 사이트에 올리지 않습니다
-     (조리기능사 3종은 운영 기획 지원과 관련이 적어 사이트에서는 뺐습니다. 노션 자격증 DB에는 그대로 있습니다) -->
 <section id="credentials">
   <div class="wrap">
     <header class="sec-head">
@@ -954,20 +889,19 @@
     <div class="cert-group">
       <div class="cert-group-head">
         <h3>자격증<em>3</em></h3>
-        <p></p>
       </div>
       <p class="cert-head"><span>자격 · 발급처</span><span>역량</span></p>
       <div class="cert-list">
         <article class="cert-row">
           <div class="cert-main"><h4>AI-POT 1급<small>AI 프롬프트 활용능력</small></h4><p class="parts"><span>한국생산성본부</span><span>2026.07 취득</span></p></div>
-          <p class="cert-use">생성형 AI 프롬프트 설계와 업무 활용</p>
+          <p class="cert-use">생성형 AI 프롬프트 설계·업무 활용</p>
         </article>
         <article class="cert-row">
-          <div class="cert-main"><h4>ADsP 데이터분석 준전문가<span class="cert-flag">국가공인</span></h4><p class="parts"><span>한국데이터산업진흥원</span><span>2025.11 취득</span></p></div>
-          <p class="cert-use">데이터 분석 기획과 통계 분석</p>
+          <div class="cert-main"><h4>ADsP 데이터분석 준전문가</h4><p class="parts"><span>한국데이터산업진흥원</span><span>2025.11 취득</span></p></div>
+          <p class="cert-use">데이터 분석 기획·통계 분석</p>
         </article>
         <article class="cert-row">
-          <div class="cert-main"><h4>SMAT 서비스경영자격 1급<span class="cert-flag">국가공인</span></h4><p class="parts"><span>한국생산성본부</span><span>2021.07 취득</span></p></div>
+          <div class="cert-main"><h4>SMAT 서비스경영자격 1급</h4><p class="parts"><span>한국생산성본부</span><span>2021.07 취득</span></p></div>
           <p class="cert-use">서비스 운영전략·마케팅·커뮤니케이션 전략</p>
         </article>
       </div>
@@ -976,12 +910,11 @@
     <div class="cert-group">
       <div class="cert-group-head">
         <h3>이수 교육<em>3</em></h3>
-        <p>강좌를 끝까지 이수한 교육</p>
       </div>
-      <p class="cert-head"><span>과정 · 기관</span><span>배운 분야</span></p>
+      <p class="cert-head"><span>과정 · 기관</span><span>분야</span></p>
       <div class="cert-list">
         <article class="cert-row">
-          <div class="cert-main"><h4>스타트업 비즈니스 기획론</h4><p class="parts"><span>포항공과대학교 · K-MOOC</span>2026.10 이수</span></p></div>
+          <div class="cert-main"><h4>스타트업 비즈니스 기획론</h4><p class="parts"><span>포항공과대학교 · K-MOOC</span><span>2026.10 이수</span></p></div>
           <p class="cert-use">스타트업 사업 기획 전반</p>
         </article>
         <article class="cert-row">
@@ -990,15 +923,13 @@
         </article>
         <article class="cert-row">
           <div class="cert-main"><h4>Claude Code in Action</h4><p class="parts"><span>Anthropic</span><span>2026.03 수료</span></p></div>
-          <p class="cert-use">AI 코딩 도구 Claude Code 활용</p>
+          <p class="cert-use">AI 코딩 도구 활용</p>
         </article>
       </div>
     </div>
   </div>
 </section>
 
-<!-- [연락처] 제목은 첫 화면 대표 문장(같은 일을 두 번 하지 않도록)을 '입사하면 무엇부터 할지'로 이어받는 마무리입니다.
-     '더 나은 경험', '최적의', '가치' 같은 누구나 쓰는 말 대신, 실제로 할 일을 구체적으로 씁니다 -->
 <section id="contact">
   <div class="wrap">
     <header class="sec-head">
@@ -1024,7 +955,6 @@
   </div>
 </footer>
 
-<!-- 프로젝트 팝업 (내용은 main.js가 카드에서 채웁니다) -->
 <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-backdrop" data-close></div>
   <div class="modal-panel">
