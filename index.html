@@ -40,7 +40,7 @@
     <li><a href="#about">소개</a></li>
     <li><a href="#works">프로젝트</a></li>
     <li><a href="#stack">도구</a></li>
-    <li><a href="#credentials">자격증</a></li>
+    <li><a href="#credentials">자격증·수료</a></li>
   </ul>
   <a class="nav-cta" href="#contact">연락하기</a>
   <button class="nav-burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
@@ -936,23 +936,63 @@
   </div>
 </section>
 
-<!-- [자격증] cert-badge: is-earned = 취득 / is-completed = 수료 -->
+<!-- [자격증·수료] 도구 섹션과 같은 장부 구조로 두 묶음: 자격증(시험 합격) / 수료증(강좌 이수). 묶음 안에서는 최신순
+     · 묶음 = <div class="cert-group">: 왼쪽 제목(h3 + 개수 em) · 칸 이름 줄(cert-head) · 목록(cert-list)
+     · 한 줄 = <article class="cert-row">: 이름(h4) · 발급처·연월(p.parts) | 증명하는 역량 / 배운 분야(p.cert-use)
+     · 국가공인 표시(cert-flag)는 공인 여부를 확인한 자격에만 붙입니다 (ADsP·SMAT: 국가공인 민간자격 / AI-POT: 등록 민간자격)
+     · 줄을 더하면 h3 옆 개수(em)와 sec-sub의 개수도 함께 바꾸세요
+     · 자격증·이수증 원본(PDF)에는 생년월일이 있어 사이트에 올리지 않습니다
+     (조리기능사 3종은 운영 기획 지원과 관련이 적어 사이트에서는 뺐습니다. 노션 자격증 DB에는 그대로 있습니다) -->
 <section id="credentials">
   <div class="wrap">
     <header class="sec-head">
-      <span class="eyebrow">자격증</span>
+      <span class="eyebrow">자격증·수료</span>
       <h2>자격증·수료</h2>
-      <p class="sec-sub">데이터 분석·AI 활용·서비스 경영 자격과 교육 이수 내역입니다.</p>
+      <p class="sec-sub">국가공인 2개를 포함한 자격증 3개와, 대학·기업 교육 3과정 수료 내역입니다.</p>
     </header>
 
-    <!-- 한 줄 = 자격증 1개. 취득은 위쪽, 수료는 아래쪽에 둡니다.
-         (조리기능사 3종은 운영 기획 지원과 관련이 적어 사이트에서는 뺐습니다. 노션 자격증 DB에는 그대로 있습니다) -->
-    <div class="cert-grid">
-      <article class="cert-card"><span class="cert-cat">데이터·AI</span><h3>ADsP 데이터 분석 준전문가 <small class="parts"><span>한국데이터산업진흥원</span><span>2025.11</span></small></h3><span class="cert-badge is-earned">취득</span></article>
-      <article class="cert-card"><span class="cert-cat">데이터·AI</span><h3>AI-POT 1급 <small class="parts"><span>한국생산성본부</span><span>2026.07</span></small></h3><span class="cert-badge is-earned">취득</span></article>
-      <article class="cert-card"><span class="cert-cat">서비스·경영</span><h3>SMAT 서비스경영자격 1급 <small class="parts"><span>한국생산성본부</span><span>2021.07</span></small></h3><span class="cert-badge is-earned">취득</span></article>
-      <article class="cert-card is-course"><span class="cert-cat">데이터·AI</span><h3>Claude Code in Action <small class="parts"><span>Anthropic</span><span>2026.03</span></small></h3><span class="cert-badge is-completed">수료</span></article>
-      <article class="cert-card is-course"><span class="cert-cat">데이터·AI</span><h3>자연어 처리의 모든 것 <small class="parts"><span>Boostcourse</span><span>2026.04</span></small></h3><span class="cert-badge is-completed">수료</span></article>
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <h3>자격증<em>3</em></h3>
+        <p>시험에 합격해 취득한 자격</p>
+      </div>
+      <p class="cert-head"><span>자격 · 발급처</span><span>증명하는 역량</span></p>
+      <div class="cert-list">
+        <article class="cert-row">
+          <div class="cert-main"><h4>AI-POT 1급<small>AI 프롬프트 활용능력</small></h4><p class="parts"><span>한국생산성본부</span><span>2026.07 취득</span></p></div>
+          <p class="cert-use">생성형 AI 프롬프트 설계와 업무 활용</p>
+        </article>
+        <article class="cert-row">
+          <div class="cert-main"><h4>ADsP 데이터분석 준전문가<span class="cert-flag">국가공인</span></h4><p class="parts"><span>한국데이터산업진흥원</span><span>2025.11 취득</span></p></div>
+          <p class="cert-use">데이터 분석 기획과 통계 분석</p>
+        </article>
+        <article class="cert-row">
+          <div class="cert-main"><h4>SMAT 서비스경영자격 1급<span class="cert-flag">국가공인</span></h4><p class="parts"><span>한국생산성본부</span><span>2021.07 취득</span></p></div>
+          <p class="cert-use">서비스 운영전략·마케팅·커뮤니케이션 3개 모듈 모두 합격</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <h3>수료증<em>3</em></h3>
+        <p>강좌를 끝까지 이수한 교육</p>
+      </div>
+      <p class="cert-head"><span>과정 · 기관</span><span>배운 분야</span></p>
+      <div class="cert-list">
+        <article class="cert-row">
+          <div class="cert-main"><h4>스타트업 비즈니스 기획론</h4><p class="parts"><span>포항공과대학교 · K-MOOC</span><span>16시간</span><span>2026.10 이수</span></p></div>
+          <p class="cert-use">스타트업 사업 기획</p>
+        </article>
+        <article class="cert-row">
+          <div class="cert-main"><h4>자연어 처리의 모든 것</h4><p class="parts"><span>Boostcourse</span><span>2026.04 수료</span></p></div>
+          <p class="cert-use">자연어 처리(NLP)</p>
+        </article>
+        <article class="cert-row">
+          <div class="cert-main"><h4>Claude Code in Action</h4><p class="parts"><span>Anthropic</span><span>2026.03 수료</span></p></div>
+          <p class="cert-use">AI 코딩 도구 Claude Code 활용</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
