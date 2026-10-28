@@ -56,6 +56,9 @@ body {
 }
 ::selection { background: var(--accent); color: #fff; }
 h1, h2, h3, h4 { color: var(--ink); font-weight: 600; line-height: 1.35; letter-spacing: -0.025em; }
+/* 줄바꿈: 제목은 줄 길이를 고르게, 문단은 마지막 줄에 단어 하나만 남지 않게 (지원하지 않는 브라우저는 예전처럼 보임) */
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, dd, figcaption { text-wrap: pretty; }
 b, strong { color: var(--ink); font-weight: 600; }
 a { color: inherit; }
 ul, ol { list-style: none; }
