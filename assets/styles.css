@@ -392,6 +392,14 @@ nav.on-dark .nav-burger span, .nav-burger[aria-expanded="true"] span { backgroun
 .cert-row h4 small { margin-left: 8px; font-size: var(--fs-label); font-weight: 400; letter-spacing: 0; color: var(--muted); }
 .cert-main .parts { margin-top: 2px; font-size: var(--fs-label); line-height: 1.6; font-variant-numeric: tabular-nums; }
 .cert-use { font-size: var(--fs-body); line-height: 1.7; color: var(--text); }
+/* 이수 교육: 자격증보다 한 단계 약하게 (옅은 선 · 작은 글자 · 보통 굵기) */
+.cert-group.is-course { border-top-color: var(--line-2); }
+.cert-group.is-course .cert-group-head h3 { font-size: var(--fs-body); color: var(--text); }
+.cert-group.is-course .cert-group-head h3 em { color: var(--muted); }
+.cert-group.is-course .cert-row { padding: 12px 0; }
+.cert-group.is-course .cert-row:last-child { padding-bottom: 0; }
+.cert-group.is-course .cert-row h4 { font-size: var(--fs-body); font-weight: 400; color: var(--text); }
+.cert-group.is-course .cert-use { font-size: var(--fs-label); color: var(--sub); }
 
 /* ── 11. 연락처 · 바닥글 ─────────────────────────────── */
 /* 페이지에서 유일한 먹색 구간. 연락처는 상자 대신 목록 한 줄씩 */
