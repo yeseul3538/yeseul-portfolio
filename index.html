@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>유예슬 | 운영 기획 포트폴리오</title>
-<meta name="description" content="같은 일을 두 번 하지 않도록 구조를 만듭니다. 카드사와 결제 서비스 회사에서 4년 동안 미납금 회수, 주문 경로 수기 매칭, 법인카드 재발급처럼 돈과 시간이 새던 일을 데이터로 찾아 줄여 온 운영 기획자 유예슬입니다." />
+<meta name="description" content="같은 일을 두 번 하지 않도록 구조를 만듭니다. 카드사와 VAN 대리점에서 4년 동안 미납금 회수, 주문 경로 수기 매칭, 법인카드 재발급처럼 돈과 시간이 새던 일을 데이터로 찾아 줄여 온 운영 기획자 유예슬입니다." />
 <meta name="author" content="Yeseul You" />
 <meta name="theme-color" content="#f2f2ee" />
 <meta property="og:type" content="website" />
@@ -59,7 +59,7 @@
 
     <div class="hero-cards">
       <a class="hero-card" href="#project-01" data-go="0">
-        <span><b>아이샵케어 · 결제 운영</b><span>미납 가맹점 관리 체계</span><em class="hero-card-n"><span class="hero-card-l">미납금 회수율 · 1년간 약 3,600만 원 회수</span>8% → 15%</em></span>
+        <span><b>아이샵케어 · 결제 운영</b><span>미납 가맹점 관리 체계</span><em class="hero-card-n"><span class="hero-card-l">미납금 평균 회수율 · 1년간 약 3,600만 원 회수</span>8% → 15%</em></span>
       </a>
       <a class="hero-card" href="#project-03" data-go="2">
         <span><b>아이샵케어 · 업무 자동화</b><span>인입 경로 자동 분류·성과 리포트</span><em class="hero-card-n"><span class="hero-card-l">하루 수동 매칭 시간</span>2시간 → 20분</em></span>
@@ -219,7 +219,7 @@
           <ol class="d-flow">
             <li><div class="d-box">정책 진단</div><p>잔액이 미납금 전체보다 많을 때만 출금하는 방식 때문에, 잔액이 적은 가맹점은 한 번도 출금되지 않고 미납만 쌓이고 있었음</p></li>
             <li><div class="d-box">바꾸기 전 손익 계산</div><p>부분 출금으로 바꾸기 전, 잔액 200원 미만에서는 이체 수수료가 출금액보다 커지는 <b>역전 구간</b> 발견 → <b>최소 출금 단위 1,000원</b>으로 차단. 월 CMS 1,000원 미만 소액 가맹점은 금액대별로 따로 계산해 어디까지 출금할지 정하는 근거로 씀</p></li>
-            <li><div class="d-box">감지와 분류</div><p>미납 데이터를 새로 구축하고, 월 <b>약 2,300만 원</b> 규모(2026년 4월 기준)의 미납을 장기·고액·일반으로 분류. 국세청 휴·폐업 자동 조회(30분 주기)로 폐업 가맹점은 따로 관리</p></li>
+            <li><div class="d-box">감지와 분류</div><p>미납 데이터를 새로 구축하고, 월 청구액 약 2억 원 가운데 <b>약 2,300만 원</b> 규모(2026년 4월 기준)의 미납을 장기·고액·일반으로 분류. 국세청 휴·폐업 자동 조회(30분 주기)로 폐업 가맹점은 따로 관리</p></li>
             <li><div class="d-box">월간 회수 일정</div><p>정상 가맹점은 매월 <b>5·10·14·20·30일</b> 잔액만큼 부분 출금하고, 실패하면 다음 영업일부터 <b>전화·알림톡</b>으로 안내. 휴·폐업 가맹점은 매월 <b>5·15·30일</b> 문자로 안내. 6개월간 입금이 없으면 외부 추심사로 넘기는 기준 수립</p></li>
             <li><div class="d-box">사유별 대응</div><p>미납 사유를 응답·무응답 고객별 8가지(납부 불응, 계약서 미서명, 일시적 현금 부족 등)로 나누고, 사유별 대응안과 협업 부서 정리</p></li>
             <li><div class="d-box">주간 보고</div><p>폐업·운영 가맹점별 고액·장기·일반 미납과 출금일별 성공률을 매주 팀 회의에 보고, 리더 회의 의사결정 자료로 사용</p></li>
@@ -246,6 +246,7 @@
             <ul>
               <li>회수율을 높이려던 부분 출금도 잔액 200원 미만에서는 오히려 손해였습니다. 정책은 바꾸기 전에 금액 구간별로 먼저 계산해 봐야 한다는 걸 이때 배웠습니다.</li>
               <li>미납 데이터가 없던 상태라, 회수 일정을 짜기 전에 미납을 장기·고액·일반과 휴·폐업으로 나누는 일부터 했습니다. 나누고 나니 대상마다 안내 방법과 날짜를 다르게 정할 수 있었습니다.</li>
+              <li>목표였던 ‘CMS 미납 금액 5% 이하’에는 못 미쳤습니다. 납부를 잊고 있었다는 가맹점 피드백이 많아, 해피콜 때 납부 내역을 한 번 더 안내하자고 건의했습니다. 해피콜 업무가 시작되지 않아 적용하지는 못했습니다.</li>
             </ul>
           </div>
         </div>
@@ -1038,7 +1039,7 @@
       <a class="contact-card" href="https://drive.google.com/uc?export=download&amp;id=1J_pDKfSwpOclMBk69iSD8uDriS_Xvk8O" target="_blank" rel="noopener noreferrer"><b>이력서</b><span>PDF 다운로드</span></a>
       <a class="contact-card" href="https://app.notion.com/p/Resume-1b3518dc10ce80929964cc9c649ad2d5?source=copy_link" target="_blank" rel="noopener noreferrer"><b>노션</b><span>1페이지 요약 이력서</span></a>
       <a class="contact-card" href="https://www.linkedin.com/in/yeseul-you" target="_blank" rel="noopener noreferrer"><b>링크드인</b><span>linkedin.com/in/yeseul-you</span></a>
-      <a class="contact-card" href="https://github.com/KUROTONI" target="_blank" rel="noopener noreferrer"><b>깃허브</b><span>github.com/KUROTONI</span></a>
+      <a class="contact-card" href="https://github.com/KUROTONI/novel-spell-checker" target="_blank" rel="noopener noreferrer"><b>깃허브</b><span>KUROTONI/novel-spell-checker</span></a>
     </div>
   </div>
 </section>
